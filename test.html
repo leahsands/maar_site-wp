@@ -37,10 +37,6 @@
 		 However, there is a blank style.css in the css directory should you prefer -->
 	<link rel="stylesheet" href="css/gumby.css"> 
 
-	<!-- Sidebar styles 
-	<link rel="stylesheet" href="css/sidebar-normalize.css">
-	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'> -->
-
 	<!-- Modernizr -->
 	<script src="bower_components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 
@@ -123,54 +119,45 @@
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
 </head>
-<body>
-<div id="page">
+	<body>
+		<!-- for the purpose of the mobile navigation, the whole body is in a "maar-container" div -->
+		<div id="maar-container" class="maar-container">
+			<!-- content push wrapper -->
+			<div class="side-pusher">
+				<!-- Container -->
+				<nav class="side-menu side-effect" id="menu">
+					<h2 class="icon icon-lab">Sidebar</h2>
+					<ul>
+						<li><a  href="#">Data Management</a></li>
+						<li><a  href="#">Location</a></li>
+						<li><a  href="#">Study</a></li>
+						<li><a  href="#">Collections</a></li>
+						<li><a  href="#">Credits</a></li>
+					</ul>
+				</nav>
 
-  <a href="#" class="open-panel"><i class="icon-menu "></i></a>
-
-<nav>
-  <!-- <a href="#" class="close-panel"><i class="icon-remove"></i></a> -->
-  <ul class="main-menu">
-    <li class="toggle" data-for".drawer"><a href="#">About</a></li>
-    	<section class="drawer">
-    	<ul>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Leadership</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Foundation</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Heart of the Community</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    	</ul>
-    	</section>
-    <li><a href="#">Membership</a></li>
-    <li><a href="#" class="switch" gumby-trigger="#something | #about">Menu Item</a></li>
-    <li><a href="#" class="switch" gumby-trigger="#">Menu Item</a></li>
-    <li><a href="#" class="switch" gumby-trigger="#a">Menu Item</a></li>
-  </ul>
-</nav>
-
-<div class="content">
-<div class="row">
-
-  <h1>Page content</h1>
-  <p>Make the browser smaller, then click the hamburger icon to see it in action. For some reason the media queries aren't working on the Codepen Details page, so view it in editor mode.</p>
-  <p>Ducimus provident recusandae magnam omnis minima cumque nemo consequuntur ea aliquid amet distinctio sint iure molestiae necessitatibus quia nulla quasi dolorum tempora voluptas quaerat qui labore aspernatur atque fugiat quis vero fugit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore porro optio unde dignissimos nam? Reiciendis minus molestias quia delectus.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus provident recusandae magnam omnis minima cumque nemo consequuntur ea aliquid amet distinctio sint iure molestiae necessitatibus quia nulla quasi dolorum tempora voluptas quaerat qui labore aspernatur atque fugiat quis vero fugit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore porro optio unde dignissimos nam? Reiciendis minus molestias quia delectus.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus magni quasi possimus soluta quam dolores maiores hic voluptas deleniti amet harum iste voluptatibus minus cum praesentium eius odio atque assumenda reiciendis vel qui dolorem sapiente aperiam corporis explicabo adipisci voluptatum optio mollitia ipsum rerum. Numquam repudiandae maxime eveniet sed. Modi.</p>
-
-</div>
-
-</div> <!--content -->
-</div> <!--page -->
-
-  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-
-  <script src="js/sidebar-index.js"></script>
-
-  </body>
+				<div class="maar-content"><!-- this is the wrapper for the content -->
+					<div class="maar-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						
+						<div >
+							<div id="side-trigger-effects">
+								
+								<div data-effect="side-effect" class="open-panel"><a href="#"><i class="icon-menu"></i></a></div>
+							</div>
+							<div class="row">
+								<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
+								<p>Here is some inspiration for showing them in style using CSS transitions.</p>
+								<p>If you enjoyed this demo you might also like:</p>
+								<p><a href="http://tympanus.net/Development/HeaderEffects/">On Scroll Header Effects</a></p>
+								<p><a href="http://tympanus.net/Development/PageTransitions/">A Collection of Page Transitions</a></p>
+							</div>
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebar-effects.js"></script>
+	</body>
 </html>
