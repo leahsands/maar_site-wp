@@ -639,7 +639,7 @@ html, body { height: 100%; }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 { font-family: "Open Sans"; font-weight: 300; color: #0f3781; text-rendering: optimizeLegibility; padding-top: 0.364em; line-height: 1.5405em; padding-bottom: 0.364em; }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: white; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #0f3781; }
 
 @media only screen and (max-width: 767px) { h1, h2, h3, h4, h5, h6 { word-wrap: break-word; } }
 h1 { font-size: 41px; font-size: 3.41667rem; }
@@ -1684,51 +1684,48 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 html, body { height: 100%; }
 
-.row { position: absolute; width: inherit; left: 200px; }
+.row { position: relative; margin: 0; width: inherit; left: 240px; }
 
+@media only screen and (max-width: 55em) { .row { position: relative; left: 0; } }
 h1, h2, h3, h4 { text-transform: uppercase; color: #0f3781; font-size: 18px; }
+
+#meta-nav li.search-field input, #main-nav li.search-field input { padding-right: 30px; float: right; }
+
+#meta-nav li.search-field i, #main-nav li.search-field i { position: absolute; top: -1px; right: 3px; color: #dddede; }
 
 /* ---- Environment Set-up ---- */
 .maar-container, .side-pusher, .side-content { height: 100%; }
 
 /* --------------- Navigation Code --------------- */
-nav { width: 200px; position: absolute; float: left; left: 0; top: 0; bottom: 0; background: #0f3781; }
-
-.side-menu { position: absolute; top: 0; left: 0; z-index: 100; }
-
-/* content style */
-.side-menu ul { margin: 0; padding: 0; list-style: none; }
-
-.side-menu h2 { margin: 0; padding: 1em; color: rgba(0, 0, 0, 0.4); text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); font-weight: 300; font-size: 2em; }
-
-.side-menu ul li a { display: block; padding: 1em 1em 1em 1.2em; outline: none; box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2); color: #f3efe0; text-transform: uppercase; text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); letter-spacing: 1px; font-weight: 400; -webkit-transition: background 0.3s, box-shadow 0.3s; transition: background 0.3s, box-shadow 0.3s; }
-
-.side-menu ul li:first-child a { box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2), inset 0 1px rgba(0, 0, 0, 0.2); }
-
-.side-menu ul li a:hover { background: rgba(0, 0, 0, 0.2); box-shadow: inset 0 -1px rgba(0, 0, 0, 0); color: #fff; }
-
-.side-content { overflow-y: scroll; background: #f3efe0; }
-
-/* ------ */
-.side-content, .side-content-inner { position: relative; }
-
-.maar-container { position: relative; overflow: hidden; }
+nav.side-menu { width: 240px; position: absolute; float: left; left: 0; top: 0; bottom: 0; background: #0f3781; }
 
 div.open-panel { display: none; }
 
-@media only screen and (max-width: 55em) { .row { position: relative; left: 0; }
+.side-menu { position: absolute; top: 0; left: 0; z-index: 100; }
+
+.side-menu ul { margin: 0; padding: 0; list-style: none; }
+
+.side-menu h2 { margin: 0; padding: 1em; color: rgba(0, 0, 0, 0.4); text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); font-weight: 300; font-size: 18px; }
+
+.side-menu ul li a { display: block; padding: 1em 1em 1em 1em; outline: none; box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2); color: white; text-transform: uppercase; text-shadow: 0 0 1px #072554; letter-spacing: 1px; font-weight: 400; -webkit-transition: background 0.3s, box-shadow 0.3s; transition: background 0.3s, box-shadow 0.3s; }
+
+.side-menu ul li:first-child a { box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2), inset 0 1px rgba(0, 0, 0, 0.2); }
+
+.side-menu ul li a:hover { background: rgba(0, 0, 0, 0.2); box-shadow: inset 0 -1px rgba(0, 0, 0, 0); color: white; }
+
+/* ---- Mobile Sidebar Drawer ---- */
+@media only screen and (max-width: 55em) { div.open-panel { display: inline; }
+  div.open-panel i { font-size: 40px; color: #0f3781; padding: 20px 15px; }
   .side-menu { visibility: hidden; -webkit-transition: all 0.5s; transition: all 0.5s; }
   .side-pusher { position: relative; left: 0; z-index: 99; height: 100%; -webkit-transition: -webkit-transform 0.5s; transition: transform 0.5s; }
   .side-pusher::after { position: absolute; top: 0; right: 0; width: 0; height: 0; background: rgba(0, 0, 0, 0.2); content: ''; opacity: 0; -webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; }
   .side-menu-open .side-pusher::after { width: 100%; height: 100%; opacity: 1; -webkit-transition: opacity 0.5s; transition: opacity 0.5s; }
-  .side-menu::after { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); content: ''; opacity: 1; -webkit-transition: opacity 0.5s; transition: opacity 0.5s; }
+  .side-menu::after { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); content: ''; opacity: 1; -webkit-transition: opacity 0.5s; transition: opacity 0.5s; }
   .side-menu-open .side-menu::after { width: 0; height: 0; opacity: 0; -webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; }
   /* Effect: Push*/
-  .side-effect.side-menu-open .side-pusher { -webkit-transform: translate3d(200px, 0, 0); transform: translate3d(200px, 0, 0); }
+  .side-effect.side-menu-open .side-pusher { -webkit-transform: translate3d(240px, 0, 0); transform: translate3d(240px, 0, 0); }
   .side-effect.side-menu { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
   .side-effect.side-menu-open .side-effect.side-menu { visibility: visible; -webkit-transition: -webkit-transform 0.5s; transition: transform 0.5s; }
   .side-effect-3.side-menu::after { display: none; }
   /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
-  .no-csstransforms3d .side-pusher, .no-js .side-pusher { padding-left: 200px; }
-  div.open-panel { display: inline; } }
-div.open-panel i { font-size: 40px; color: #0f3781; padding: 20px 15px; }
+  .no-csstransforms3d .side-pusher, .no-js .side-pusher { padding-left: 240px; } }

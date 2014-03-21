@@ -13,7 +13,7 @@
 			 More info: h5bp.com/b/378 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Gumby - A Flexible, Responsive CSS Framework - Powered by SASS</title>
+	<title>Minneapolis Area Association of REALTORS&reg;</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="humans.txt">
@@ -36,10 +36,6 @@
 	<!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 		 However, there is a blank style.css in the css directory should you prefer -->
 	<link rel="stylesheet" href="css/gumby.css"> 
-
-	<!-- Sidebar styles 
-	<link rel="stylesheet" href="css/sidebar-normalize.css">
-	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'> -->
 
 	<!-- Modernizr -->
 	<script src="bower_components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
@@ -123,54 +119,79 @@
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
 </head>
+
 <body>
-<div id="page">
+	<!-- for the purpose of the mobile navigation, the whole body is in a "maar-container" div -->
+	<div id="maar-container" class="maar-container">
+		<!-- content push wrapper -->
+		<div class="side-pusher">
 
-  <a href="#" class="open-panel"><i class="icon-menu "></i></a>
+			<!-- Navigation -->
+			<nav class="side-menu side-effect" id="menu">
+				<h2 class="icon icon-lab">Sidebar</h2>
+				<ul>
+    			<li class="toggle" data-for".drawer" data-on"click"><a href="#">About</a></li>
+    				<section class="drawer">
+    				<ul>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Leadership</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Foundation</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Heart of the Community</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				</ul>
+    			</section>
+    			<li><a href="#">Membership</a></li>
+   		 		<li><a href="#" class="switch" gumby-trigger="#something | #about">Menu Item</a></li>
+    			<li><a href="#" class="switch" gumby-trigger="#">Menu Item</a></li>
+    			<li><a href="#" class="switch" gumby-trigger="#a">Menu Item</a></li>
+  			</ul>
+			</nav>
 
-<nav>
-  <!-- <a href="#" class="close-panel"><i class="icon-remove"></i></a> -->
-  <ul class="main-menu">
-    <li class="toggle" data-for".drawer"><a href="#">About</a></li>
-    	<section class="drawer">
-    	<ul>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Leadership</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Foundation</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Heart of the Community</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    		<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    	</ul>
-    	</section>
-    <li><a href="#">Membership</a></li>
-    <li><a href="#" class="switch" gumby-trigger="#something | #about">Menu Item</a></li>
-    <li><a href="#" class="switch" gumby-trigger="#">Menu Item</a></li>
-    <li><a href="#" class="switch" gumby-trigger="#a">Menu Item</a></li>
-  </ul>
-</nav>
 
-<div class="content">
-<div class="row">
+			<!-- Mobile Menu Header -->
+			<div id="side-trigger-effects">
+				<div data-effect="side-effect" class="open-panel"><a href="#"><i class="icon-menu"></i></a></div>
+			</div>
 
-  <h1>Page content</h1>
-  <p>Make the browser smaller, then click the hamburger icon to see it in action. For some reason the media queries aren't working on the Codepen Details page, so view it in editor mode.</p>
-  <p>Ducimus provident recusandae magnam omnis minima cumque nemo consequuntur ea aliquid amet distinctio sint iure molestiae necessitatibus quia nulla quasi dolorum tempora voluptas quaerat qui labore aspernatur atque fugiat quis vero fugit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore porro optio unde dignissimos nam? Reiciendis minus molestias quia delectus.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus provident recusandae magnam omnis minima cumque nemo consequuntur ea aliquid amet distinctio sint iure molestiae necessitatibus quia nulla quasi dolorum tempora voluptas quaerat qui labore aspernatur atque fugiat quis vero fugit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore porro optio unde dignissimos nam? Reiciendis minus molestias quia delectus.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus magni quasi possimus soluta quam dolores maiores hic voluptas deleniti amet harum iste voluptatibus minus cum praesentium eius odio atque assumenda reiciendis vel qui dolorem sapiente aperiam corporis explicabo adipisci voluptatum optio mollitia ipsum rerum. Numquam repudiandae maxime eveniet sed. Modi.</p>
+			<div class="container" id="meta-nav">
+			<!-- Page Content -->
+			<div class="row">
+				<nav class="eight columns push_four">
+					<ul>
+						<li class="field search-field">
+							<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
+								<input class="toggle search input icon-right icon-search" type="text" name="q" placeholder="Search" gumby-trigger="#meta-nav .field" gumby-on="focus blur">
+								<i class="icon-search"></i>
+							</form>
+						</li>
+						<li><i class="icon-login"></i></li>
+						<li><i class="icon-basket"></i></li>
+						<li><i class="icon-chart-bar"></i></li>
+						<li><i class="icon-calendar"></i></li>
+					</ul>
+				</nav>
+			</div>
+			</div>
+			<!-- Page Content -->
+			<div class="row">
+				<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
+				<p>Here is some inspiration for showing them in style using CSS transitions.</p>
+				<p>If you enjoyed this demo you might also like:</p>
+				<p><a href="http://tympanus.net/Development/HeaderEffects/">On Scroll Header Effects</a></p>
+				<p><a href="http://tympanus.net/Development/PageTransitions/">A Collection of Page Transitions</a></p>
+			</div>
 
-</div>
+		</div><!-- /side-pusher -->
+	</div><!-- /side-container -->
+	
+	<!-- Sidebar javascript files -->
+	<script src="js/classie.js"></script>
+	<script src="js/sidebar-effects.js"></script>
 
-</div> <!--content -->
-</div> <!--page -->
+</body>
 
-  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-
-  <script src="js/sidebar-index.js"></script>
-
-  </body>
 </html>

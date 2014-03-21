@@ -7,10 +7,18 @@ body,
 }
 
 .row {
-  position: absolute;
+  position: relative;
+  margin: 0;
   width: inherit;
-  left: 200px;
+  left: $sidebar-width;
 }
+
+	@media only screen and (max-width: 55em) {
+		.row {
+			position: relative;
+			left: 0;
+		}
+	}
 
 h1, h2, h3, h4 {
 	text-transform: uppercase;
@@ -18,3 +26,14 @@ h1, h2, h3, h4 {
   font-size: $large;
 }
 
+#meta-nav li.search-field input, #main-nav li.search-field input {
+	padding-right: 30px;
+	float: right;
+}
+
+#meta-nav li.search-field i, #main-nav li.search-field i {
+	position: absolute;
+	top: -1px;
+	right: 3px;
+	color: #dddede;
+}

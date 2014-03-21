@@ -6,14 +6,18 @@
 }
 
 /* --------------- Navigation Code --------------- */
-nav {
-	width: 200px; 
+nav.side-menu {
+	width: $sidebar-width; 
 	position: absolute;
 	float: left;
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background: $blu;
+	background: $primary-color;
+}
+
+div.open-panel {
+  display: none;
 }
 
 .side-menu {
@@ -22,8 +26,6 @@ nav {
 	left: 0;
 	z-index: 100;
 }
-
-/* content style */
 
 .side-menu ul {
 	margin: 0;
@@ -36,18 +38,18 @@ nav {
 	padding: 1em;
 	color: rgba(0,0,0,0.4);
 	text-shadow: 0 0 1px rgba(0,0,0,0.1);
-	font-weight: 300;
-	font-size: 2em;
+	font-weight: $font-weight-light;
+	font-size: $large;
 }
 
 .side-menu ul li a {
 	display: block;
-	padding: 1em 1em 1em 1.2em;
+	padding: 1em 1em 1em 1em;
 	outline: none;
 	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
-	color: #f3efe0;
+	color: $white;
 	text-transform: uppercase;
-	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	text-shadow: 0 0 1px $primary-hover-color;
 	letter-spacing: 1px;
 	font-weight: 400;
 	-webkit-transition: background 0.3s, box-shadow 0.3s;
@@ -61,35 +63,19 @@ nav {
 .side-menu ul li a:hover {
 	background: rgba(0,0,0,0.2);
 	box-shadow: inset 0 -1px rgba(0,0,0,0);
-	color: #fff;
+	color: $white;
 }
 
-.side-content {
-	overflow-y: scroll;
-	background: #f3efe0;
-}
-
-/* ------ */
-
-.side-content,
-.side-content-inner {
-	position: relative;
-}
-
-.maar-container {
-	position: relative;
-	overflow: hidden;
-}
-
-div.open-panel {
-  display: none;
-}
-
+/* ---- Mobile Sidebar Drawer ---- */
 @media only screen and (max-width: 55em) {
-	.row {
-		position: relative;
-		left: 0;
-	}
+
+div.open-panel { display: inline; }
+
+div.open-panel i {
+	font-size: 40px;
+	color: $primary-color;
+	padding: 20px 15px;
+}
 
 .side-menu {
 	visibility: hidden;
@@ -127,14 +113,13 @@ div.open-panel {
 	transition: opacity 0.5s;
 }
 
-
 .side-menu::after {
 	position: absolute;
 	top: 0;
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.3);
 	content: '';
 	opacity: 1;
 	-webkit-transition: opacity 0.5s;
@@ -149,11 +134,10 @@ div.open-panel {
 	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 }
 
-
 /* Effect: Push*/
 .side-effect.side-menu-open .side-pusher {
-	-webkit-transform: translate3d(200px, 0, 0);
-	transform: translate3d(200px, 0, 0);
+	-webkit-transform: translate3d($sidebar-width, 0, 0);
+	transform: translate3d($sidebar-width, 0, 0);
 }
 
 .side-effect.side-menu {
@@ -167,23 +151,10 @@ div.open-panel {
 	transition: transform 0.5s;
 }
 
-.side-effect-3.side-menu::after {
-	display: none;
-}
-
+.side-effect-3.side-menu::after { display: none; }
 
 /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
 .no-csstransforms3d .side-pusher,
-.no-js .side-pusher {
-	padding-left: 200px;
-}
-div.open-panel {
-    display: inline;
-  }
-}
+.no-js .side-pusher { padding-left: $sidebar-width; }
 
-div.open-panel i {
-	font-size: 40px;
-	color: $blu;
-	padding: 20px 15px;
 }
