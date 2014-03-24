@@ -70,7 +70,10 @@ $absurd: ms(10);
 
 // User Interface Colors
 $black: #000;
-$white: #fff;
+$grey: #414042;
+$grey-drk: darken($grey, 5%);
+$grey-drkr: darken($grey-drk, 5%);
+$white: #fdfdfd;
 
 $blu: #0f3781;
 $blu-drk: #072554;
@@ -100,9 +103,7 @@ $danger-hover-color: #f14f4f;
 $warning-hover-color: #fdd27f;
 $success-hover-color: #66d92f;
 
-$global-bg-color: #fff;
-$navbar-color: #4a4d50;
-$navbar-link-color: #fff;
+$global-bg-color: $white;
 
 $horizontal-rule-color: #ccc !default;
 
@@ -145,6 +146,11 @@ $tab-height: 42px;
 
 // Navigation
 $navcontain-height: 80px; // makes space at the top of a document for when using a fixed nav
+$navbar-color: $grey;
+$navbar-hover-color: $grey-drk;
+$navbar-link-color: $white;
+$nav-drawer-color: $grey-drk;
+$nav-drawer-hover-color: $grey-drkr;
 
 // Drawers & Modals
 $modal-overlay-color: rgba(0, 0, 0, 0.8);

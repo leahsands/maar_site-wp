@@ -41,7 +41,7 @@
 	<script src="bower_components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 
 	<!-- Grab Google CDN's jQuery, fall back to local if offline -->
-	<!-- 2.0 for modern browsers, 1.10 for .oldie
+	<!-- 2.0 for modern browsers, 1.10 for .oldie -->
 	<script>
 	var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
 	if(!oldieCheck) {
@@ -49,11 +49,11 @@
 	} else {
 	document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
 	}
-	</script> -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	<script src="http://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>
+	</script>
 
-	<script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<!-- <script>
 	if(!window.jQuery) {
 	if(!oldieCheck) {
 	  document.write('<script src="bower_components/gumby/js/libs/jquery-2.0.2.min.js"><\/script>');
@@ -61,7 +61,7 @@
 	  document.write('<script src="bower_components/gumby/js/libs/jquery-1.10.1.min.js"><\/script>');
 	}
 	}
-	</script>
+	</script> -->
 
 	<!-- Include gumby.js followed by UI modules followed by gumby.init.js
 	Or concatenate and minify into a single file 
@@ -130,61 +130,92 @@
 			<nav class="side-menu side-effect" id="menu">
 				<h2 class="icon icon-lab">Sidebar</h2>
 				<ul>
-    			<li class="toggle" data-for".drawer" data-on"click"><a href="#">About</a></li>
-    				<section class="drawer">
+    			<li><a href="#" class="switch" gumby-trigger="#about-toggle-nav|#membership-toggle-nav, #news-toggle-nav">About</a></li>
+    				<section id="about-toggle-nav" class="drawer">
     				<ul>
-    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    				<li><a href="#" gumby-trigger="#about > li">Meet the Leadership</a></li>
-    				<li><a href="#" gumby-trigger="#about > li">Foundation</a></li>
-    				<li><a href="#" gumby-trigger="#about > li">Heart of the Community</a></li>
-    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
-    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#">Meet the Leadership</a></li>
+    				<li><a href="#">Foundation</a></li>
+    				<li><a href="#">Heart of the Community</a></li>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#">Meet the Team</a></li>
     				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
     				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
     				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
     				</ul>
     			</section>
-    			<li><a href="#">Membership</a></li>
-   		 		<li><a href="#" class="switch" gumby-trigger="#something | #about">Menu Item</a></li>
-    			<li><a href="#" class="switch" gumby-trigger="#">Menu Item</a></li>
-    			<li><a href="#" class="switch" gumby-trigger="#a">Menu Item</a></li>
+    			<li><a href="#" class="switch" gumby-trigger="#membership-toggle-nav|#about-toggle-nav, #news-toggle-nav">Membership</a></li>
+    				<section id="membership-toggle-nav" class="drawer">
+    				<ul>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#">Meet the Leadership</a></li>
+    				<li><a href="#">Foundation</a></li>
+    				<li><a href="#">Heart of the Community</a></li>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				</ul>
+    			</section>
+    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #membership-toggle-nav">About</a></li>
+    				<section id="news-toggle-nav" class="drawer">
+    				<ul>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#">Meet the Leadership</a></li>
+    				<li><a href="#">Foundation</a></li>
+    				<li><a href="#">Heart of the Community</a></li>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				<li><a href="#" gumby-trigger="#about > li">Meet the Team</a></li>
+    				</ul>
+    			</section>
   			</ul>
 			</nav>
 
+			<div class="maar-content">
+				<div class="maar-content-inner">
+					<!-- Mobile Menu Header -->
+					<div id="side-trigger-effects">
+						<div data-effect="side-effect" class="open-panel"><a href="#"><i class="icon-menu"></i></a></div>
+					</div>
 
-			<!-- Mobile Menu Header -->
-			<div id="side-trigger-effects">
-				<div data-effect="side-effect" class="open-panel"><a href="#"><i class="icon-menu"></i></a></div>
-			</div>
+					<!-- Page Content -->
 
-			<div class="container" id="meta-nav">
-			<!-- Page Content -->
-			<div class="row">
-				<nav class="eight columns push_four">
-					<ul>
-						<li class="field search-field">
-							<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
-								<input class="toggle search input icon-right icon-search" type="text" name="q" placeholder="Search" gumby-trigger="#meta-nav .field" gumby-on="focus blur">
-								<i class="icon-search"></i>
-							</form>
-						</li>
-						<li><i class="icon-login"></i></li>
-						<li><i class="icon-basket"></i></li>
-						<li><i class="icon-chart-bar"></i></li>
-						<li><i class="icon-calendar"></i></li>
-					</ul>
-				</nav>
-			</div>
-			</div>
-			<!-- Page Content -->
-			<div class="row">
-				<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
-				<p>Here is some inspiration for showing them in style using CSS transitions.</p>
-				<p>If you enjoyed this demo you might also like:</p>
-				<p><a href="http://tympanus.net/Development/HeaderEffects/">On Scroll Header Effects</a></p>
-				<p><a href="http://tympanus.net/Development/PageTransitions/">A Collection of Page Transitions</a></p>
-			</div>
+					<!-- Top Member Navigation -->
+						<div class="row" id="mem-nav">
+							<div class="three columns push_six">
+								<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
+								<ul>
+									<li class="field search-field">
+											<input class="toggle search input icon-right icon-search" type="search" name="q" placeholder="Search" gumby-trigger="#meta-nav .field" gumby-on="focus blur">
+											<i class="icon-search"></i>
+									</li>
+								</ul>
+								</form>
+							</div>
+							<div class="three columns">
+								<ul style="float:center;">
+									<li class="mem-icon"><i class="icon-login"></i></li>
+									<li class="mem-icon"><i class="icon-basket"></i></li>
+									<li class="mem-icon"><i class="icon-chart-bar"></i></li>
+									<li class="mem-icon"><i class="icon-calendar"></i></li>
+								</ul>
+							</div>
+						</div><!-- / top member navigation -->
 
+					<!-- Page Content -->
+					<div class="row">
+						<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways. Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
+						<p>Here is some inspiration for showing them in style using CSS transitions.</p>
+						<p>If you enjoyed this demo you might also like:</p>
+						<p><a href="http://tympanus.net/Development/HeaderEffects/">On Scroll Header Effects</a></p>
+						<p><a href="http://tympanus.net/Development/PageTransitions/">A Collection of Page Transitions</a></p>
+					</div>
+				</div><!-- / maar-content-inner -->
+			</div><!-- / maar-content -->
 		</div><!-- /side-pusher -->
 	</div><!-- /side-container -->
 	

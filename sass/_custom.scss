@@ -1,4 +1,10 @@
 // Your custom SCSS should be written here...
+*,
+*:after,
+*::before {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 html,
 body,
@@ -6,34 +12,90 @@ body,
   height: 100%;
 }
 
-.row {
-  position: relative;
+/* ---- Containers, Content and Push Divs ---- */
+.maar-container,
+.side-pusher,
+.maar-content {
+	height: 100%;
+}
+
+.maar-container {
+	position: relative;
+	overflow: hidden;
+}
+
+.maar-content {
+	overflow-y: scroll;
+	position: relative;
   margin: 0;
   width: inherit;
-  left: $sidebar-width;
+  margin-left: $sidebar-width;
 }
 
 	@media only screen and (max-width: 55em) {
-		.row {
+		.maar-content {
 			position: relative;
-			left: 0;
+			margin-left: 0;
 		}
 	}
 
+.maar-content,
+.maar-content-inner {
+	position: relative;
+}
+
+/* ---- Font Styles ---- */
 h1, h2, h3, h4 {
 	text-transform: uppercase;
-  color: $blu;
+  color: $primary-color;
   font-size: $large;
 }
 
-#meta-nav li.search-field input, #main-nav li.search-field input {
-	padding-right: 30px;
-	float: right;
+/* ---- Top Member Navigation ---- */
+
+#mem-nav li {
+	margin: 0;
 }
 
-#meta-nav li.search-field i, #main-nav li.search-field i {
+#mem-nav i {
+	color: $white;
+}
+
+#mem-nav li.search-field input {
+	padding-right: 30px;
+	float: right;
+	margin-top: $gutter-in-px;
+	width: 100px;
+	-webkit-transition: width 1s 0.1s;
+					transition: width 1s 0.1s;
+}
+
+#mem-nav li.search-field input:focus {
+	padding-right: 30px;
+	float: right;
+	margin-top: $gutter-in-px;
+	width: 200px;
+	-webkit-transition: width 1s 0.1s;
+					transition: width 1s 0.1s;
+}
+
+#mem-nav li.search-field i {
 	position: absolute;
-	top: -1px;
+	top: 10px;
 	right: 3px;
-	color: #dddede;
+	color: $grey;
+}
+
+.mem-icon {
+	background: $grey;
+	padding: $gutter-in-px 4px;
+	float: left;
+	-webkit-transition: background 0.5s;
+					transition: background 0.5s;
+}
+
+.mem-icon:hover {
+	background: $grey-drk;
+	-webkit-transition: background 0.5s;
+					transition: background 0.5s;
 }
