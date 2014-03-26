@@ -69,7 +69,7 @@ $(".open-panel").click(function(){
   
 });
 	
-$(".close-panel, .content").click(function(){
+$(".content").click(function(){
   
 $("html").removeClass("openNav");
   
