@@ -6,6 +6,7 @@
 	bottom: 0;
 	width: $sidebar-width;
 	overflow-y: hidden;
+	overflow-x: hidden;
 	&::-webkit-scrollbar {
 		width: 12px;
 		height: 12px;
@@ -27,7 +28,7 @@
 		overflow-y: auto;
 
 	}
-	@media only screen and (max-width: 55em) {
+	@media only screen and (max-width: $mobile-width) {
 		top: 10px;
 	}
 }
@@ -38,7 +39,8 @@
 	float: left;
 	top: 0;
 	bottom: 0;
-	z-index: 100;
+	z-index: 9999;
+	color: $white;
 	background: $navbar-color;
 	-webkit-box-shadow: inset -10px 0 10px $navbar-hover-color;
 		 -moz-box-shadow: inset -10px 0 10px $navbar-hover-color;
@@ -52,6 +54,10 @@
 .side-right {
 	display: none;
 	right: 0;
+}
+
+.side-menu .row {
+	min-width: $sidebar-width;
 }
 
 .side-menu h2 {
@@ -71,10 +77,15 @@
 		padding-bottom: 0;
 		&:first-child {
 			margin-top: 20px;
-			@media only screen and (max-width: 55em) {
+			@media only screen and (max-width: $mobile-width) {
 				margin-top: 0px;
 			}
 		}
+		&:hover {
+			background: $navbar-hover-color;
+			box-shadow: inset 0 -1px rgba(0,0,0,0);
+			color: $white;
+		} 
 		a {
 			display: block;
 			padding: 4px 10px;
@@ -86,14 +97,18 @@
 			font-weight: 400;
 			-webkit-transition: background 0.3s, box-shadow 0.3s;
 			transition: background 0.3s, box-shadow 0.3s;
-			&:hover {
-				background: $navbar-hover-color;
-				box-shadow: inset 0 -1px rgba(0,0,0,0);
-				color: $white;
-			}
 		} //side-menu a
 	} //side-menu li
 } //side-menu ul
+
+.side-main-nav-mobile {
+	@media only screen and (max-width: $mobile-width) {
+		position: absolute;
+		top: 260px;
+		left: 0;
+		right: 0;
+	}
+}
 
 // Area for MAAR Logo
 .logo-area {
@@ -115,7 +130,7 @@
 		max-width: 100%;
 		padding: 12px 50px 0 50px;
 	}
-	@media only screen and (max-width: 55em) {
+	@media only screen and (max-width: $mobile-width) {
 		display: none;
 	}
 }
@@ -142,6 +157,13 @@
 .pop-links {
 	margin-top: 20px;
 	background: $primary-color;
+	@media only screen and (max-width: $mobile-width) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: inline;
+	}
 	h1 {
 		font-size: $med;
 		text-transform: uppercase;
@@ -166,8 +188,24 @@
 	}
 }
 
+/* --- Contact Information --- */
+.side-contact {
+	p {
+		font-size: $norm;
+	}
+	i {
+		padding: 42px 0;
+		font-size: $xlarge !important;
+	}
+	a {
+		padding-bottom: 2px;
+		color: $white;
+		text-decoration: underline;
+	}
+}
+
 /* ---- Mobile Sidebar Drawer ---- */
-@media only screen and (max-width: 55em) {
+@media only screen and (max-width: $mobile-width) {
 
 .side-menu {
 	visibility: hidden;
@@ -190,17 +228,20 @@
 	right: 0;
 }
 
+/* Right Sidebar styles */
 .side-right {
 	display: block;
 	&::after {
 		left: 0;
 	}
-}
+	.search-field {
+		width: 80%;
+	}
+} // end right sidebar styles
 
 .side-pusher {
 	position: relative;
 	left: 0;
-	z-index: 9999;
 	height: 100%;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -223,6 +264,7 @@
 		width: 100%;
 		height: 100%;
 		opacity: 1;
+		z-index: 9999;
 		-webkit-transition: opacity 0.5s;
 		transition: opacity 0.5s;
 	}
@@ -277,4 +319,5 @@
 .no-csstransforms3d .side-pusher,
 .no-js .side-pusher { padding-left: $sidebar-width; }
 
-}
+
+}//sidebar mobile

@@ -15,6 +15,7 @@ html,
 body,
  {
   height: 100%;
+  overflow: hidden;
 }
 
 /* ---- Containers, Content and Push Divs ---- */
@@ -26,22 +27,36 @@ body,
 
 .maar-container {
 	position: relative;
-	overflow: hidden;
 }
 
 .maar-content {
-	overflow-y: scroll;
+	overflow-y: auto;
 	position: relative;
   margin: 0;
   width: inherit;
   margin-left: $sidebar-width;
-  @media only screen and (max-width: 55em) {
-  	position: relative;
+  &::-webkit-scrollbar {
+		width: 12px;
+		height: 12px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(150, 150, 150, 0.3);
+		background-clip: content-box;
+		border-radius: 10px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		&:hover {
+			background-color: rgba(150, 150, 150, 0.7);
+		}
+	}
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
+  @media only screen and (max-width: $mobile-width) {
   	margin-left: 0;
   }
 }
 
-.maar-content,
 .maar-content-inner {
 	position: relative;
 }
@@ -56,47 +71,56 @@ h1, h2, h3, h4 {
 /* ---- Top Member Navigation ---- */
 
 #mem-nav {
+	float: left;
 	i {
 		color: $white;
 	}
-
 	li {
 		margin: 0;
 	} 
-	@media only screen and (max-width: 55em) {
+	@media only screen and (max-width: $mobile-width) {
 		display: none;
 	}
-	.search-field {
-		input {
-			padding-right: 30px;
-			float: right;
-			margin-top: $gutter-in-px;
-			width: 100px;
-			-webkit-transition: width 1s 0.1s;
-							transition: width 1s 0.1s;
-			&:focus {
-				padding-right: 30px;
-				float: right;
-				margin-top: $gutter-in-px;
-				width: 200px;
-				-webkit-transition: width 1s 0.1s;
-								transition: width 1s 0.1s;
-			}
-		} // search-field input
-
-		i {
-			position: absolute;
-			top: 10px;
-			right: 3px;
-			color: $grey;
-		}
-	} // mem nav search-field
 } // mem nav
+
+.search-field {
+	input {
+		padding-right: 30px;
+		float: right;
+		margin-top: $gutter-in-px;
+		width: 100px;
+		-webkit-transition: width 1s 0.1s;
+						transition: width 1s 0.1s;
+		@media only screen and (max-width: $mobile-width){
+			width: 100%;
+			float: center;
+			padding-right: 0;
+		}
+		&:focus {
+			width: 200px;
+			@media only screen and (max-width: $mobile-width) {
+				width: 100%;
+			}
+		}
+	} // search-field input
+	i {
+		position: absolute;
+		top: 10px;
+		right: 3px;
+		color: $grey !important;
+		@media only screen and (max-width: $mobile-width) {
+			right: 20px;
+		}
+	}
+} // search-field
 
 .mem-tools {
 	background: $grey;
 	display: inline-block;
 	height: 46px;
+	@media only screen and (max-width: $mobile-width) {
+
+	}
 }
 
 .mem-icon {
@@ -105,6 +129,12 @@ h1, h2, h3, h4 {
 	float: left;
 	-webkit-transition: background 0.5s;
 					transition: background 0.5s;
+	@media only screen and (max-width: $mobile-width) {
+		margin-bottom: 0;
+		padding: 4px;
+		float: none;
+		background: transparent;
+	}
 	&:hover {
 		background: $grey-drk;
 		-webkit-transition: background 0.5s;
@@ -133,15 +163,20 @@ h1, h2, h3, h4 {
 /* ----------- Mobile Header ---------- */
 .mobile-header {
 	display: none;
-	@media only screen and (max-width: 55em) {
-		padding: 7px;
+	@media only screen and (max-width: $mobile-width) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
 		display: block;
+		z-index: 999;
+		padding: 7px;
 		width: 100%;
 		height: 60px;
 		background-color: $white;
-		-webkit-box-shadow: 0 10px 10px #ccc;
-		 	 -moz-box-shadow: 0 10px 10px #ccc;
-						box-shadow: 0 10px 10px #ccc;
+		-webkit-box-shadow: 0 10px 10px rgba(50, 50, 50, 0.2);
+		 	 -moz-box-shadow: 0 10px 10px rgba(50, 50, 50, 0.2);
+						box-shadow: 0 10px 10px rgba(50, 50, 50, 0.2);
 		.logo-area-mobile {
 			margin: 0 auto;
 			width: 81px; 
@@ -154,7 +189,7 @@ h1, h2, h3, h4 {
 	float: left;
 	i {
 		margin-top: 7px;
-		font-size: 10px;
+		font-size: $xlarge;
 		color: $primary-color;
 	}
 }
@@ -166,6 +201,11 @@ h1, h2, h3, h4 {
 /* ----------- Main Body Styles ----------- */
 .main-body {
 	margin-top: 30px;
+	float: left;
+	@media only screen and (max-width: $mobile-width) {
+		margin-top: 80px;
+		float: none;
+	}
 }
 
 /* ----------- Notification Alert ----------- */
@@ -187,10 +227,65 @@ h1, h2, h3, h4 {
 
 /* ----------- Footer Styles ------------ */
 .footer {
-	color: $grey;
-	font-size: $small;
-	i {
-		font-size: $large;
+	float: left;
+	margin-top: 40px;
+	color: $footer-color;
+	p {
+		font-size: 10px;
 	}
+	a {
+		color: $footer-color;
+		text-decoration: underline;
+		&:hover {
+			color: $footer-hover-color;
+		}
+		i {
+			font-size: $xlarge;
+			padding-top: 3px;
+		}
+	}
+	@media only screen and (max-width: $mobile-width) {
+		display: none;
+	}
+}
 
+.social {
+	font-size: $med !important;
+	margin: 0 auto;
+	width: 100%;
+	border: 1px solid $footer-color;
+	@media only screen and (max-width: $mobile-width) {
+		padding: 6px;
+		float: left;
+		width: 25%;
+		color: $white;
+		border: none;
+	}
+	&:hover {
+		border-color: transparent;
+		color: $white;
+	}
+}
+.icon-facebook:hover {
+	background-color: #3c599f;
+}
+
+.icon-twitter:hover {
+	background-color: #1ac4ff;
+}
+
+.icon-play:hover {
+	background-color: #d92622;
+}
+
+.icon-linkedin:hover {
+	background-color: #2079b5;
+}
+
+.icon-flickr:hover {
+	background-color: #ff0084;
+}
+
+.icon-pinterest:hover {
+	background-color: #d73532;
 }
