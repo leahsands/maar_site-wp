@@ -17,9 +17,7 @@
 		border-radius: 10px;
 		border-left: 3px solid transparent;
 		border-right: 3px solid transparent;
-		-webkit-box-shadow: 5px 5px 5px $navbar-hover-color;
-		 	 -moz-box-shadow: 5px 5px 5px $navbar-hover-color;
-						box-shadow: 5px 5px 5px $navbar-hover-color;
+		@include div-shadow(false, 5px, 5px, 5px);
 	}
 	&::-webkit-scrollbar-track {
 		background: none;
@@ -42,9 +40,7 @@
 	z-index: 9999;
 	color: $white;
 	background: $navbar-color;
-	-webkit-box-shadow: inset -10px 0 10px $navbar-hover-color;
-		 -moz-box-shadow: inset -10px 0 10px $navbar-hover-color;
-					box-shadow: inset -10px 0 10px $navbar-hover-color;
+	@include div-shadow(inset);
 }
 
 .side-left {
@@ -54,6 +50,7 @@
 .side-right {
 	display: none;
 	right: 0;
+	@include div-shadow(inset, 10px);
 }
 
 .side-menu .row {
@@ -63,8 +60,8 @@
 .side-menu h2 {
 	margin: 0;
 	padding: 1em;
-	color: rgba(0,0,0,0.4);
-	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	color: $grey-drk;
+	text-shadow: 0 0 1px rgba (black, 0.3);
 	font-weight: $font-weight-light;
 	font-size: $large;
 }
@@ -83,7 +80,6 @@
 		}
 		&:hover {
 			background: $navbar-hover-color;
-			box-shadow: inset 0 -1px rgba(0,0,0,0);
 			color: $white;
 		} 
 		a {
@@ -124,7 +120,7 @@
 		border-top: 20px solid $white;
 		border-left: 120px solid transparent;
 		border-right: 120px solid transparent;
-		box-shadow: inset 0px 30px 10px $grey-drkr;
+		@include div-shadow(inset, 0, 30px, 10px);
 	}
 	img {
 		max-width: 100%;
@@ -138,9 +134,7 @@
 /* ---- Drawer Styles --- */
 .drawer {
 	background: $nav-drawer-color;
-	-webkit-box-shadow: inset -10px 0 10px $nav-drawer-hover-color;
-		 -moz-box-shadow: inset -10px 0 10px $nav-drawer-hover-color;
-					box-shadow: inset -10px 0 10px $nav-drawer-hover-color;
+	@include div-shadow(inset);
 }
 
 .drawer ul li {
@@ -156,7 +150,7 @@
 /* ---- Popular Links ---- */
 .pop-links {
 	margin-top: 20px;
-	background: $primary-color;
+	background: $poplinks-color;
 	@media only screen and (max-width: $mobile-width) {
 		position: absolute;
 		top: 0;
@@ -182,7 +176,7 @@
 		padding: 4px 1em;
 		color: $white;
 			&:hover {
-				background: $primary-hover-color;
+				background: $poplinks-hover-color;
 			}
 		}
 	}
