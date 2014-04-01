@@ -1688,6 +1688,8 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 html, body { height: 100%; overflow: hidden; }
 
+.row { position: relative; }
+
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container, .side-pusher, .maar-content { height: 100%; }
 
@@ -1726,7 +1728,7 @@ h1, h2, h3, h4 { text-transform: uppercase; color: #334374; font-size: 18px; }
 
 #mem-nav .ttip { display: inline-block; }
 #mem-nav .ttip:before { top: 50px; border-bottom: 9px solid #343335 !important; }
-#mem-nav .ttip:after { top: 50px; z-index: 500; min-width: 55px; background: #343335; border: none; border-radius: none; text-align: center; }
+#mem-nav .ttip:after { top: 50px; z-index: 500; min-width: 10px; background: #343335; border: none; border-radius: none; text-align: center; font-size: 10px; }
 
 /* ----------- Mobile Header ---------- */
 .mobile-header { display: none; }
@@ -1739,7 +1741,7 @@ h1, h2, h3, h4 { text-transform: uppercase; color: #334374; font-size: 18px; }
 .open-panel-right { float: right; }
 
 /* ----------- Main Body Styles ----------- */
-.main-body { margin-top: 30px; float: left; }
+.main-body { margin-top: 30px; margin-bottom: 30px; float: left; }
 @media only screen and (max-width: 55em) { .main-body { margin-top: 80px; float: none; } }
 
 /* ----------- Notification Alert ----------- */
@@ -1747,10 +1749,31 @@ h1, h2, h3, h4 { text-transform: uppercase; color: #334374; font-size: 18px; }
 .notify p { margin-bottom: 0; color: #fdfdfd; font-size: 18px; text-transform: uppercase; text-align: center; }
 
 /* ----------- Market Data ----------- */
-.mrk-data { background: #334374; }
+.mrkt-data { margin-bottom: 12px; }
+@media only screen and (max-width: 768px) { .mrkt-data { border-bottom: 5px solid #334374; } }
+.mrkt-data li { margin: 0; padding: 2% 1%; height: 120px; overflow: hidden; text-transform: uppercase; text-align: center; border-left: 1px solid #e7e7e7; }
+@media only screen and (max-width: 768px) { .mrkt-data li { height: 60px; padding: 3% 5%; }
+  .mrkt-data li img { float: right; }
+  .mrkt-data li:hover { padding: 2% 5% !important; }
+  .mrkt-data li h2 { float: left; } }
+.mrkt-data li img { max-width: 32px; }
+.mrkt-data li:hover { background: #072554; padding: 1%; }
+.mrkt-data li:hover h2 { color: #fdfdfd; }
+.mrkt-data li:first-child { border-left: none; }
+
+/* ----------- News, Videos, Calendar ----------- */
+.home-div { height: 100%; width: 100%; overflow: hidden; margin-top: 12px; padding: 12px; padding-bottom: 26px; border-bottom: 5px solid #e7e7e7; background-color: #fff; }
+.home-div h2 { float: left; }
+.home-div:hover { border-bottom: 5px solid #334374; }
+
+.home-div-inner { float: left; width: 100%; height: 160px; overflow: hidden; }
+@media only screen and (max-width: 768px) { .home-div-inner { height: inherit; } }
+
+.archive { float: left; padding: 6px 0 0 10px; color: #8d8c8f; }
+.archive:hover { color: #676669; }
 
 /* ----------- Footer Styles ------------ */
-.footer { float: left; margin-top: 40px; color: #8d8c8f; }
+.footer { float: left; margin-top: 30px; color: #8d8c8f; }
 .footer p { font-size: 10px; }
 .footer a { color: #8d8c8f; text-decoration: underline; }
 .footer a:hover { color: #676669; }
@@ -1861,10 +1884,10 @@ h1, h2, h3, h4 { text-transform: uppercase; color: #334374; font-size: 18px; }
 *********************************/
 .flexslider { margin: 0; padding: 0; }
 
-.flexslider .slides > li { display: none; -webkit-backface-visibility: hidden; }
+.flexslider .slides > li { display: none; padding: 0; -webkit-backface-visibility: hidden; }
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img { width: 100%; display: block; }
+.flexslider .slides img { width: 100%; max-height: 320px; display: block; }
 
 .flex-pauseplay span { text-transform: capitalize; }
 
@@ -1881,9 +1904,9 @@ html[xmlns] .slides { display: block; }
 
 /* FlexSlider Default Theme
 *********************************/
-.flexslider { margin: 0; border: none; position: relative; border: none; }
+.flexslider { margin: 0; margin-bottom: 10px; border: none; position: relative; overflow: hidden; border: none; -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
 
-.flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.flex-viewport { max-height: 320px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
 
 .loading .flex-viewport { max-height: 300px; }
 
@@ -1892,13 +1915,13 @@ html[xmlns] .slides { display: block; }
 .carousel li { margin-right: 5px; }
 
 /* Direction Nav */
-.flex-direction-nav { *height: 0; }
+.flex-direction-nav { *height: 0; height: 0; }
 
-.flex-direction-nav a { display: block; font-size: 27px; width: 30px; height: 30px; margin: -20px 0 0; position: absolute; bottom: 16px; overflow: hidden; opacity: 0; cursor: pointer; color: #fdfdfd; text-shadow: 0 0 3px #414042; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
+.flex-direction-nav a { display: block; font-size: 27px; width: 30px; height: 30px; margin: 0; position: absolute; bottom: 0; overflow: hidden; opacity: 0; cursor: pointer; color: #fdfdfd; text-shadow: 0 0 3px #414042; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
 
-.flex-direction-nav .flex-prev { left: -50px; }
+.flex-direction-nav .flex-prev { left: -50px; bottom: 6px; }
 
-.flex-direction-nav .flex-next { right: -50px; text-align: right; }
+.flex-direction-nav .flex-next { right: -50px; bottom: 6px; text-align: right; }
 
 .flexslider:hover .flex-prev { opacity: 0.7; left: 35%; }
 
@@ -1918,7 +1941,7 @@ html[xmlns] .slides { display: block; }
 .flex-pauseplay a.flex-play:before { content: '\f003'; }
 
 /* Control Nav */
-.flex-control-nav { width: 100%; position: absolute; bottom: 10px; text-align: center; }
+.flex-control-nav { width: 100%; position: absolute; bottom: 0; text-align: center; }
 
 .flex-control-nav li { margin: 0 6px; display: inline-block; oom: 1; *display: inline; }
 

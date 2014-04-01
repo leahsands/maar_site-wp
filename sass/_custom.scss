@@ -18,6 +18,10 @@ body,
   overflow: hidden;
 }
 
+.row {
+	position: relative;
+}
+
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container,
 .side-pusher,
@@ -34,7 +38,7 @@ body,
 	position: relative;
   margin: 0;
   width: inherit;
-  margin-left: $sidebar-width;
+  margin-left: ($sidebar-width);
   &::-webkit-scrollbar {
 		width: 12px;
 		height: 12px;
@@ -152,11 +156,12 @@ h1, h2, h3, h4 {
 	&:after {
 		top: 50px;
 		z-index: 500;
-		min-width: 55px;
+		min-width: 10px;
 		background: $grey-drk;
 		border: none;
 		border-radius: none;
 		text-align: center;
+		font-size: 10px;
 	}
 } 
 
@@ -199,6 +204,7 @@ h1, h2, h3, h4 {
 /* ----------- Main Body Styles ----------- */
 .main-body {
 	margin-top: 30px;
+	margin-bottom: 30px;
 	float: left;
 	@media only screen and (max-width: $mobile-width) {
 		margin-top: 80px;
@@ -219,14 +225,86 @@ h1, h2, h3, h4 {
 }
 
 /* ----------- Market Data ----------- */
-.mrk-data {
-	background: $primary-color;
+
+.mrkt-data {
+	margin-bottom: 12px;
+	@media only screen and (max-width: $tablet-device-width) {
+		border-bottom: 5px solid $primary-color;
+	}
+	li {
+		margin: 0;
+		padding: 2% 1%;
+		height: 120px;
+		overflow: hidden;
+		text-transform: uppercase;
+		text-align: center;
+		border-left: 1px solid #e7e7e7;
+		@media only screen and (max-width: $tablet-device-width) {
+			height: 60px;
+			padding: 3% 5%;
+			img { float: right; }
+			&:hover { padding: 2% 5% !important; }
+			h2 { float: left; }
+		}
+		img {
+			max-width: 32px;
+		}
+		&:hover {
+			background: $primary-hover-color;
+			padding: 1%;
+			img {
+
+			}
+			h2 {
+				color: $white;
+			}
+		}
+		&:first-child {
+			border-left: none;
+		}
+	}
+}
+/* ----------- News, Videos, Calendar ----------- */
+.home-div {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 12px;
+	padding: 12px;
+	padding-bottom: 26px;
+	border-bottom: 5px solid #e7e7e7;
+	background-color: #fff;
+	h2 {
+		float: left;
+	}
+	&:hover {
+		border-bottom: 5px solid $primary-color;
+	}
+}
+
+.home-div-inner {
+	float: left;
+	width: 100%;
+	height: 160px;
+	overflow: hidden;
+	@media only screen and (max-width: $tablet-device-width) {
+		height: inherit;
+	}
+}
+
+.archive {
+	float: left;
+	padding: 6px 0 0 10px;
+	color: $grey-lgtr;
+	&:hover {
+		color: $grey-lgt;
+	}
 }
 
 /* ----------- Footer Styles ------------ */
 .footer {
 	float: left;
-	margin-top: 40px;
+	margin-top: 30px;
 	color: $footer-color;
 	p {
 		font-size: 10px;
