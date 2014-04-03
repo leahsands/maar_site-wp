@@ -72,6 +72,10 @@ h1, h2, h3, h4 {
   font-size: $large;
 }
 
+a {
+	font-weight: $font-weight-bold;
+}
+
 /* ---- Top Member Navigation ---- */
 
 #mem-nav {
@@ -131,8 +135,7 @@ h1, h2, h3, h4 {
 	background: $grey;
 	padding: $gutter-in-px 4px 8px;
 	float: left;
-	-webkit-transition: background 0.5s;
-					transition: background 0.5s;
+	font-weight: $font-weight-regular;
 	@media only screen and (max-width: $mobile-width) {
 		margin-bottom: 0;
 		padding: 4px;
@@ -207,7 +210,6 @@ h1, h2, h3, h4 {
 	margin-bottom: 30px;
 	float: left;
 	@media only screen and (max-width: $mobile-width) {
-		margin-top: 80px;
 		float: none;
 	}
 }
@@ -228,50 +230,89 @@ h1, h2, h3, h4 {
 
 .mrkt-data {
 	margin-bottom: 12px;
+	background: #fff;
+	border-bottom: 5px solid #e7e7e7;
 	@media only screen and (max-width: $tablet-device-width) {
-		border-bottom: 5px solid $primary-color;
+		margin-top: 80px;
+		padding: 0;
+		background: transparent;
+		border-bottom: none;
+	}
+	@media only screen and (max-width: $mobile-width) {
+		margin-top: 80px;
 	}
 	li {
-		margin: 0;
+		margin-top: 12px;
+		margin-bottom: 12px;
 		padding: 2% 1%;
 		height: 120px;
 		overflow: hidden;
 		text-transform: uppercase;
 		text-align: center;
-		border-left: 1px solid #e7e7e7;
 		@media only screen and (max-width: $tablet-device-width) {
+			margin-top: 0;
+			margin-bottom: 0;
 			height: 60px;
-			padding: 3% 5%;
-			img { float: right; }
+			padding: 3% 5% !important;
+			background: $primary-color;
+			.infosparks-icon { background-image: url('../img/assets/icons/infosparks-white.png'); float: right; }
+			.faststats-icon { background-image: url('../img/assets/icons/faststats-white.png'); float: right; }
+			.skinny-icon { background-image: url('../img/assets/icons/skinny-white.png'); float: right; }
 			&:hover { padding: 2% 5% !important; }
-			h2 { float: left; }
+			h2 { float: left; color: $white; }
 		}
-		img {
-			max-width: 32px;
-		}
-		&:hover {
-			background: $primary-hover-color;
-			padding: 1%;
-			img {
 
-			}
+		&:hover {
+			background: $primary-color;
+			padding: 1%;
 			h2 {
 				color: $white;
 			}
+			.infosparks-icon { background-image: url('../img/assets/icons/infosparks-white.png'); }
+			.faststats-icon { background-image: url('../img/assets/icons/faststats-white.png'); }
+			.skinny-icon { background-image: url('../img/assets/icons/skinny-white.png'); }
 		}
 		&:first-child {
 			border-left: none;
 		}
 	}
 }
+.market-icon {
+	margin: 0 auto;
+	background-size: 32px 32px;
+	width: 32px;
+	height: 32px;
+}
+
+.infosparks-icon { background-image: url('../img/assets/icons/infosparks.png'); }
+
+.faststats-icon { background-image: url('../img/assets/icons/faststats.png'); }
+
+.skinny-icon { background-image: url('../img/assets/icons/skinny.png'); }
+
+/* ----------- Welcome ----------- */
+.welcome {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 12px;
+	border-top: 1px solid $secondary-color;
+	border-bottom: 1px solid $secondary-color;
+	text-align: center;
+	p {
+		margin: 0;
+		color: $secondary-color;
+		@include font-size($large);
+		line-height: $threehalf-line-height;
+	}
+}
+
 /* ----------- News, Videos, Calendar ----------- */
 .home-div {
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
 	margin-top: 12px;
-	padding: 12px;
-	padding-bottom: 26px;
+	padding-bottom: 24px;
 	border-bottom: 5px solid #e7e7e7;
 	background-color: #fff;
 	h2 {
@@ -282,8 +323,24 @@ h1, h2, h3, h4 {
 	}
 }
 
+.home-div-header {
+	overflow: auto;
+	padding: 6px 12px;
+	h2 {
+		float: left;
+	}
+	a {
+		color: $primary-color;
+		font-weight: $font-weight-regular;
+		&:hover {
+			color: $primary-hover-color;
+		}
+	}
+}
+
 .home-div-inner {
 	float: left;
+	padding: 12px;
 	width: 100%;
 	height: 160px;
 	overflow: hidden;
@@ -305,6 +362,7 @@ h1, h2, h3, h4 {
 .footer {
 	float: left;
 	margin-top: 30px;
+	margin-bottom: 60px;
 	color: $footer-color;
 	p {
 		font-size: 10px;
@@ -327,6 +385,7 @@ h1, h2, h3, h4 {
 
 .social {
 	font-size: $med !important;
+	font-weight: $font-weight-regular;
 	margin: 0 auto;
 	width: 100%;
 	border: 1px solid $footer-color;

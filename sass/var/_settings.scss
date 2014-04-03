@@ -6,7 +6,7 @@
 $row-max-width: 940px !default;    				// 940px
 $gutter-in-px: 12px !default;      				// 20px
 $cols: 12 !default;              				// 12 Column Default Grid
-$hybrid: 16 !default;							// 16 Column Default Hybrid Grid
+$hybrid: 14 !default;							// 16 Column Default Hybrid Grid
 
 $sidebar-width: 240px;
 
@@ -43,6 +43,9 @@ $tabs-font-weight: $font-weight-semibold;
 
 // Vertical Rhythm Spacing
 $base-line-height: ms(1) !default;
+
+$threehalf-line-height: ms(1.5);
+
 $rhythm-spacing: .168;
 $rhythm-height: .711;
 
@@ -76,7 +79,7 @@ $grey-lgt: lighten($grey, 15%);
 $grey-lgtr: lighten($grey-lgt, 15%);
 $grey-drk: darken($grey, 5%);
 $grey-drkr: darken($grey-drk, 5%);
-$white: #fdfdfd;
+$white: #f7f7f7;
 
 $blu: #334374;
 $blu-drk: #072554;

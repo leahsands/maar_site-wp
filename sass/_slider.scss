@@ -30,6 +30,7 @@
 .flexslider {
 	margin: 0; 
 	padding: 0;
+	max-height: 320px;
 }
 
 .flexslider .slides > li {
@@ -40,7 +41,6 @@
 
 .flexslider .slides img {
 	width: 100%; 
-	max-height: 320px;
 	display: block;
 }
 
@@ -77,7 +77,6 @@ html[xmlns] .slides {display: block;}
 	@include div-shadow(false, 0, 5px, 20px);
 }
 .flex-viewport {
-	max-height: 320px;
 	-webkit-transition: all 1s ease; 
 	   -moz-transition: all 1s ease; 
 		 	 -o-transition: all 1s ease; 
