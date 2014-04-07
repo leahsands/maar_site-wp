@@ -315,93 +315,33 @@
 					<!-- Page Content -->
 					<div class="maar-content-inner">
 
-						<!-- Market Data -->
-						<div class="row mrkt-data main-body">
-							<h1>Today in the Market</h1>
-							<section class="centered ten columns">
-								<div class="fourteen colgrid">
-								<ul>
-									<li class="two columns push_one">
-										<h2>Infosparks</h2>
-										<div class="market-icon infosparks-icon"></div>
-									</li>
-									<li class="two columns">
-										<h2>Faststats</h2>
-										<div class="market-icon faststats-icon"></div>
-									</li>
-									<li class="two columns">
-										<h2>The Skinny</h2>
-										<div class="market-icon skinny-icon"></div>
-									</li>
-									<li class="two columns"><h2>Annual Reports</h2></li>
-									<li class="two columns"><h2>Weekly Activities</h2></li>
-								</ul>
-								</div>
-							</section>
-						</div>
-
-						<!-- Slider -->
-						<section class="flexslider row main-body">
-						  <ul class="slides">
-						    <li>
-						      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/tuesdaymornings@maar_fall.jpg" />
-						    </li>
-						    <li>
-						      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/takefive.jpg" />
-						    </li>
-						    <li>
-						      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/realtorsummit.jpg" />
-						    </li>
-						    <li>
-						      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/MarchMadness-logo.jpg" />
-						    </li>
-						  </ul>
-						</section>
-						<!-- / slider -->
-
 					<div class="main-body row">
-						<!-- Welcome -->
 						<div class="row">
-							<section class="twelve columns welcome">
-								<p>Hey, welcome to MAAR!! This is just an area for a personal greeting so you feel more welcome to the website! If  you'd like to know more about our foundation, you can navigate to <a href="#">this page</a> to find out more!</p>
+							<section class="twelve columns">
+								<h1>Contact</h1>
 							</section>
 						</div>
 
-						<!-- News, Video, Calendar -->
 						<div class="row">
-							<section class="four columns gen-div">
-								<div class="gen-div-header">
-									<h2>News</h2><a class="archive" href="#">| News Archive</a>
-								</div>
-								<span class="gen-home-div-inner">
+							<section class="six columns">
 								<ul>
-									<li><a href="#">April 20, 2014</a></li>
-									<li><a href="#">Apri 1, 2014</a></li>
-									<li><a href="#"> March 25, 2014</a></li>
+								 	<li class="field">
+								    	<input class="wide input" type="text" placeholder="What's your name?" />
+								  	</li>
+								  	<li class="field">
+								   		<input class="wide input" type="email" placeholder="What's your email?" />
+								  	</li>
+								  	<li class="field">
+								    	<textarea class="xwide input textarea" placeholder="Write us a message."></textarea>
+								  	</li>
+								  	<li>
+								  		<div class="medium primary btn"><a href="#">Send</a></div>
+								  	</li>
 								</ul>
-								</span>
 							</section>
-							<section class="four columns gen-div">
-								<div class="gen-div-header">
-									<h2>Videos</h2><a class="archive" href="#">| Video Archive</a>
-								</div>
-								<span class="gen-home-div-inner">
-									<a href="#">
-										<article class="youtube video">
- 											<iframe width="560" height="315" src="//www.youtube.com/embed/FPbHpK6E1II"></iframe >
-										</article>
-									</a>
-								</span>
-							</section>
-							<section class="four columns gen-div">
-								<div class="gen-div-header">
-									<h2>Calendar</h2><a class="archive" href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">| View Calendar</a>
-								</div>
-								<span class="gen-home-div-inner">
-									<a href="#">
-										<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="100%"  frameborder="0" scrolling="no"></iframe>
-									</a>
-								</span>
+
+							<section class="six columns">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2826.126381014509!2d-93.39990660000001!3d44.90042479999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f621c779db5991%3A0x5e30239602f63c5e!2s5750+Lincoln+Dr!5e0!3m2!1sen!2sus!4v1396892542519" frameborder="0" style="border:0; width: 100%; height: 300px; "></iframe>
 							</section>
 						</div>
 
@@ -433,7 +373,42 @@
 			</div><!-- /maar-content -->
 		</div><!-- /side-pusher -->
 	</div><!-- /side-container -->
-	
+	<!-- Validation javascript -->
+	<script>
+		// initialize plugin
+		$('input').validation({
+		  // pass an array of required field objects
+		  required: [
+		    {
+		      // name should reference a form inputs name attribute
+		      // just passing the name property will default to a check for a present value
+		      name: 'name',
+		    },
+		    {
+		      name: 'email',
+		      // pass a function to the validate property for complex custom validations
+		      // the function will receive the jQuery element itself, return true or false depending on validation
+		      validate: function($el) {
+		        return $el.val().match('@') !== null;
+		      }
+		    }
+		  ],
+		  // callback for failed validaiton on form submit
+		  fail: function() {
+		    Gumby.error('Form validation failed');
+		  },
+		  // callback for successful validation on form submit
+		  // if omited, form will submit normally
+		  submit: function(data) {
+		    $.ajax({
+		      url: 'do/something/with/data',
+		      data: data,
+		      success: function() {alert("Submitted");}
+		    });
+		  } 
+		});
+	</script>
+
 	<!-- Sidebar javascript files -->
 	<script src="js/classie.js"></script>
 	<script src="js/sidebar-effects.js"></script>

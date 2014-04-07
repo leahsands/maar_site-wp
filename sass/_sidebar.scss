@@ -90,9 +90,8 @@
 			text-transform: uppercase;
 			text-shadow: 0 0 1px $navbar-hover-color;
 			letter-spacing: 1px;
-			font-weight: 400;
-			-webkit-transition: background 0.3s, box-shadow 0.3s;
-			transition: background 0.3s, box-shadow 0.3s;
+			font-weight: 700;
+			@include maar-transition(0.3s);
 		} //side-menu a
 	} //side-menu li
 } //side-menu ul
@@ -141,6 +140,7 @@
 	margin-top: 0px !important;
 	a {
 		text-transform: none;
+		font-weight: 400;
 		&:hover {
 			background: $nav-drawer-hover-color;
 		}
@@ -150,7 +150,9 @@
 /* ---- Popular Links ---- */
 .pop-links {
 	margin-top: 20px;
+	padding-top: 12px;
 	background: $poplinks-color;
+	@include div-shadow(inset);
 	@media only screen and (max-width: $mobile-width) {
 		position: absolute;
 		top: 0;
@@ -161,8 +163,9 @@
 	h1 {
 		font-size: $med;
 		text-transform: uppercase;
+		font-weight: 700;
 		color: $white;
-		text-align: center;
+		padding-left: 12px;
 	}
 	ul li {
 		&:first-child {
@@ -175,6 +178,7 @@
 		text-transform: none;
 		padding: 4px 1em;
 		color: $white;
+		font-weight: 400;
 			&:hover {
 				background: $poplinks-hover-color;
 			}
@@ -203,8 +207,6 @@
 
 .side-menu {
 	visibility: hidden;
-	-webkit-transition: all 0.5s;
-	transition: all 0.5s;
 	&::after {
 		position: absolute;
 		top: 0;
@@ -213,8 +215,7 @@
 		background: rgba(0,0,0,0.3);
 		content: '';
 		opacity: 1;
-		-webkit-transition: opacity 0.5s;
-						transition: opacity 0.5s;
+		@include maar-transition(0.5s, opacity);
 	}
 }
 
@@ -237,8 +238,6 @@
 	position: relative;
 	left: 0;
 	height: 100%;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
 	&::after {
 		position: absolute;
 		top: 0;
@@ -248,8 +247,6 @@
 		background: rgba(0,0,0,0.2);
 		content: '';
 		opacity: 0;
-		-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 	}
 }
 
@@ -259,15 +256,11 @@
 		height: 100%;
 		opacity: 1;
 		z-index: 9999;
-		-webkit-transition: opacity 0.5s;
-		transition: opacity 0.5s;
 	}
 	.side-menu::after {
 		width: 0;
 		height: 0;
 		opacity: 0;
-		-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 	}
 } 
 

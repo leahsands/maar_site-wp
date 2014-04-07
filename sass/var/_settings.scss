@@ -15,6 +15,7 @@ $min-device-width: 320px; 						// iPhone Portrait
 $tablet-device-width: 768px;					// iPad Portrait
 $mobile-width: 55em;							// Screen changes to mobile width
 $document-width: $row-max-width;				// Default Document
+$desktop-width: 1232px;							// Screen starts responding
 $max-device-width: 2880px;						// Max Document Size
 
 // Spacing
@@ -115,27 +116,13 @@ $header-font-color: $primary-color !default;
 $header-link-color: $primary-color !default;
 $header-link-hover-color: $primary-hover-color !default;
 $body-font-color: $grey-drk !default;
-$body-link-color: $secondary-color !default;
-$body-link-hover-color: $secondary-hover-color !default;
+$body-link-color: $primary-color !default;
+$body-link-hover-color: $primary-hover-color !default;
 
 // Borders
 $button-radius: 4px !default;
 $metro-radius: 0 !default;
 $bigger-radius: 8px;
-
-//Shadows
-$box-shadow-color: rgba(0, 0, 0, 0.2);
-@mixin div-shadow($inset: false, $left: -10px, $top: 0, $blur: 10px) {
-	@if $inset {
-		-webkit-box-shadow: inset $left $top $blur $box-shadow-color;
-			 -moz-box-shadow: inset $left $top $blur $box-shadow-color;
-						box-shadow: inset $left $top $blur $box-shadow-color;
-	} @else {
-		-webkit-box-shadow: $left $top $blur $box-shadow-color;
-			 -moz-box-shadow: $left $top $blur $box-shadow-color;
-						box-shadow: $left $top $blur $box-shadow-color;
-	}
-};
 
 // Buttons
 // Font Sizing
@@ -169,8 +156,8 @@ $navbar-link-color: $white;
 $nav-drawer-color: $grey-drk;
 $nav-drawer-hover-color: $grey-drkr;
 
-$poplinks-color: $grey-drk;
-$poplinks-hover-color: $grey-drkr;
+$poplinks-color: $primary-color;
+$poplinks-hover-color: $primary-hover-color;
 
 // Drawers & Modals
 $modal-overlay-color: rgba(0, 0, 0, 0.8);
@@ -210,3 +197,37 @@ $switch-float: right;
 //Footer 
 $footer-color: $grey-lgtr;
 $footer-hover-color: $grey-lgt;
+
+// ---------- MIX-INS ------------
+//Shadows
+$box-shadow-color: rgba(0, 0, 0, 0.2);
+@mixin div-shadow($inset: false, $left: -10px, $top: 0, $blur: 10px) {
+	@if $inset {
+		-webkit-box-shadow: inset $left $top $blur $box-shadow-color;
+			 -moz-box-shadow: inset $left $top $blur $box-shadow-color;
+						box-shadow: inset $left $top $blur $box-shadow-color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $box-shadow-color;
+			 -moz-box-shadow: $left $top $blur $box-shadow-color;
+						box-shadow: $left $top $blur $box-shadow-color;
+	}
+};
+
+//Grayscale
+@mixin maar-transition ($time: 0.5s, $type: all, $ease: ease){
+	-webkit-transition: $type $time $ease;
+       -moz-transition: $type $time $ease;
+    	 -o-transition: $type $time $ease;
+   		    transition: $type $time $ease;
+}
+
+@mixin grayscale{
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+@mixin grayscale-color{
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+}

@@ -1,7 +1,6 @@
 // Your custom SCSS should be written here...
 * {
-	  -webkit-transition: all 0.5s ease;
-	 				transition: all 0.5s ease;
+	@include maar-transition;
 }
 
 *,
@@ -63,6 +62,7 @@ body,
 
 .maar-content-inner {
 	position: relative;
+	margin-top: 60px;
 }
 
 /* ---- Font Styles ---- */
@@ -80,6 +80,13 @@ a {
 
 #mem-nav {
 	float: left;
+	position: fixed;
+	z-index: 300;
+	padding-bottom: 30px;
+	background: -webkit-linear-gradient(top, $white 60%, transparent 99%); /*Safari 5.1-6*/
+	background: -o-linear-gradient(bottom, $white 60%, transparent 99%); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(bottom, $white 60%, transparent 99%); /*Fx 3.6-15*/
+	background: linear-gradient(to bottom, $white 60%, transparent 99%); /*Standard*/
 	i {
 		color: $white;
 	}
@@ -89,6 +96,9 @@ a {
 	@media only screen and (max-width: $mobile-width) {
 		display: none;
 	}
+	@media only screen and (max-width: $desktop-width) {
+		right: 0;
+	}
 } // mem nav
 
 .search-field {
@@ -97,8 +107,7 @@ a {
 		float: right;
 		margin-top: $gutter-in-px;
 		width: 100px;
-		-webkit-transition: width 1s 0.1s;
-						transition: width 1s 0.1s;
+		@include maar-transition(1s, width);
 		@media only screen and (max-width: $mobile-width){
 			width: 100%;
 			float: center;
@@ -144,8 +153,7 @@ a {
 	}
 	&:hover {
 		background: $grey-drk;
-		-webkit-transition: background 0.5s;
-						transition: background 0.5s;
+		@include maar-transition(0.5s, background);
 	}
 }
 
@@ -206,7 +214,7 @@ a {
 
 /* ----------- Main Body Styles ----------- */
 .main-body {
-	margin-top: 30px;
+	margin-top: 30px !important;
 	margin-bottom: 30px;
 	float: left;
 	@media only screen and (max-width: $mobile-width) {
@@ -214,15 +222,57 @@ a {
 	}
 }
 
-/* ----------- Notification Alert ----------- */
-.notify {
-	background: $red;
-	p {
-		margin-bottom: 0;
-		color: $white;
-		font-size: $large;
-		text-transform: uppercase;
-		text-align: center;
+.field .input.textarea { height: 215px; }
+
+/* ----------- General Div Style ----------- */
+.gen-div {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 12px;
+	padding-bottom: 24px;
+	border-bottom: 5px solid #e7e7e7;
+	background-color: #fff;
+	img { width: 100%; }
+	h2 {
+		float: left;
+	}
+	&:hover {
+		border-bottom: 5px solid $primary-color;
+	}
+}
+
+.gen-div-header {
+	overflow: auto;
+	padding: 6px 12px;
+	h2 {
+		float: left;
+	}
+	a {
+		color: $primary-color;
+		font-weight: $font-weight-regular;
+		&:hover {
+			color: $primary-hover-color;
+		}
+	}
+}
+
+.gen-div-inner {
+	float: left;
+	padding: 12px;
+	width: 100%;
+	height: 100%;
+}
+
+//only for homepage as it gives a set height for the content
+.gen-home-div-inner {
+	float: left;
+	padding: 12px;
+	width: 100%;
+	height: 160px;
+	overflow: hidden;
+	@media only screen and (max-width: $tablet-device-width) {
+		height: inherit;
 	}
 }
 
@@ -232,6 +282,11 @@ a {
 	margin-bottom: 12px;
 	background: #fff;
 	border-bottom: 5px solid #e7e7e7;
+	h1 {
+		font-weight: 700;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
 	@media only screen and (max-width: $tablet-device-width) {
 		margin-top: 80px;
 		padding: 0;
@@ -242,7 +297,6 @@ a {
 		margin-top: 80px;
 	}
 	li {
-		margin-top: 12px;
 		margin-bottom: 12px;
 		padding: 2% 1%;
 		height: 120px;
@@ -290,65 +344,35 @@ a {
 
 .skinny-icon { background-image: url('../img/assets/icons/skinny.png'); }
 
+/* ----------- Notification Alert ----------- */
+.notify {
+	background: $red;
+	p {
+		margin-bottom: 0;
+		color: $white;
+		font-size: $large;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
 /* ----------- Welcome ----------- */
 .welcome {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 12px;
-	border-top: 1px solid $secondary-color;
-	border-bottom: 1px solid $secondary-color;
+	border-top: 1px solid $primary-color;
+	border-bottom: 1px solid $primary-color;
 	text-align: center;
 	p {
 		margin: 0;
-		color: $secondary-color;
+		color: $primary-color;
 		@include font-size($large);
 		line-height: $threehalf-line-height;
 	}
 }
 
 /* ----------- News, Videos, Calendar ----------- */
-.home-div {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	margin-top: 12px;
-	padding-bottom: 24px;
-	border-bottom: 5px solid #e7e7e7;
-	background-color: #fff;
-	h2 {
-		float: left;
-	}
-	&:hover {
-		border-bottom: 5px solid $primary-color;
-	}
-}
-
-.home-div-header {
-	overflow: auto;
-	padding: 6px 12px;
-	h2 {
-		float: left;
-	}
-	a {
-		color: $primary-color;
-		font-weight: $font-weight-regular;
-		&:hover {
-			color: $primary-hover-color;
-		}
-	}
-}
-
-.home-div-inner {
-	float: left;
-	padding: 12px;
-	width: 100%;
-	height: 160px;
-	overflow: hidden;
-	@media only screen and (max-width: $tablet-device-width) {
-		height: inherit;
-	}
-}
-
 .archive {
 	float: left;
 	padding: 6px 0 0 10px;
@@ -357,6 +381,109 @@ a {
 		color: $grey-lgt;
 	}
 }
+
+/* ----------- Team Page Styles ------------ */
+.team {
+	img { @include grayscale; }
+	&:after {
+		content: "";
+	}
+	&:hover {
+		border-bottom: 5px solid $red;
+		h2 { color: $red }
+		a { color: $red }
+		img { @include grayscale-color }
+		&:after {
+			position: relative;
+			bottom: -20px;
+			left: -12px;
+			margin: -36px 6px 0 12px;
+			padding: 0 12px;
+			float: left;
+			color: $red;
+			text-transform: uppercase;
+			line-height: 1.5em;
+			@media only screen and (max-width: $mobile-width) {
+				bottom: -10px;
+				margin: -36px 0 0 12px;
+				padding: 12px;
+			}
+		}
+	}
+}
+
+.team-executive {
+	&:hover {
+		&:after {
+			content: "Executive";
+		}
+	}
+}
+
+.team-pubaffairs {
+	&:hover {
+		&:after {
+			content: "Public Affairs";
+		}
+	}
+}
+
+.team-account {
+	&:hover {
+		&:after {
+			content: "Accounting & Operations";
+		}
+	}
+}
+
+.team-broker {
+	&:hover {
+		&:after {
+			content: "Broker Services";
+		}
+	}
+}
+
+.team-edu {
+	&:hover {
+		&:after {
+			content: "Education and Professional Development";
+		}
+	}
+}
+
+.team-marketing {
+	&:hover {
+		&:after {
+			content: "Marketing & Communications";
+		}
+	}
+}
+
+.team-memberserv {
+	&:hover {
+		&:after {
+			content: "Member Services";
+		}
+	}
+}
+
+.team-membership {
+	&:hover {
+		&:after {
+			content: "Membership";
+		}
+	}
+}
+
+.team-research {
+	&:hover {
+		&:after {
+			content: "Research";
+		}
+	}
+}
+
 
 /* ----------- Footer Styles ------------ */
 .footer {
