@@ -8,8 +8,8 @@
 	overflow-y: hidden;
 	overflow-x: hidden;
 	&::-webkit-scrollbar {
-		width: 12px;
-		height: 12px;
+		width: $gutter-in-px;
+		height: $gutter-in-px;
 	}
 	&::-webkit-scrollbar-thumb {
 		background-color: rgba(255, 255, 255, 0.3);
@@ -123,7 +123,7 @@
 	}
 	img {
 		max-width: 100%;
-		padding: 12px 50px 0 50px;
+		padding: $gutter-in-px 50px 0 50px;
 	}
 	@media only screen and (max-width: $mobile-width) {
 		display: none;
@@ -150,7 +150,7 @@
 /* ---- Popular Links ---- */
 .pop-links {
 	margin-top: 20px;
-	padding-top: 12px;
+	padding-top: $gutter-in-px;
 	background: $poplinks-color;
 	@include div-shadow(inset);
 	@media only screen and (max-width: $mobile-width) {
@@ -165,22 +165,22 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		color: $white;
-		padding-left: 12px;
+		padding-left: $gutter-in-px;
 	}
 	ul li {
 		&:first-child {
 			margin-top: 0;
 		}
-		&:last-child {
-			padding-bottom: 10px;
-		}
 		a {
-		text-transform: none;
-		padding: 4px 1em;
-		color: $white;
-		font-weight: 400;
+			text-transform: none;
+			padding: 4px 1em;
+			color: $white;
+			font-weight: 400;
 			&:hover {
 				background: $poplinks-hover-color;
+			}
+			&:last-child {
+				padding-bottom: $gutter-in-px;
 			}
 		}
 	}

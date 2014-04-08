@@ -78,9 +78,11 @@ $black: #000;
 $grey: #414042;
 $grey-lgt: lighten($grey, 15%);
 $grey-lgtr: lighten($grey-lgt, 15%);
+$grey-lgtst: #e7e7e7;
 $grey-drk: darken($grey, 5%);
 $grey-drkr: darken($grey-drk, 5%);
 $white: #f7f7f7;
+$tru-white: #fff;
 
 $blu: #334374;
 $blu-drk: #072554;
@@ -124,6 +126,8 @@ $button-radius: 4px !default;
 $metro-radius: 0 !default;
 $bigger-radius: 8px;
 
+$gen-div-border: $grey-lgtst;
+
 // Buttons
 // Font Sizing
 $xlarge-button-font-size: $larger;
@@ -136,14 +140,14 @@ $default-button-padding: $med;
 $default-button-height: 36px;
 
 // Form Elements
-$form-text-input-stroke: #ccc;
+$form-text-input-stroke: $grey-lgt;
 $form-text-input-background: $white;
 $form-text-input-placeholder-color: $default-color;
-$form-text-input-color: #555;
+$form-text-input-color: $grey;
 
-$form-select-stroke: #ccc;
+$form-select-stroke: $grey-lgt;
 $form-select-background: $white;
-$form-select-color: #555;
+$form-select-color: $grey;
 
 // Tabs
 $tab-height: 42px;
