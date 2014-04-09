@@ -4,7 +4,7 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!-- Consider adting an manifest.appcache: h5bp.com/d/Offline -->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en" itemscope="" itemtype="http://schema.org/Product"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
@@ -92,8 +92,8 @@
 	element.src = "js/libs/gumby.min.js";
 	document.body.appendChild(element);
 	}
-	if (window.adtEventListener)
-	window.adtEventListener("load", downloadJSAtOnload, false);
+	if (window.addEventListener)
+	window.addEventListener("load", downloadJSAtOnload, false);
 	else if (window.attachEvent)
 	window.attachEvent("onload", downloadJSAtOnload);
 	else window.onload = downloadJSAtOnload;
@@ -136,10 +136,9 @@
 	    			<li><a href="#" class="switch" gumby-trigger="#about-toggle-nav|#mem-toggle-nav, #news-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">About</a></li>
 	    				<section id="about-toggle-nav" class="drawer">
 	    				<ul>
+	    				<li><a href="#">Who We Are</a></li>
 	    				<li><a href="about.html">Meet the Team</a></li>
 	    				<li><a href="#">Meet the Leadership</a></li>
-	    				<li><a href="#">Foundation</a></li>
-	    				<li><a href="#">Heart of the Community</a></li>
 	    				<li><a href="#">Apply for Scholarships</a></li>
 	    				<li><a href="#">Awards &amp; Accolades</a></li>
 	    				<li><a href="#">Get Involved</a></li>
@@ -166,7 +165,7 @@
 	    				<section id="news-toggle-nav" class="drawer">
 	    				<ul>
 	    				<li><a href="#">Communications</a></li>
-	    				<li><a href="#">Upcoming Classes</a></li>
+	    				<li><a href="#">Newsletter</a></li>
 	    				<li><a href="#">Videos</a></li>
 	    				<li><a href="#">Blog</a></li>
 	    				</ul>
@@ -210,8 +209,8 @@
 	  			<section class="pop-links">
 	  				<h1>Popular Links</h1>
 	  				<ul>
-	  					<li><a href="">Forms</a></li>
-	  					<li><a href="">Videos</a></li>
+	  					<li><a href="forms.html">Forms</a></li>
+	  					<li><a href="https://www.youtube.com/user/MinneapolisREALTORS" target="_blank">Videos</a></li>
 	  					<li><a href="">Find a REALTOR&reg;</a></li>
 	  					<li><a href="">Real Estate Service Guide</a></li>
 	  					<li><a href="">NorthstarMLS</a></li>
@@ -314,99 +313,54 @@
 
 					<!-- Page Content -->
 					<div class="maar-content-inner">
-
-					<div class="main-body row">
-						<div class="row">
-							<section class="twelve columns">
-								<h1>Meet the Team</h1>
-							</section>
-						</div>
-
-						<div class="row">
-							<section class="three columns gen-div team-executive team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-marketing team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-edu team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-account team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-						</div>
-
-						<div class="row">
-							<section class="three columns gen-div team-executive team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-marketing team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-edu team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-account team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-						</div>
+						<div class="row main-body">
+							<section class="ten columns">
+								<div class="search-results-num">
+									Results #-## of ## for "keyword". (# of seconds to find)
+								</div>
+								<ul class="search-results">
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+									<li class="gen-div"><h4>Title</h4>
+										<p> description, description, description, description, description, description, description, description</p>
+										<a href="#">linklinklinklinklink.html</a>
+									</li>
+								</ul>
+							<div class="search-results-page">
+								Results page <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a>
+							</div>
+						</section>
+					</div>
 
 					</div><!-- / main-body -->
 

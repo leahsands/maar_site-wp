@@ -87,14 +87,11 @@ $tru-white: #fff;
 $blu: #334374;
 $blu-drk: #072554;
 
-$prp: #5f5265;
-$prp-lgt: #7e5d5a;
-$prp-drk: #3d3249;
-
 $red: #e82e0a;
+$red-drk: darken($red, 10%);
 
 $primary-color: $blu;
-$secondary-color: $prp;
+$secondary-color: $red;
 $default-color: $white;
 $info-color: $grey-drk;
 $danger-color: #ca3838;
@@ -102,7 +99,7 @@ $warning-color: #ffe497;
 $success-color: #58c026;
 
 $primary-hover-color: $blu-drk;
-$secondary-hover-color: $prp-drk;
+$secondary-hover-color: $red-drk;
 $default-hover-color: #ffffff;
 $info-hover-color: $grey-drkr;
 $danger-hover-color: #f14f4f;
@@ -203,6 +200,27 @@ $footer-color: $grey-lgtr;
 $footer-hover-color: $grey-lgt;
 
 // ---------- MIX-INS ------------
+//Scrollbar
+@mixin maar-scrollbar {
+	&::-webkit-scrollbar {
+		width: $gutter-in-px;
+		height: $gutter-in-px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(150, 150, 150, 0.3);
+		background-clip: content-box;
+		border-radius: 10px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		&:hover {
+			background-color: rgba(150, 150, 150, 0.7);
+		}
+	}
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
+}
+
 //Shadows
 $box-shadow-color: rgba(0, 0, 0, 0.2);
 @mixin div-shadow($inset: false, $left: -10px, $top: 0, $blur: 10px) {

@@ -112,6 +112,8 @@
 	margin-bottom: 40px;
 	&:after {
 		position: absolute;
+		left:0;
+		top: 89px;
 		z-index: 100;
 		width: $sidebar-width;
 		height: 0;
@@ -171,6 +173,9 @@
 		&:first-child {
 			margin-top: 0;
 		}
+		&:last-child {
+			a { padding-bottom: $gutter-in-px; }
+		}
 		a {
 			text-transform: none;
 			padding: 4px 1em;
@@ -178,9 +183,6 @@
 			font-weight: 400;
 			&:hover {
 				background: $poplinks-hover-color;
-			}
-			&:last-child {
-				padding-bottom: $gutter-in-px;
 			}
 		}
 	}

@@ -48,23 +48,7 @@ body,
   margin: 0;
   width: inherit;
   margin-left: ($sidebar-width);
-  &::-webkit-scrollbar {
-		width: $gutter-in-px;
-		height: $gutter-in-px;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: rgba(150, 150, 150, 0.3);
-		background-clip: content-box;
-		border-radius: 10px;
-		border-left: 3px solid transparent;
-		border-right: 3px solid transparent;
-		&:hover {
-			background-color: rgba(150, 150, 150, 0.7);
-		}
-	}
-	&::-webkit-scrollbar-track {
-		background: none;
-	}
+  @include maar-scrollbar;
   @media only screen and (max-width: $mobile-width) {
   	margin-left: 0;
   }
@@ -79,16 +63,17 @@ body,
 h1, h2, h3, h4 {
 	text-transform: uppercase;
   color: $primary-color;
+  @media only screen and (max-width: $tablet-device-width) {
+  	font-size: $large;
+  }
 }
 
-h1 { @include font-size($xlarge) }
+h1 { @include font-size($xxlarge) }
 h2 { @include font-size($larger) }
 h3 { @include font-size($large) }
 h4 { @include font-size($med) }
 
-a {
-	font-weight: $font-weight-bold;
-}
+a { font-weight: $font-weight-bold; }
 
 /* ---- Top Member Navigation ---- */
 
@@ -98,10 +83,10 @@ a {
 	z-index: 300;
 	padding-bottom: 30px;
 	//in order to create a fade effect for the member navigation as the page scrolls
-	background: -webkit-linear-gradient(top, $white 60%, transparent 99%); /*Safari 5.1-6*/
-	background: 	-o-linear-gradient(bottom, $white 60%, transparent 99%); /*Opera 11.1-12*/
-	background: -moz-linear-gradient(bottom, $white 60%, transparent 99%); /*Fx 3.6-15*/
-	background: 	linear-gradient(to bottom, $white 60%, transparent 99%); /*Standard*/
+	background: -webkit-linear-gradient(top, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /*Safari 5.1-6*/
+	background: 	-o-linear-gradient(bottom, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(bottom, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /* Firefox */
+	background: 	linear-gradient(to bottom, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /*Standard*/
 	i {
 		color: $tru-white;
 	}
@@ -145,6 +130,32 @@ a {
 		}
 	}
 } // search-field
+
+
+//search results page styling
+.search-results {
+	li {
+		padding: $gutter-in-px;
+		&:hover {
+			border-bottom: 5px solid $secondary-color;
+			a { color: $secondary-color; }
+		}
+	}
+	p {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	a { color: $tru-white; }
+}
+
+.search-results-num {
+	font-weight: $font-weight-bold;
+}
+
+.search-results-page {
+	font-weight: $font-weight-bold;
+	a { color: $primary-color; }
+}
 
 .mem-tools {
 	background: $grey;
@@ -333,13 +344,12 @@ a {
 /* ----------- Market Data ----------- */
 
 .mrkt-data {
+	margin-top: 30px !important;
 	margin-bottom: $gutter-in-px;
 	background: $tru-white;
 	border-bottom: 5px solid $gen-div-border;
-	h2 {
-		font-weight: $font-weight-bold;
+	h1 {
 		margin-bottom: 0;
-		padding-left: $gutter-in-px;
 		padding-bottom: 0;
 	}
 	@media only screen and (max-width: $tablet-device-width) {
@@ -401,7 +411,7 @@ a {
 
 /* ----------- Notification Alert ----------- */
 .notify {
-	background: $red;
+	background: $secondary-color;
 	p {
 		margin-bottom: 0;
 		color: $white;
@@ -444,9 +454,9 @@ a {
 		content: "";
 	}
 	&:hover {
-		border-bottom: 5px solid $red;
-		h2 { color: $red }
-		a { color: $red }
+		border-bottom: 5px solid $secondary-color;
+		h2 { color: $secondary-color }
+		a { color: $secondary-color }
 		img { @include grayscale-color }
 		&:after {
 			position: relative;
@@ -455,7 +465,7 @@ a {
 			margin: -36px 6px 0 $gutter-in-px;
 			padding: 0 $gutter-in-px;
 			float: left;
-			color: $red;
+			color: $secondary-color;
 			text-transform: uppercase;
 			line-height: 1.5em;
 			@media only screen and (max-width: $mobile-width) {
