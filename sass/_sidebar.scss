@@ -110,12 +110,13 @@
 	background: $white;
 	z-index:100;
 	margin-bottom: 40px;
+	width: $sidebar-width;
 	&:after {
 		position: absolute;
 		left:0;
 		top: 89px;
 		z-index: 100;
-		width: $sidebar-width;
+		//width: $sidebar-width;
 		height: 0;
 		content: " ";
 		border-top: 20px solid $white;
@@ -125,6 +126,8 @@
 	}
 	img {
 		max-width: 100%;
+		width: $sidebar-width;
+		height: 81px;
 		padding: $gutter-in-px 50px 0 50px;
 	}
 	@media only screen and (max-width: $mobile-width) {

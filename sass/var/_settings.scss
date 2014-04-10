@@ -92,7 +92,7 @@ $red-drk: darken($red, 10%);
 
 $primary-color: $blu;
 $secondary-color: $red;
-$default-color: $white;
+$default-color: $grey-lgtst;
 $info-color: $grey-drk;
 $danger-color: #ca3838;
 $warning-color: #ffe497;
@@ -100,7 +100,7 @@ $success-color: #58c026;
 
 $primary-hover-color: $blu-drk;
 $secondary-hover-color: $red-drk;
-$default-hover-color: #ffffff;
+$default-hover-color: $primary-color;
 $info-hover-color: $grey-drkr;
 $danger-hover-color: #f14f4f;
 $warning-hover-color: #fdd27f;
@@ -137,13 +137,13 @@ $default-button-padding: $med;
 $default-button-height: 36px;
 
 // Form Elements
-$form-text-input-stroke: $grey-lgt;
-$form-text-input-background: $white;
+$form-text-input-stroke: $grey-lgtr;
+$form-text-input-background: $tru-white;
 $form-text-input-placeholder-color: $default-color;
 $form-text-input-color: $grey;
 
-$form-select-stroke: $grey-lgt;
-$form-select-background: $white;
+$form-select-stroke: $primary-color;
+$form-select-background: $tru-white;
 $form-select-color: $grey;
 
 // Tabs
@@ -252,4 +252,16 @@ $box-shadow-color: rgba(0, 0, 0, 0.2);
 @mixin grayscale-color{
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%);
+}
+
+//Icon image scaling
+@mixin mrkt-data-img ($img-location){
+	background-image: url('../#{$img-location}');
+	background-image: none\9;
+	-webkit-background-size: 32px 32px;
+  	   -moz-background-size: 32px 32px;
+  		 -o-background-size: 32px 32px;
+  			background-size: 32px 32px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img-location}', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img-location}', sizingMethod='scale')";
 }
