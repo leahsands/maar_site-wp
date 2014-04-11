@@ -34,6 +34,11 @@ body,
 .alignleft { float: left; overflow: auto; }
 .alignright { float: right; overflow: auto; }
 
+.lead {
+	border-bottom: 1px solid $grey-lgtst;
+	margin-bottom: ($gutter-in-px*2);
+}
+
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container,
 .side-pusher,
@@ -59,6 +64,7 @@ body,
 
 .maar-content-inner {
 	position: relative;
+	overflow: auto;
 	margin-top: 60px;
 }
 
@@ -465,13 +471,25 @@ a { font-weight: $font-weight-bold; }
 		padding-bottom: 0;
 		padding-top: 0;
 	}
-	p { margin-bottom: 0; }
 	&:hover {
 		img { @include grayscale-color }
 		a { color: $primary-color; }
 		h1,h2,h3,h4 { color: $primary-color; }
 	}
 }
+
+.blog-author {
+	font-style: oblique;
+	@include font-size($med);
+}
+
+.blog .flexslider {
+	width: auto;
+	max-height: 100%;
+	@include div-shadow(false, 0, 0, 0);
+}
+
+.blog #modal-gallery .flex-control-nav { display: inline-block; }
 
 /* ----------- Team Page Styles ------------ */
 .team {
