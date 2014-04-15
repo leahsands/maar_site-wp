@@ -120,6 +120,16 @@
 </head>
 
 <body>
+	<!--facebook plugin -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<!-- for the purpose of the mobile navigation, the whole body is in a "maar-container" div -->
 	<div id="maar-container" class="maar-container">
 		<!-- content push wrapper -->
@@ -160,16 +170,6 @@
 	    				</ul>
 	    				</section>
 	    			</li>
-	    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">News &amp; Media</a></li>
-	    				<section id="news-toggle-nav" class="drawer">
-	    				<ul>
-	    				<li><a href="#">Communications</a></li>
-	    				<li><a href="#">Newsletter</a></li>
-	    				<li><a href="#">Videos</a></li>
-	    				<li><a href="#">Blog</a></li>
-	    				</ul>
-	    				</section>
-	    			</li>
 	    			<li><a href="#" class="switch" gumby-trigger="#edu-toggle-nav|#about-toggle-nav, #news-toggle-nav, #mem-toggle-nav, #adv-toggle-nav, #com-toggle-nav">Education</a></li>
 	    				<section id="edu-toggle-nav" class="drawer">
 	    				<ul>
@@ -189,6 +189,16 @@
 	    				<li><a href="#">Laws &amp; Regulations</a></li>
 	    				<li><a href="#">RPAC</a></li>
 	    				<li><a href="#">Call to Action</a></li>
+	    				</ul>
+	    				</section>
+	    			</li>
+	    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">News &amp; Media</a></li>
+	    				<section id="news-toggle-nav" class="drawer">
+	    				<ul>
+	    				<li><a href="#">Communications</a></li>
+	    				<li><a href="#">Newsletter</a></li>
+	    				<li><a href="#">Videos</a></li>
+	    				<li><a href="#">Blog</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>
@@ -282,7 +292,7 @@
 
 					<!-- Top Member Navigation -->
 					<div class="row" id="mem-nav">
-						<div class="three columns push_seven">
+						<div class="three columns push_six">
 							<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
 							<ul>
 								<li class="field search-field">
@@ -292,20 +302,18 @@
 							</ul>
 							</form>
 						</div>
-						<div class="two columns">
-							<div class="mem-tools">
-								<div class="ttip three columns" data-tooltip="Login" alt="">
-									<a href="https://maarportal.ramcoams.net" target="_blank"><div class="mem-icon"><i class="icon-login"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Market Data" alt="">
-									<a href="mrk-data.html"><div class="mem-icon"><i class="icon-chart-bar"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Calendar" alt="">
-									<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><div class="mem-icon"><i class="icon-calendar"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Store" alt="">
-									<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><div class="mem-icon"><i class="icon-basket"></i></div></a>
-								</div>
+						<div class="three columns mem-tools">
+							<div class="six columns mem-tools-login">
+								<a href="https://maarportal.ramcoams.net" target="_blank"><div class="mem-icon"><i class="icon-login"></i></div><p>LOGIN</p></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Market Data" alt="">
+								<a href="mrk-data.html"><div class="mem-icon"><i class="icon-chart-bar"></i></div></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Calendar" alt="">
+								<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><div class="mem-icon"><i class="icon-calendar"></i></div></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Store" alt="">
+								<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><div class="mem-icon"><i class="icon-basket"></i></div></a>
 							</div>
 						</div>
 					</div><!-- / top member navigation -->
@@ -313,98 +321,92 @@
 					<!-- Page Content -->
 					<div class="maar-content-inner">
 
-					<div class="main-body row">
+					<div class="row main-body">
+						<h1>Compass Academy</h1>
 						<div class="row">
-							<section class="twelve columns">
-								<h1>Meet the Team</h1>
+						<div class="eight columns">
+							<section class="row gen-div">
+								<div class="gen-div-inner">
+									<p>This program fosters the personal leadership skills required to make bold business decisions in a fiercely competitive industry. Participants learn and practice key concepts of personal leadership. Group sessions include interactive learning and are supplemented with individual coaching. For more information, contact Nancy Scott at <a href="#">nancys@mplsrealtor.com</a> or 952.988.3128.</p>
+								</div>
+							</section>
+							<section class="row gen-div">
+								<div class="four columns">
+									<img src="http://www.mplsrealtor.com/images/member/compass-logo.jpg">
+								</div>
+								<div class="eight columns">
+									<div class="gen-div-inner">
+										<h2>Committee Members</h2>
+										<ul>
+											<li>Name</li>
+											<li>Name</li>
+											<li>Name</li>
+											<li>Name</li>
+											<li>Name</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section class="tabs pill row gen-div">
+								<ul class="tab-nav">
+								    <li class="active"><a href="#">Arbitration</a></li>
+								    <li><a href="#">Education</a></li>
+								    <li><a href="#">Keybox</a></li>
+								    <li><a href="#">MLS</a></li>
+								    <li><a href="#">Membership</a></li>
+								</ul>
+
+								<div class="tab-content active">
+									<p><a href="">Request and Agreement to Arbitrate</a></p>
+								</div>
+								<div class="tab-content">
+								    <p><a href="">Class Registration</a> (form version) | <a href="">online registration here</a></p>
+									<p><a href="">Compass Academy Application</a></p>
+								</div>
+								<div class="tab-content">
+									<p><a href="">Supra iBox Transfer Form</a></p>
+									<p><a href="">Supra Key Transfer Form</a></p>
+									<p><a href="">Complaint Form</a></p>
+									<p><a href="">Complaint Reply</a></p>
+								</div>
+								<div class="tab-content">
+									<p><a href="">Regional Multiple Listing Service Application</a> (Broker Only)</p>
+									<p><a href="">MLS Only Application</a></p>
+									<p><a href="">MLS Resignation</a> (Broker Only)</p>
+									<p><a href="">MLS Participant Agreement</a> (Broker Only)</p>
+									<p><a href="">Office Support Staff Application</a></p>
+									<p><a href="">Unlicensed Assistant Application</a></p>
+								</div>
+								<div class="tab-content">
+								    <p><a href="">Affiliate Membership Application </a></p>
+								    <p><a href="">Broker Change Letter (Broker Only) </a></p>
+									<p><a href="">Limited Function Referral Office (LFRO) Certification</a></p>
+									<p><a href="">Membership Application</a></p>
+									<p><a href="">Orientation Calendar</a></p>
+									<p><a href="">REALTOR® Change Form</a></p>
+									<p><a href="">Regional Multiple Listing Service Application (Broker Only)</a></p>
+									<p><a href="">Regional Multiple Listing Service (RMLS) Resignation Form (Broker Only)</a></p>
+									<p><a href="">Salesperson Certification Form (Broker Only)</a></p>			
+									<p><a href="">Support Affiliate Membership</a></p>
+								</div>
 							</section>
 						</div>
-
-						<div class="row">
-							<section class="three columns gen-div team-executive team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
+						<div class="four columns">
+							<section class="row gen-div">
+								<div class="gen-div-inner">
+									<a class="twitter-timeline" href="https://twitter.com/mplsREALTORS" data-widget-id="456195151069589504">Tweets de @mplsREALTORS</a>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+									</script>
+								</div>
 							</section>
-
-							<section class="three columns gen-div team-marketing team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
+							<section class="row gen-div">
+								<div class="gen-div-inner">
+									<div class="fb-activity" data-site="https://www.facebook.com/MinneapolisREALTORS" data-action="likes, recommends" data-colorscheme="light" data-header="false"></div>
+								</div>
 							</section>
-
-							<section class="three columns gen-div team-edu team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-account team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
 						</div>
-
-						<div class="row">
-							<section class="three columns gen-div team-executive team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-marketing team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-edu team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
-							<section class="three columns gen-div team-account team">
-								<h3 class="gen-div-header">Mark Allen</h3>
-								<article class="gen-div-inner">
-									<article class="twelve columns"><img src="http://news.nationalgeographic.com/news/2005/08/photogalleries/ligers_dynamite/images/primary/Liger4.jpg" /></article>
-									<p> Chief Executive Officer <br />
-										952.988.3134 <br />
-										<a href="mailto:marka@mplsrealtor.com">Email</a> </p>
-								</article>
-							</section>
-
 						</div>
+					</div>
 
 					</div><!-- / main-body -->
 
@@ -438,6 +440,7 @@
 	<!-- Sidebar javascript files -->
 	<script src="js/classie.js"></script>
 	<script src="js/sidebar-effects.js"></script>
+
 
 	<!-- Slider javascript files -->
 	<script src="js/jquery.flexslider.js"></script>

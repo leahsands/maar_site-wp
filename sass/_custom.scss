@@ -31,6 +31,8 @@ body,
 	position: relative;
 }
 
+.ttip:after { z-index: 1000; }
+
 .alignleft { float: left; overflow: auto; }
 .alignright { float: right; overflow: auto; }
 
@@ -64,8 +66,8 @@ body,
 
 .maar-content-inner {
 	position: relative;
-	overflow: auto;
-	margin-top: 60px;
+	overflow: visible;
+	margin-top: 73px;
 }
 
 /* ---- Font Styles ---- */
@@ -77,12 +79,26 @@ h1, h2, h3, h4 {
   }
 }
 
-h1 { @include font-size($xxlarge) }
-h2 { @include font-size($larger) }
-h3 { @include font-size($large) }
-h4 { @include font-size($med) }
+h1 {
+	@include font-size($xxxlarge);
+	@media only screen and (max-width: $tablet-device-width) { @include font-size($xlarge) }
+}
+h2 {
+	@include font-size($xxlarge);
+	@media only screen and (max-width: $tablet-device-width) { @include font-size($large) }
+}
+h3 {
+	@include font-size($xlarge);
+	@media only screen and (max-width: $tablet-device-width) { @include font-size($larger) }
+}
+h4 {
+	@include font-size($larger);
+	@media only screen and (max-width: $tablet-device-width) { @include font-size($large) }
+}
 
 a { font-weight: $font-weight-bold; }
+
+i { font-weight: $font-weight-regular !important; }
 
 /* ---- Top Member Navigation ---- */
 
@@ -91,11 +107,9 @@ a { font-weight: $font-weight-bold; }
 	position: fixed;
 	z-index: 300;
 	padding-bottom: 30px;
+	padding-right: 0;
 	//in order to create a fade effect for the member navigation as the page scrolls
-	background: -webkit-linear-gradient(top, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /*Safari 5.1-6*/
-	background: 	-o-linear-gradient(bottom, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /*Opera 11.1-12*/
-	background: -moz-linear-gradient(bottom, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /* Firefox */
-	background: 	linear-gradient(to bottom, rgba(247,247,247,1) 60%, rgba(247,247,247,0) 85%); /*Standard*/
+	@include maar-gradient(rgba(247,247,247,0.99), 60%, rgba(247,247,247,0), 85%);
 	i {
 		color: $tru-white;
 	}
@@ -170,12 +184,34 @@ a { font-weight: $font-weight-bold; }
 	background: $grey;
 	display: inline-block;
 	height: 46px;
+	.ttip {
+		padding: 10px 2px;
+		height: 100%;
+		&:hover {
+			background: $grey-drk;
+		}
+	}
+}
+
+.mem-tools-login {
+	background: $secondary-color;
+	height: inherit;
+	padding: 10px 12px;
+	p {
+		float: left;
+		color: $tru-white;
+	}
+	&:hover { background: $secondary-hover-color; }
+	.mem-icon {
+		&:hover { background: none; }
+
+	}
 }
 
 .mem-icon {
-	background: $grey;
-	padding: $gutter-in-px 4px 8px;
+	//padding: $gutter-in-px 4px 8px;
 	float: left;
+	//height: inherit;
 	font-weight: $font-weight-regular;
 	@media only screen and (max-width: $mobile-width) {
 		margin-bottom: 0;
@@ -184,7 +220,6 @@ a { font-weight: $font-weight-bold; }
 		background: transparent;
 	}
 	&:hover {
-		background: $grey-drk;
 		@include maar-transition(0.5s, background);
 	}
 }
@@ -254,6 +289,8 @@ a { font-weight: $font-weight-bold; }
 }
 
 .field .input.textarea { height: 215px; }
+
+.picker { background: $tru-white; }
 
 /* ----- Pill Tab Styles ----- */
 .tab-nav > li {
@@ -333,7 +370,7 @@ a { font-weight: $font-weight-bold; }
 	float: left;
 	padding: $gutter-in-px;
 	width: 100%;
-	height: 160px;
+	height: 180px;
 	overflow: hidden;
 	h2 { float: left; }
 	@media only screen and (max-width: $tablet-device-width) {
@@ -353,80 +390,111 @@ a { font-weight: $font-weight-bold; }
 .mrkt-data {
 	margin-top: 30px !important;
 	margin-bottom: $gutter-in-px;
-	background: $tru-white;
-	border-bottom: 5px solid $gen-div-border;
+	@include maar-gradient($blu, 30%, $blu-lgt, 100%);
+	//border-bottom: 5px solid $gen-div-border;
 	h1 {
 		margin-bottom: 0;
 		padding-bottom: 0;
+		color: $tru-white;
+	}
+	p {
+		color: $tru-white;
+		line-height: 1.3em;
 	}
 	@media only screen and (max-width: $tablet-device-width) {
 		margin-top: 80px;
 		padding: 0;
-		background: transparent;
 		border-bottom: none;
+		h1 { margin-left: $gutter-in-px; }
 	}
 	@media only screen and (max-width: $mobile-width) {
 		margin-top: 80px;
 	}
+	.ttip:before {
+		min-width: inherit;
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+	}
+	.ttip:after {
+		min-width: inherit;
+		top: 100%;
+		margin-top: -10px;
+		left: 0;
+		right: 0;
+		background: $primary-hover-color;
+		border: none;
+		text-transform: none;
+		font-size: $small;
+
+	}
 	li {
-		margin-bottom: $gutter-in-px;
+		margin: 0;
 		padding: 2% 1%;
 		height: 120px;
-		overflow: hidden;
 		text-transform: uppercase;
 		text-align: center;
+		@media only screen and (min-width: $tablet-device-width) {
+			width: 12.5% !important;
+		}
+		@media only screen and (min-width: $tablet-device-width) and (max-width: 1060px) {
+			p { font-size: 10px; }
+		}
 		@media only screen and (max-width: $tablet-device-width) {
 			margin-top: 0;
 			margin-bottom: 0;
 			height: 60px;
 			padding: 3% 5% !important;
-			background: $primary-color;
-			.infosparks-icon { @include mrkt-data-img('img/assets/icons/infosparks-white.png'); float: right; }
-			.faststats-icon {  @include mrkt-data-img('img/assets/icons/faststats-white.png'); float: right; }
-			.skinny-icon { @include mrkt-data-img('img/assets/icons/skinny-white.png'); float: right; }
+			.infosparks-icon { float: right; }
+			.faststats-icon { float: right; }
+			.skinny-icon { float: right; }
 			&:hover { padding: 2% 5% !important; }
-			h3 { float: left; color: $white; }
+			p { float: left; color: $white; }
 		}
-
 		&:hover {
-			background: $primary-color;
+			background: $primary-hover-color;
 			padding: 1%;
-			h3 {
+			p {
 				color: $white;
 			}
-			.infosparks-icon { @include mrkt-data-img('img/assets/icons/infosparks-white.png'); }
-			.faststats-icon { @include mrkt-data-img('img/assets/icons/faststats-white.png'); }
-			.skinny-icon { @include mrkt-data-img('img/assets/icons/skinny-white.png'); }
-		}
-		&:first-child {
-			border-left: none;
+			@media only screen and (min-width: $tablet-device-width) {
+				.market-icon { bottom: 30px; }
+			}
 		}
 	}
 }
 .market-icon {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
 	margin: 0 auto;
 	background-size: 32px 32px;
 	width: 32px;
 	height: 32px;
+	@media only screen and (max-width: $tablet-device-width) {
+		position: relative;
+		bottom: 0;
+	}
 }
 
 .infosparks-icon {
-	@include mrkt-data-img('img/assets/icons/infosparks.png');
+	@include mrkt-data-img('img/assets/icons/infosparks-white.png');
 }
 
 .faststats-icon {
-	@include mrkt-data-img('img/assets/icons/faststats.png');
+	@include mrkt-data-img('img/assets/icons/faststats-white.png');
 
 }
 
 .skinny-icon {
-	@include mrkt-data-img('img/assets/icons/skinny.png');
+	@include mrkt-data-img('img/assets/icons/skinny-white.png');
 
 }
 
 /* ----------- Notification Alert ----------- */
 .notify {
-	background: $secondary-color;
+	background: $blu-lgt;
 	p {
 		margin-bottom: 0;
 		color: $white;
@@ -436,7 +504,7 @@ a { font-weight: $font-weight-bold; }
 	}
 }
 
-/* ----------- Welcome ----------- */
+/* ----------- Welcome ----------- 
 .welcome {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -450,7 +518,7 @@ a { font-weight: $font-weight-bold; }
 		@include font-size($large);
 		line-height: $threehalf-line-height;
 	}
-}
+} */
 
 /* ----------- News, Videos, Calendar ----------- */
 .archive {
@@ -459,6 +527,9 @@ a { font-weight: $font-weight-bold; }
 	color: $grey-lgtr;
 	&:hover {
 		color: $grey-lgt;
+	}
+	@media only screen and (max-width: $tablet-device-width) {
+		padding: ($gutter-in-px/2);
 	}
 }
 
@@ -511,6 +582,7 @@ a { font-weight: $font-weight-bold; }
 			float: left;
 			color: $secondary-color;
 			text-transform: uppercase;
+			font-size: 11px;
 			line-height: 1.5em;
 			@media only screen and (max-width: $mobile-width) {
 				bottom: -10px;

@@ -2,7 +2,7 @@
 .side-scroll {
 	display:block;
 	position: absolute;
-	top: 90px;
+	top: 100px;
 	bottom: 0;
 	width: $sidebar-width;
 	overflow-y: hidden;
@@ -114,7 +114,7 @@
 	&:after {
 		position: absolute;
 		left:0;
-		top: 89px;
+		top: 103px;
 		z-index: 100;
 		//width: $sidebar-width;
 		height: 0;
@@ -127,8 +127,8 @@
 	img {
 		max-width: 100%;
 		width: $sidebar-width;
-		height: 81px;
-		padding: $gutter-in-px 50px 0 50px;
+		height: 95px;
+		padding: ($gutter-in-px/2) 30px 0;
 	}
 	@media only screen and (max-width: $mobile-width) {
 		display: none;
@@ -136,12 +136,12 @@
 }
 
 /* ---- Drawer Styles --- */
-.drawer {
+.side-menu .drawer {
 	background: $nav-drawer-color;
 	@include div-shadow(inset);
 }
 
-.drawer ul li {
+.side-menu .drawer ul li {
 	margin-top: 0px !important;
 	a {
 		text-transform: none;

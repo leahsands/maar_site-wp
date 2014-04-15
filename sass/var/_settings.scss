@@ -6,7 +6,7 @@
 $row-max-width: 940px !default;    				// 940px
 $gutter-in-px: 12px !default;      				// 20px
 $cols: 12 !default;              				// 12 Column Default Grid
-$hybrid: 14 !default;							// 16 Column Default Hybrid Grid
+$hybrid: 16 !default;							// 16 Column Default Hybrid Grid
 
 $sidebar-width: 240px;
 
@@ -53,8 +53,8 @@ $rhythm-height: .711;
 // Modular Scale Settings
 // http://www.modularscale.com by Tim Brown
 // https://github.com/scottkellum/modular-scale
-$ratio: fifth();						// Ratio for Modular Scale
-$base-font-size: 12px !default;
+$ratio: fourth();						// Ratio for Modular Scale
+$base-font-size: 13px !default;
 $importantNum: 78px !default;
 $base-size: $base-font-size $importantNum;
 // Gumby Default Scale Values: 16, 18, 26, 30, 42, 48, 68, 78, 110, 126;
@@ -79,13 +79,14 @@ $grey: #414042;
 $grey-lgt: lighten($grey, 15%);
 $grey-lgtr: lighten($grey-lgt, 15%);
 $grey-lgtst: #e7e7e7;
-$grey-drk: darken($grey, 5%);
+$grey-drk: darken($grey, 10%);
 $grey-drkr: darken($grey-drk, 5%);
 $white: #f7f7f7;
 $tru-white: #fff;
 
 $blu: #334374;
 $blu-drk: #072554;
+$blu-lgt: lighten($blu, 25%);
 
 $red: #e82e0a;
 $red-drk: darken($red, 10%);
@@ -163,11 +164,11 @@ $poplinks-hover-color: $primary-hover-color;
 // Drawers & Modals
 $modal-overlay-color: rgba(0, 0, 0, 0.8);
 $modal-window-color: $white;
-$drawer-background-color: #3e4144;
+$drawer-background-color: $tru-white;
 $drawer-inner-shadow-x-offset: 0;
 $drawer-inner-shadow-y-offset: 2px;
-$drawer-inner-shadow-blur: 5px;
-$drawer-inner-shadow-color: #313436;
+$drawer-inner-shadow-blur: 3px;
+$drawer-inner-shadow-color: $grey-lgtst;
 
 // Tables
 $table-bgcolor: #fff;
@@ -182,7 +183,7 @@ $table-cell-border-style: solid;
 // .rounded
 $table-border-radius: 4px;
 // .striped
-$table-stripe-bgcolor: #e5e5e5;
+$table-stripe-bgcolor: $grey-lgt;
 
 // Tooltips
 $tt-min-width: 130px;
@@ -236,11 +237,12 @@ $box-shadow-color: rgba(0, 0, 0, 0.2);
 };
 
 //Grayscale
-@mixin maar-transition ($time: 0.5s, $type: all, $ease: ease){
+@mixin maar-transition ($time: 0.3s, $type: all, $ease: ease-out){
 	-webkit-transition: $type $time $ease;
        -moz-transition: $type $time $ease;
     	 -o-transition: $type $time $ease;
    		    transition: $type $time $ease;
+
 }
 
 @mixin grayscale{
@@ -252,6 +254,14 @@ $box-shadow-color: rgba(0, 0, 0, 0.2);
 @mixin grayscale-color{
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%);
+}
+
+//Gradient 
+@mixin maar-gradient($color1, $position1, $color2, $position2){
+	background: -webkit-linear-gradient(top, $color1 $position1, $color2 $position2); /*Safari 5.1-6*/
+	background: 	-o-linear-gradient(bottom, $color1 $position1, $color2 $position2); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(bottom, $color1 $position1, $color2 $position2); /* Firefox */
+	background: 	linear-gradient(to bottom, $color1 $position1, $color2 $position2); /*Standard*/
 }
 
 //Icon image scaling

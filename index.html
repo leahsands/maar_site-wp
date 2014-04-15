@@ -155,18 +155,8 @@
 	    				<li><a href="forms.html">Applications &amp; Forms</a></li>
 	    				<li><a href="#">Real Estate Services Guide</a></li>
 	    				<li><a href="#">Supra Keybox System</a></li>
-	    				<li><a href="#">Dues &amp; Fees</a></li>
+	    				<li><a href="dues.html">Dues &amp; Fees</a></li>
 	    				<li><a href="#">FAQ</a></li>
-	    				</ul>
-	    				</section>
-	    			</li>
-	    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">News &amp; Media</a></li>
-	    				<section id="news-toggle-nav" class="drawer">
-	    				<ul>
-	    				<li><a href="#">Communications</a></li>
-	    				<li><a href="#">Newsletter</a></li>
-	    				<li><a href="#">Videos</a></li>
-	    				<li><a href="#">Blog</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>
@@ -192,14 +182,24 @@
 	    				</ul>
 	    				</section>
 	    			</li>
+	    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">News &amp; Media</a></li>
+	    				<section id="news-toggle-nav" class="drawer">
+	    				<ul>
+	    				<li><a href="#">Communications</a></li>
+	    				<li><a href="#">Newsletter</a></li>
+	    				<li><a href="#">Videos</a></li>
+	    				<li><a href="#">Blog</a></li>
+	    				</ul>
+	    				</section>
+	    			</li>
 	    			<li><a href="#" class="switch" gumby-trigger="#com-toggle-nav|#about-toggle-nav, #news-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav">Join Communities</a></li>
 	    				<section id="com-toggle-nav" class="drawer">
 	    				<ul>
-	    				<li><a href="#">Affliates</a></li>
-	    				<li><a href="#">Appraisers</a></li>
-	    				<li><a href="#">Brokers</a></li>
-	    				<li><a href="#">Global Business Council</a></li>
-	    				<li><a href="#">Yo Pro</a></li>
+	    				<li><a href="community.html">Affliates</a></li>
+	    				<li><a href="community.html">Appraisers</a></li>
+	    				<li><a href="community.html">Brokers</a></li>
+	    				<li><a href="community.html">Global Business Council</a></li>
+	    				<li><a href="community.html">Yo Pro</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>
@@ -235,7 +235,7 @@
 							<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><p class="mem-icon"><i class="icon-basket"></i> Online Store</p></a>
 						</li>
 						<li class="twelve columns">
-							<a><p class="mem-icon"><i class="icon-chart-bar"></i> Market Data</p></a>
+							<a href="mrk-data.html"><p class="mem-icon"><i class="icon-chart-bar"></i> Market Data</p></a>
 						</li>
 						<li class="twelve columns">
 							<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><p class="mem-icon"><i class="icon-calendar"></i> Calendar</p></a>
@@ -282,7 +282,7 @@
 
 					<!-- Top Member Navigation -->
 					<div class="row" id="mem-nav">
-						<div class="three columns push_seven">
+						<div class="three columns push_six">
 							<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
 							<ul>
 								<li class="field search-field">
@@ -292,20 +292,18 @@
 							</ul>
 							</form>
 						</div>
-						<div class="two columns">
-							<div class="mem-tools">
-								<div class="ttip three columns" data-tooltip="Login" alt="">
-									<a href="https://maarportal.ramcoams.net" target="_blank"><div class="mem-icon"><i class="icon-login"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Market Data" alt="">
-									<a><div class="mem-icon"><i class="icon-chart-bar"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Calendar" alt="">
-									<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><div class="mem-icon"><i class="icon-calendar"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Store" alt="">
-									<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><div class="mem-icon"><i class="icon-basket"></i></div></a>
-								</div>
+						<div class="three columns mem-tools">
+							<div class="six columns mem-tools-login">
+								<a href="https://maarportal.ramcoams.net" target="_blank"><div class="mem-icon"><i class="icon-login"></i></div><p>LOGIN</p></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Market Data" alt="">
+								<a href="mrk-data.html"><div class="mem-icon"><i class="icon-chart-bar"></i></div></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Calendar" alt="">
+								<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><div class="mem-icon"><i class="icon-calendar"></i></div></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Store" alt="">
+								<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><div class="mem-icon"><i class="icon-basket"></i></div></a>
 							</div>
 						</div>
 					</div><!-- / top member navigation -->
@@ -316,25 +314,41 @@
 					<!-- Market Data -->
 					<div class="row mrkt-data main-body">
 						<h1>Today in the Market</h1>
-						<section class="centered ten columns">
-							<div class="fourteen colgrid">
-							<ul>
-								<li class="two columns push_one">
-									<h3>Infosparks</h3>
+						<section class="sixteen colgrid">
+							<ul class="row">
+								<li class="ttip two columns" data-tooltip="The real estate market expert's best friend. Interactive, mobile friendly, widget ready and fresh daily" alt="">
+									<p>Infosparks</p>
 									<div class="market-icon infosparks-icon"></div>
 								</li>
-								<li class="two columns">
-									<h3>Faststats</h3>
-									<div class="market-icon faststats-icon"></div>
+								<li class="ttip two columns" data-tooltip="Get local" alt="">
+									<p>Local Market Updates</p>
+									<div class="market-icon infosparks-icon"></div>
 								</li>
-								<li class="two columns">
-									<h3>The Skinny</h3>
+								<li class="ttip two columns" data-tooltip="See the big picture" alt="">
+									<p>Monthly Indicators</p>
+									<div class="market-icon infosparks-icon"></div>
+								</li>
+								<li class="ttip two columns" data-tooltip="Trends behind trends" alt="">
+									<p>Housing Supply</p>
+									<div class="market-icon infosparks-icon"></div>
+								</li>
+								<li class="ttip two columns" data-tooltip="..." alt="">
+									<p>Foreclosure Report</p>
+									<div class="market-icon infosparks-icon"></div>
+								</li>
+								<li class="ttip two columns" data-tooltip="A smart, informative and fast breakdown of your local housing market" alt="">
+									<p>The Skinny</p>
 									<div class="market-icon skinny-icon"></div>
 								</li>
-								<li class="two columns"><h3>Annual Reports</h3></li>
-								<li class="two columns"><h3>Weekly Activities</h3></li>
+								<li class="ttip two columns" data-tooltip="Your full year at a glance" alt="">
+									<p>Annual Reports</p>
+									<div class="market-icon infosparks-icon"></div>
+								</li>
+								<li class="ttip two columns" data-tooltip="Trend-spotting faster" alt="">
+									<p>Weekly Activity</p>
+									<div class="market-icon infosparks-icon"></div>
+								</li>
 							</ul>
-							</div>
 						</section>
 					</div>
 
@@ -365,13 +379,6 @@
 					</div>
 
 					<div class="row main-body">
-
-						<!-- Welcome -->
-						<div class="row">
-							<section class="twelve columns welcome">
-								<p>Hey, welcome to MAAR!! This is just an area for a personal greeting so you feel more welcome to the website! If  you'd like to know more about our foundation, you can navigate to <a href="#">this page</a> to find out more!</p>
-							</section>
-						</div>
 
 						<!-- News, Video, Calendar -->
 						<div class="row">
