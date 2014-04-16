@@ -63,22 +63,8 @@
 	}
 	</script> -->
 
-	<!-- Include gumby.js followed by UI modules followed by gumby.init.js
-	Or concatenate and minify into a single file 
-	<script gumby-touch="js/libs" src="bower_components/gumby/js/libs/gumby.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.retina.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.fixed.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.skiplink.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.toggleswitch.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.checkbox.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.radiobtn.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.tabs.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.navbar.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/jquery.validation.js"></script>
-	<script src="bower_components/gumby/js/libs/gumby.init.js"></script>
-
 	
-	Google's recommended deferred loading of JS
+	<!--Google's recommended deferred loading of JS
 	gumby.min.js contains gumby.js, all UI modules and gumby.init.js
 
 	Note: If you opt to use this method of defered loading,
@@ -98,7 +84,10 @@
 	window.attachEvent("onload", downloadJSAtOnload);
 	else window.onload = downloadJSAtOnload;
 	</script> -->
+
+
 	<script src="js/gumby.min.js"></script>
+	<script src="js/custom.js"></script>
 
 	<script src="bower_components/gumby/js/plugins.js"></script>
 	<script src="bower_components/gumby/js/main.js"></script>
@@ -155,7 +144,7 @@
 	    				<li><a href="forms.html">Applications &amp; Forms</a></li>
 	    				<li><a href="#">Real Estate Services Guide</a></li>
 	    				<li><a href="#">Supra Keybox System</a></li>
-	    				<li><a href="#">Dues &amp; Fees</a></li>
+	    				<li><a href="dues.html">Dues &amp; Fees</a></li>
 	    				<li><a href="#">FAQ</a></li>
 	    				</ul>
 	    				</section>
@@ -195,11 +184,11 @@
 	    			<li><a href="#" class="switch" gumby-trigger="#com-toggle-nav|#about-toggle-nav, #news-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav">Join Communities</a></li>
 	    				<section id="com-toggle-nav" class="drawer">
 	    				<ul>
-	    				<li><a href="#">Affliates</a></li>
-	    				<li><a href="#">Appraisers</a></li>
-	    				<li><a href="#">Brokers</a></li>
-	    				<li><a href="#">Global Business Council</a></li>
-	    				<li><a href="#">Yo Pro</a></li>
+	    				<li><a href="community.html">Affliates</a></li>
+	    				<li><a href="community.html">Appraisers</a></li>
+	    				<li><a href="community.html">Brokers</a></li>
+	    				<li><a href="community.html">Global Business Council</a></li>
+	    				<li><a href="community.html">Yo Pro</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>
@@ -323,37 +312,49 @@
 							<section class="eight columns">
 								<p>Upon joining the Minneapolis Area Association of REALTORS® (MAAR), you will be required to pay member dues which are prorated depending on the month you join. Our annual renewal is billed every November to be applied toward the following calendar year. Member dues must be paid annually in order to keep the membership active. View our online dues schedule.</p>
 								<p class="danger alert">PLEASE NOTE THERE ARE NO REFUNDS FOR EITHER MEMBERSHIP DUES OR MLS FEES. ALSO, NOTE THAT IF YOU BECOME INACTIVE FOR MORE THAN 60 DAYS, THERE IS $100 REINSTATEMENT FEE.</p>
-								<table class="striped rounded">
-									<thead>
-										<tr>
-											<th colspan="9">Designated REALTOR&reg; Dues and REALTOR&reg; Dues Prorated</th>
-										</tr>
-										<tr>
-											<th>Month</th>
-											<th>Local MAAR</th>
-											<th>State MNAR</th>
-											<th>National NAR</th>
-											<th>National Advert.</th>
-											<th>Dues Subtotal</th>
-											<th>App Fee MAAR</th>
-											<th>App Fee MNAR</th>
-											<th>Total</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>November 2013</td>
-											<td>$175.00</td>
-											<td>$151.25</td>
-											<td>$140.00</td>
-											<td>$70.00</td>
-											<td>$536.25</td>
-											<td>$50.00</td>
-											<td>$100.00</td>
-											<td>$686.25</td>
-										</tr>
-									</tbody>
-								</table>
+								<ul class="row">
+								<li class="field">
+									<div class="picker">
+										<select>
+											<option value="#" disabled>Choose a month:</option>
+											<option value="#11">November 2013</option>
+											<option value="#12">December 2013</option>
+											<option value="#1">January 2014</option>
+											<option value="#2">February 2014</option>
+											<option value="#3">March 2014</option>
+											<option value="#4">April 2014</option>
+											<option value="#5">May 2014</option>
+										</select>
+									</div>
+								</li>
+								</ul>
+								<section class="striped rounded">
+									<article class="row">
+											<div class="twelve columns">Designated REALTOR&reg; Dues and REALTOR&reg; Dues Prorated</div>
+									</article>
+									<article class="row" style="font-size: 10px;">
+										<div class="two columns">Month</div>
+										<div class="columns">Local MAAR</div>
+										<div class="columns">State MNAR</div>
+										<div class="columns">National NAR</div>
+										<div class="columns">National Advert.</div>
+										<div class="columns">Dues Subtotal</div>
+										<div class="columns">App Fee MAAR</div>
+										<div class="columns">App Fee MNAR</div>
+										<div class="columns">Total</div>
+									</article>
+									<article class="row">
+										<div class="two columns">November 2013</div>
+										<div class="columns">$175.00</div>
+										<div class="columns">$151.25</div>
+										<div class="columns">$140.00</div>
+										<div class="columns">$70.00</div>
+										<div class="columns">$536.25</div>
+										<div class="columns">$50.00</div>
+										<div class="columns">$100.00</div>
+										<div class="columns">$686.25</div>
+									</article>
+								</section>
 							</section>
 						</div>
 					</div>

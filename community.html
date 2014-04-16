@@ -63,22 +63,8 @@
 	}
 	</script> -->
 
-	<!-- Include gumby.js followed by UI modules followed by gumby.init.js
-	Or concatenate and minify into a single file 
-	<script gumby-touch="js/libs" src="bower_components/gumby/js/libs/gumby.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.retina.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.fixed.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.skiplink.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.toggleswitch.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.checkbox.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.radiobtn.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.tabs.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.navbar.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/jquery.validation.js"></script>
-	<script src="bower_components/gumby/js/libs/gumby.init.js"></script>
-
 	
-	Google's recommended deferred loading of JS
+	<!--Google's recommended deferred loading of JS
 	gumby.min.js contains gumby.js, all UI modules and gumby.init.js
 
 	Note: If you opt to use this method of defered loading,
@@ -98,7 +84,10 @@
 	window.attachEvent("onload", downloadJSAtOnload);
 	else window.onload = downloadJSAtOnload;
 	</script> -->
+
+
 	<script src="js/gumby.min.js"></script>
+	<script src="js/custom.js"></script>
 
 	<script src="bower_components/gumby/js/plugins.js"></script>
 	<script src="bower_components/gumby/js/main.js"></script>
@@ -120,16 +109,6 @@
 </head>
 
 <body>
-	<!--facebook plugin -->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-
 	<!-- for the purpose of the mobile navigation, the whole body is in a "maar-container" div -->
 	<div id="maar-container" class="maar-container">
 		<!-- content push wrapper -->
@@ -165,7 +144,7 @@
 	    				<li><a href="forms.html">Applications &amp; Forms</a></li>
 	    				<li><a href="#">Real Estate Services Guide</a></li>
 	    				<li><a href="#">Supra Keybox System</a></li>
-	    				<li><a href="#">Dues &amp; Fees</a></li>
+	    				<li><a href="dues.html">Dues &amp; Fees</a></li>
 	    				<li><a href="#">FAQ</a></li>
 	    				</ul>
 	    				</section>
@@ -205,11 +184,11 @@
 	    			<li><a href="#" class="switch" gumby-trigger="#com-toggle-nav|#about-toggle-nav, #news-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav">Join Communities</a></li>
 	    				<section id="com-toggle-nav" class="drawer">
 	    				<ul>
-	    				<li><a href="#">Affliates</a></li>
-	    				<li><a href="#">Appraisers</a></li>
-	    				<li><a href="#">Brokers</a></li>
-	    				<li><a href="#">Global Business Council</a></li>
-	    				<li><a href="#">Yo Pro</a></li>
+	    				<li><a href="community.html">Affliates</a></li>
+	    				<li><a href="community.html">Appraisers</a></li>
+	    				<li><a href="community.html">Brokers</a></li>
+	    				<li><a href="community.html">Global Business Council</a></li>
+	    				<li><a href="community.html">Yo Pro</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>

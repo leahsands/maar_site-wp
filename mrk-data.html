@@ -63,22 +63,8 @@
 	}
 	</script> -->
 
-	<!-- Include gumby.js followed by UI modules followed by gumby.init.js
-	Or concatenate and minify into a single file 
-	<script gumby-touch="js/libs" src="bower_components/gumby/js/libs/gumby.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.retina.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.fixed.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.skiplink.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.toggleswitch.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.checkbox.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.radiobtn.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.tabs.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/gumby.navbar.js"></script>
-	<script src="bower_components/gumby/js/libs/ui/jquery.validation.js"></script>
-	<script src="bower_components/gumby/js/libs/gumby.init.js"></script>
-
 	
-	Google's recommended deferred loading of JS
+	<!--Google's recommended deferred loading of JS
 	gumby.min.js contains gumby.js, all UI modules and gumby.init.js
 
 	Note: If you opt to use this method of defered loading,
@@ -98,7 +84,10 @@
 	window.attachEvent("onload", downloadJSAtOnload);
 	else window.onload = downloadJSAtOnload;
 	</script> -->
+
+
 	<script src="js/gumby.min.js"></script>
+	<script src="js/custom.js"></script>
 
 	<script src="bower_components/gumby/js/plugins.js"></script>
 	<script src="bower_components/gumby/js/main.js"></script>
@@ -155,18 +144,8 @@
 	    				<li><a href="forms.html">Applications &amp; Forms</a></li>
 	    				<li><a href="#">Real Estate Services Guide</a></li>
 	    				<li><a href="#">Supra Keybox System</a></li>
-	    				<li><a href="#">Dues &amp; Fees</a></li>
+	    				<li><a href="dues.html">Dues &amp; Fees</a></li>
 	    				<li><a href="#">FAQ</a></li>
-	    				</ul>
-	    				</section>
-	    			</li>
-	    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">News &amp; Media</a></li>
-	    				<section id="news-toggle-nav" class="drawer">
-	    				<ul>
-	    				<li><a href="#">Communications</a></li>
-	    				<li><a href="#">Newsletter</a></li>
-	    				<li><a href="#">Videos</a></li>
-	    				<li><a href="#">Blog</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>
@@ -192,14 +171,24 @@
 	    				</ul>
 	    				</section>
 	    			</li>
+	    			<li><a href="#" class="switch" gumby-trigger="#news-toggle-nav|#about-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav, #com-toggle-nav">News &amp; Media</a></li>
+	    				<section id="news-toggle-nav" class="drawer">
+	    				<ul>
+	    				<li><a href="#">Communications</a></li>
+	    				<li><a href="#">Newsletter</a></li>
+	    				<li><a href="#">Videos</a></li>
+	    				<li><a href="#">Blog</a></li>
+	    				</ul>
+	    				</section>
+	    			</li>
 	    			<li><a href="#" class="switch" gumby-trigger="#com-toggle-nav|#about-toggle-nav, #news-toggle-nav, #mem-toggle-nav, #edu-toggle-nav, #adv-toggle-nav">Join Communities</a></li>
 	    				<section id="com-toggle-nav" class="drawer">
 	    				<ul>
-	    				<li><a href="#">Affliates</a></li>
-	    				<li><a href="#">Appraisers</a></li>
-	    				<li><a href="#">Brokers</a></li>
-	    				<li><a href="#">Global Business Council</a></li>
-	    				<li><a href="#">Yo Pro</a></li>
+	    				<li><a href="community.html">Affliates</a></li>
+	    				<li><a href="community.html">Appraisers</a></li>
+	    				<li><a href="community.html">Brokers</a></li>
+	    				<li><a href="community.html">Global Business Council</a></li>
+	    				<li><a href="community.html">Yo Pro</a></li>
 	    				</ul>
 	    				</section>
 	    			</li>
@@ -235,7 +224,7 @@
 							<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><p class="mem-icon"><i class="icon-basket"></i> Online Store</p></a>
 						</li>
 						<li class="twelve columns">
-							<a><p class="mem-icon"><i class="icon-chart-bar"></i> Market Data</p></a>
+							<a href="mrk-data.html"><p class="mem-icon"><i class="icon-chart-bar"></i> Market Data</p></a>
 						</li>
 						<li class="twelve columns">
 							<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><p class="mem-icon"><i class="icon-calendar"></i> Calendar</p></a>
@@ -282,7 +271,7 @@
 
 					<!-- Top Member Navigation -->
 					<div class="row" id="mem-nav">
-						<div class="three columns push_seven">
+						<div class="three columns push_six">
 							<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
 							<ul>
 								<li class="field search-field">
@@ -292,20 +281,18 @@
 							</ul>
 							</form>
 						</div>
-						<div class="two columns">
-							<div class="mem-tools">
-								<div class="ttip three columns" data-tooltip="Login" alt="">
-									<a href="https://maarportal.ramcoams.net" target="_blank"><div class="mem-icon"><i class="icon-login"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Market Data" alt="">
-									<a><div class="mem-icon"><i class="icon-chart-bar"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Calendar" alt="">
-									<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><div class="mem-icon"><i class="icon-calendar"></i></div></a>
-								</div>
-								<div class="ttip three columns" data-tooltip="Store" alt="">
-									<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><div class="mem-icon"><i class="icon-basket"></i></div></a>
-								</div>
+						<div class="three columns mem-tools">
+							<div class="six columns mem-tools-login">
+								<a href="https://maarportal.ramcoams.net" target="_blank"><div class="mem-icon"><i class="icon-login"></i></div><p>LOGIN</p></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Market Data" alt="">
+								<a href="mrk-data.html"><div class="mem-icon"><i class="icon-chart-bar"></i></div></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Calendar" alt="">
+								<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank"><div class="mem-icon"><i class="icon-calendar"></i></div></a>
+							</div>
+							<div class="ttip two columns" data-tooltip="Store" alt="">
+								<a href="https://maarportal.ramcoams.net/Sales/Catalog/ProductSearch.aspx" target="_blank"><div class="mem-icon"><i class="icon-basket"></i></div></a>
 							</div>
 						</div>
 					</div><!-- / top member navigation -->
