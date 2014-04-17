@@ -345,16 +345,20 @@
 					<section class="flexslider row main-body">
 					  <ul class="slides">
 					    <li>
-					      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/tuesdaymornings@maar_fall.jpg" />
+					      <img src="img/featureslider/tuesday.png" />
+					      <div class="flex-caption">
+					      			<h1 class="fittext" gumby-rate="0.5" gumby-sizes="14|40">Tuesday Mornings at MAAR</h1>
+					      			<h2 class="fittext" gumby-rate="0.5" gumby-sizes="10|30">April 15 at 10am</h2>
+					      			<p class="large default btn">
+					      				<a href="#">Find out more<i class="icon-right-open-big"></i></a>
+					      			</p>
+					      </div>
 					    </li>
 					    <li>
-					      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/takefive.jpg" />
+					      <img src="img/featureslider/summit.png" />
 					    </li>
 					    <li>
-					      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/realtorsummit.jpg" />
-					    </li>
-					    <li>
-					      <img src="http://www.mplsrealtor.com/flash/Mpls_Realtor_2013-02-28/img/MarchMadness-logo.jpg" />
+					      <img src="img/featureslider/takefive.png" />
 					    </li>
 					  </ul>
 					</section>
@@ -363,7 +367,7 @@
 					<!-- Notification -->
 					<div class="row main-body notify">
 						<section class="twelve columns">
-							<p>Due to incliment weather, the MAAR Office is closed today.</p>
+							<p><i class="icon-attention"></i>Due to incliment weather, the MAAR Office is closed today.<i class="icon-attention"></i></p>
 						</section>
 					</div>
 
@@ -442,16 +446,14 @@
 
 
 	<!-- Slider javascript files -->
+		<script src="js/jquery.flexslider-min.js"></script>
 	<script src="js/jquery.flexslider.js"></script>
 	<script>
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
+    $(window).load(function() {
+	  $('.flexslider').flexslider({
+	    animation: "slide"
+	  });
+	});
   </script>
 
 </body>

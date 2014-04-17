@@ -40,6 +40,8 @@
 	-webkit-backface-visibility: hidden;
 } /* Hide the slides before the JS is loaded. Avoids image jumping */
 
+.flexslider .slides li { position: relative; }
+
 .flexslider .slides img {
 	width: 100%; 
 	display: block;
@@ -246,4 +248,28 @@ html[xmlns] .slides {display: block;}
   	right: 10px;
   }
 
+}
+
+/* ------------ Flexslider Captions ------------- */
+.flex-caption {
+	width: 100%;
+	padding: 2%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin-top: 5%;
+	text-align: center;
+	text-shadow: 0 0 5px rgba(0,0,0,0.6);
+	* {color: $tru-white !important;}
+	.btn {
+		background: rgba(0,0,0,0.5) !important;
+		border: none !important;
+		&:hover { background: rgba(0,0,0,0.8) !important; }
+		a {
+			font-weight: $font-weight-regular;
+			text-shadow: none !important;
+		}
+	}
 }

@@ -30,3 +30,7 @@ $('.contact form').validation({
     });
   } 
 });
+
+
+$('h1').addClass('fittext');
+Gumby.initialize('fittext');

@@ -1806,6 +1806,14 @@ i { font-weight: 400 !important; }
 @media only screen and (max-width: 768px) { .tabs.pill .tab-nav > li a { border-right: none; border-bottom: 1px solid #e7e7e7; } }
 @media only screen and (max-width: 768px) { .tabs.pill .tab-nav > li { float: left; margin-left: 0; width: 100%; } }
 
+/* ----------- Dropdown Select Style ----------- */
+.navbar.select-dropdown { background: transparent; margin-bottom: 0; }
+.navbar.select-dropdown ul li { text-align: left; }
+.navbar.select-dropdown ul li:hover > a { background-color: #072554; }
+.navbar.select-dropdown ul li:hover .dropdown { top: 70%; border: none; border-radius: 4px; }
+.navbar.select-dropdown ul li:hover .dropdown ul li > a { border: none; }
+.navbar.select-dropdown ul li > a { text-shadow: none; font-weight: 400; line-height: 33px; height: auto; }
+
 /* ----------- General Div Style ----------- */
 .gen-div { height: 100%; width: 100%; overflow: hidden; margin-top: 12px; padding-bottom: 24px; border-bottom: 5px solid #e7e7e7; background-color: white; }
 .gen-div img { width: 100%; }
@@ -1856,8 +1864,8 @@ i { font-weight: 400 !important; }
 .skinny-icon { background-image: url("../img/assets/icons/skinny-white.png"); background-image: none\9; -webkit-background-size: 32px 32px; -moz-background-size: 32px 32px; -o-background-size: 32px 32px; background-size: 32px 32px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/assets/icons/skinny-white.png', sizingMethod='scale'); -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/assets/icons/skinny-white.png', sizingMethod='scale')"; }
 
 /* ----------- Notification Alert ----------- */
-.notify { background: #697ebd; }
-.notify p { margin-bottom: 0; color: #f7f7f7; font-size: 17px; text-transform: uppercase; text-align: center; }
+.notify { background: #697ebd; padding: 12px; }
+.notify p { margin-bottom: 0; color: #f7f7f7; font-size: 17px; text-transform: uppercase; text-align: center; text-shadow: 0 0 10px #072554; }
 
 /* ----------- Welcome ----------- 
 .welcome {
@@ -2036,6 +2044,8 @@ i { font-weight: 400 !important; }
 .flexslider .slides > li { display: none; padding: 0; -webkit-backface-visibility: hidden; }
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides li { position: relative; }
+
 .flexslider .slides img { width: 100%; display: block; }
 
 .flex-pauseplay span { text-transform: capitalize; }
@@ -2112,3 +2122,9 @@ html[xmlns] .slides { display: block; }
 
 @media only screen and (max-width: 55em) { .flex-direction-nav .flex-prev, .flexslider:hover .flex-prev { opacity: 1; left: 10px; }
   .flex-direction-nav .flex-next, .flexslider:hover .flex-next { opacity: 1; right: 10px; } }
+/* ------------ Flexslider Captions ------------- */
+.flex-caption { width: 100%; padding: 2%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin-top: 5%; text-align: center; text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); }
+.flex-caption * { color: white !important; }
+.flex-caption .btn { background: rgba(0, 0, 0, 0.5) !important; border: none !important; }
+.flex-caption .btn:hover { background: rgba(0, 0, 0, 0.8) !important; }
+.flex-caption .btn a { font-weight: 400; text-shadow: none !important; }

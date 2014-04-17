@@ -327,6 +327,31 @@ i { font-weight: $font-weight-regular !important; }
 	}
 }
 
+/* ----------- Dropdown Select Style ----------- */
+.navbar.select-dropdown {
+	background: transparent;
+	margin-bottom: 0;
+	ul li {
+		text-align: left;
+		&:hover {
+			& > a { background-color: $primary-hover-color; }
+			.dropdown {
+				top: 70%;
+				border:none;
+				border-radius: $table-border-radius;
+				ul li > a {
+					border: none;
+				}
+			}
+		}
+	}
+	ul li > a {
+		text-shadow: none;
+		font-weight: $font-weight-regular;
+		line-height: $threehalf-line-height;
+		height: auto;
+	}
+}
 
 /* ----------- General Div Style ----------- */
 .gen-div {
@@ -495,12 +520,14 @@ i { font-weight: $font-weight-regular !important; }
 /* ----------- Notification Alert ----------- */
 .notify {
 	background: $blu-lgt;
+	padding: $gutter-in-px;
 	p {
 		margin-bottom: 0;
 		color: $white;
 		font-size: $large;
 		text-transform: uppercase;
 		text-align: center;
+		text-shadow: 0 0 10px $primary-hover-color;
 	}
 }
 

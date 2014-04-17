@@ -50,7 +50,7 @@
 	FitText.prototype.resize = function() {
 		var size = this.calculateSize(),
 			scope = this;
-		
+
 		this.$el.css('font-size', size);
 
 		// wrap debug in timeout so not printing on every resize event
