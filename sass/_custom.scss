@@ -353,6 +353,25 @@ i { font-weight: $font-weight-regular !important; }
 	}
 }
 
+/* ----------- Modal Box ------------- */
+.modal.active > .content {
+	min-height: inherit;
+	max-height: inherit;
+	overflow: visible;
+}
+
+.modal > .content > .close {
+	top: -30px;
+	right: -10px;
+	color: $white;
+	background: $grey-drkr;
+	font-size: $large;
+	&:hover {
+		color: $grey-lgtr;
+		background: black;
+	}
+}
+
 /* ----------- General Div Style ----------- */
 .gen-div {
 	height: 100%;
