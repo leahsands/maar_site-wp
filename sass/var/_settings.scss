@@ -265,7 +265,7 @@ $box-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 //Icon image scaling
-@mixin mrkt-data-img ($img-location){
+@mixin mrkt-data-img($img-location){
 	background-image: url('../#{$img-location}');
 	background-image: none\9;
 	-webkit-background-size: 32px 32px;

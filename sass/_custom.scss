@@ -27,20 +27,6 @@ body,
   overflow: hidden;
 }
 
-.row {
-	position: relative;
-}
-
-.ttip:after { z-index: 1000; }
-
-.alignleft { float: left; overflow: auto; }
-.alignright { float: right; overflow: auto; }
-
-.lead {
-	border-bottom: 1px solid $grey-lgtst;
-	margin-bottom: ($gutter-in-px*2);
-}
-
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container,
 .side-pusher,
@@ -99,6 +85,10 @@ h4 {
 a { font-weight: $font-weight-bold; }
 
 i { font-weight: $font-weight-regular !important; }
+
+span {
+	@include font-size($norm);
+}
 
 /* ---- Top Member Navigation ---- */
 
@@ -285,12 +275,44 @@ i { font-weight: $font-weight-regular !important; }
 	float: left;
 	@media only screen and (max-width: $mobile-width) {
 		float: none;
+		margin-bottom: 60px;
 	}
+}
+
+.row {
+	position: relative;
 }
 
 .field .input.textarea { height: 215px; }
 
 .picker { background: $tru-white; }
+
+.drawer { @include div-shadow(false,0,0,0); }
+
+.ttip:after { z-index: 1000; }
+
+.alignleft { float: left; overflow: auto; }
+.alignright { float: right; overflow: auto; }
+
+.lead {
+	border-bottom: 1px solid $grey-lgtst;
+	margin-bottom: ($gutter-in-px*2);
+}
+
+/* ----- Button Styles ----- */
+.btn > a,
+.btn input,
+.btn button,
+.skiplink > a, 
+.skiplink input, 
+.skiplink button { color: $white !important; }
+
+.btn.default > a,
+.btn.default input,
+.btn button,
+.skiplink.default > a,
+.skiplink.default input,
+.skiplink.default button { color: $grey-lgt !important; }
 
 /* ----- Pill Tab Styles ----- */
 .tab-nav > li {
@@ -374,6 +396,7 @@ i { font-weight: $font-weight-regular !important; }
 
 /* ----------- General Div Style ----------- */
 .gen-div {
+	position: relative;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
@@ -711,6 +734,24 @@ i { font-weight: $font-weight-regular !important; }
 	}
 }
 
+/* ----------- Video Page Styles ------------ */
+.video-overlay {
+	position: absolute;
+	z-index: 500;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(231,231,231,0.8);
+	width: 100%;
+	text-align: center;
+	&:hover {
+		background: rgba(0,0,0,0.8);
+		h2 { color: $white; }
+		i { color: $white; }
+	}
+	h2 { margin-top: 15%; }
+	i {	font-size: $xlarge; }
+}
 
 /* ----------- Footer Styles ------------ */
 .footer {

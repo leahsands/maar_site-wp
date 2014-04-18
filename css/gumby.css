@@ -1692,16 +1692,6 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 html, body { height: 100%; overflow: hidden; }
 
-.row { position: relative; }
-
-.ttip:after { z-index: 1000; }
-
-.alignleft { float: left; overflow: auto; }
-
-.alignright { float: right; overflow: auto; }
-
-.lead { border-bottom: 1px solid #e7e7e7; margin-bottom: 24px; }
-
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container, .side-pusher, .maar-content { height: 100%; }
 
@@ -1735,6 +1725,8 @@ h4 { font-size: 19px; font-size: 1.46154rem; }
 a { font-weight: 700; }
 
 i { font-weight: 400 !important; }
+
+span { font-size: 13px; font-size: 1rem; }
 
 /* ---- Top Member Navigation ---- */
 #mem-nav { float: left; position: fixed; z-index: 300; padding-bottom: 30px; padding-right: 0; background: -webkit-linear-gradient(top, rgba(247, 247, 247, 0.99) 60%, rgba(247, 247, 247, 0) 85%); /*Safari 5.1-6*/ background: -o-linear-gradient(bottom, rgba(247, 247, 247, 0.99) 60%, rgba(247, 247, 247, 0) 85%); /*Opera 11.1-12*/ background: -moz-linear-gradient(bottom, rgba(247, 247, 247, 0.99) 60%, rgba(247, 247, 247, 0) 85%); /* Firefox */ background: linear-gradient(to bottom, rgba(247, 247, 247, 0.99) 60%, rgba(247, 247, 247, 0) 85%); /*Standard*/ }
@@ -1790,11 +1782,28 @@ i { font-weight: 400 !important; }
 
 /* ----------- Main Body Styles ----------- */
 .main-body { margin-top: 20px !important; float: left; }
-@media only screen and (max-width: 55em) { .main-body { float: none; } }
+@media only screen and (max-width: 55em) { .main-body { float: none; margin-bottom: 60px; } }
+
+.row { position: relative; }
 
 .field .input.textarea { height: 215px; }
 
 .picker { background: white; }
+
+.drawer { -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); }
+
+.ttip:after { z-index: 1000; }
+
+.alignleft { float: left; overflow: auto; }
+
+.alignright { float: right; overflow: auto; }
+
+.lead { border-bottom: 1px solid #e7e7e7; margin-bottom: 24px; }
+
+/* ----- Button Styles ----- */
+.btn > a, .btn input, .btn button, .skiplink > a, .skiplink input, .skiplink button { color: #f7f7f7 !important; }
+
+.btn.default > a, .btn.default input, .btn button, .skiplink.default > a, .skiplink.default input, .skiplink.default button { color: #676669 !important; }
 
 /* ----- Pill Tab Styles ----- */
 .tab-nav > li:hover { background-color: transparent; }
@@ -1821,7 +1830,7 @@ i { font-weight: 400 !important; }
 .modal > .content > .close:hover { color: #8d8c8f; background: black; }
 
 /* ----------- General Div Style ----------- */
-.gen-div { height: 100%; width: 100%; overflow: hidden; margin-top: 12px; padding-bottom: 24px; border-bottom: 5px solid #e7e7e7; background-color: white; }
+.gen-div { position: relative; height: 100%; width: 100%; overflow: hidden; margin-top: 12px; padding-bottom: 24px; border-bottom: 5px solid #e7e7e7; background-color: white; }
 .gen-div img { width: 100%; }
 .gen-div:hover { border-bottom: 5px solid #334374; }
 
@@ -1934,6 +1943,14 @@ i { font-weight: 400 !important; }
 .team-membership:hover:after { content: "Membership"; }
 
 .team-research:hover:after { content: "Research"; }
+
+/* ----------- Video Page Styles ------------ */
+.video-overlay { position: absolute; z-index: 500; top: 0; bottom: 0; left: 0; background: rgba(231, 231, 231, 0.8); width: 100%; text-align: center; }
+.video-overlay:hover { background: rgba(0, 0, 0, 0.8); }
+.video-overlay:hover h2 { color: #f7f7f7; }
+.video-overlay:hover i { color: #f7f7f7; }
+.video-overlay h2 { margin-top: 15%; }
+.video-overlay i { font-size: 23px; }
 
 /* ----------- Footer Styles ------------ */
 .footer { float: left; margin-top: 40px; margin-bottom: 60px; color: #8d8c8f; }
