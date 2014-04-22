@@ -713,8 +713,8 @@ span {
 	height: 200px;
 	.slides {
 		img {
-			height: 200px;
-			width: auto;
+			min-height: 200px;
+			width: 100%;
 			max-width: 1000px !important;
 		}
 		li { max-width: 100%; }

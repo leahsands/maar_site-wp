@@ -1945,7 +1945,7 @@ span { font-size: 13px; font-size: 1rem; }
 @media only screen and (min-width: 768px) { .newsroom.row { height: 450px; overflow: hidden; }
   .newsroom.row section.four.columns { height: 97%; } }
 .flexslider.newsroom { height: 200px; }
-.flexslider.newsroom .slides img { height: 200px; width: auto; max-width: 1000px !important; }
+.flexslider.newsroom .slides img { min-height: 200px; width: 100%; max-width: 1000px !important; }
 .flexslider.newsroom .slides li { max-width: 100%; }
 
 /* ----------- Team Page Styles ------------ */
