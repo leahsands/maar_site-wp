@@ -303,18 +303,25 @@
 							<section class="twelve columns">
 								<h1>Newsroom</h2>
 							</section>
-							<div class="row">
+							<div class="row newsroom">
 								<section class="four columns">
 									<div class="gen-div">
-										<h2 class="gen-div-header">Blog Post</h2>
+										<div class="gen-div-header">
+											<h2>Blog</h2>
+											<a class="archive" href="#">| More Posts</a>
+										</div>
 										<div class="gen-div-inner">
-											<p>Something something...</p>
+											<h4>Blog Title</h4>
+											<p>Stumptown trust fund XOXO kale chips Pitchfork direct trade. Stumptown bicycle rights forage, Neutra scenester occupy letterpress irony selvage beard. Aesthetic single-origin coffee literally drinking vinegar, Pitchfork art party chia. Fanny pack pug Austin cliche, next level dreamcatcher jean shorts rights forage, Neutra scenester occupy letterpress irony selvage beard. Aesthetic single-origin coffee literally drinking vinegar, Pitchfork art party chia. <a href="#">[read more]</a></p>
 										</div>
 									</div>
 								</section>
-								<section class="five columns">
+								<section class="four columns">
 									<div class="gen-div">
-										<h2 class="gen-div-header">Videos</h2>
+										<div class="gen-div-header">
+											<h2>Videos</h2>
+											<a class="archive" href="#">| Video Archive</a>
+										</div>
 										<div class="gen-div-inner">
 											<div class="row main-body">
 									      		<article class="youtube video">
@@ -331,11 +338,35 @@
 										</div>
 									</div>
 								</section>
-								<section class="three columns">
+								<section class="four columns">
 									<div class="gen-div">
-										<h2 class="gen-div-header">Newsletter</h2>
+										<div class="gen-div-header">
+											<h2>Newsletter</h2>
+											<a class="archive" href="#">| Full List</a>
+										</div>
 										<div class="gen-div-inner">
-											<p>Something something...</p>
+											<ul>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+												<li><a href="#">Date, Year</a></li>
+											</ul>
+											<h4>Subscribe</h4>
+											<form>
+												<ul>
+													<li class="append field">
+														<input class="wide email input" type="email" placeholder="Your Email">
+														<div class="medium primary btn">
+															<a href="#">Go</a>
+														</div>
+														</input>
+													</li>
+												</ul>
+											</form>
 										</div>
 									</div>
 								</section>
@@ -343,9 +374,31 @@
 							<div class="row">
 								<section class="twelve columns">
 									<div class="gen-div">
-										<h2 class="gen-div-header">Photos</h2>
+										<div class="gen-div-header">
+											<h2>Photos</h2>
+											<a class="archive" href="#">| See More</a>
+										</div>
 										<div class="gen-div-inner">
-											<p>Something something...</p>
+											<div class="flexslider newsroom">
+											  <ul class="slides">
+											    <li>
+											      <img src="http://www.obrienhomes.net/assets/img/homeSlide/001.jpg" />
+											    </li>
+											    <li>
+											      <img src="http://upload.wikimedia.org/wikipedia/commons/c/c9/Ranch_style_home_in_Salinas,_California.JPG" />
+											    </li>
+											    <li>
+											      <img src="http://nhhigheredforum.org/wp-content/uploads/2013/12/luxury-homes.jpg" />
+											    </li>
+											    <li>
+											      <img src="http://www.trbimg.com/img-50e4d5cf/turbine/lat-celebrities-under-30-real-estate-flipper-lists-rihannas-former-home" />
+											    </li>
+											    <li>
+											      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTZVkYage4SI3PWPIzyIB1pKoAy4xjPdDrvyyU45AJW8fsIjfvJ" />
+											    </li>
+											    <!-- items mirrored twice, total of 12 -->
+											  </ul>
+											</div>
 										</div>
 									</div>
 								</section>
@@ -388,15 +441,20 @@
 
 
 	<!-- Slider javascript files -->
-		<script src="js/jquery.flexslider-min.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script>
-    $(window).load(function() {
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script>
+	$(window).load(function() {
 	  $('.flexslider').flexslider({
-	    animation: "slide"
+	    animation: "slide",
+	    animationLoop: true,
+	    itemWidth: 200,
+	    itemMargin: 0,
+	    minItems: 2,
+	    maxItems: 6
 	  });
 	});
-  </script>
+ </script>
 
 </body>
 

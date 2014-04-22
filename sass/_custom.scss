@@ -45,7 +45,7 @@ body,
   width: inherit;
   margin-left: ($sidebar-width);
   @include maar-scrollbar;
-  @media only screen and (max-width: $mobile-width) {
+  @media only screen and (max-width: $tablet-landscape-width) {
   	margin-left: 0;
   }
 }
@@ -106,7 +106,7 @@ span {
 	li {
 		margin: 0;
 	} 
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		display: none;
 	}
 	@media only screen and (max-width: $desktop-width) {
@@ -121,14 +121,14 @@ span {
 		margin-top: $gutter-in-px;
 		width: 100px;
 		@include maar-transition(1s, width);
-		@media only screen and (max-width: $mobile-width){
+		@media only screen and (max-width: $tablet-landscape-width){
 			width: 100%;
 			float: center;
 			padding-right: 0;
 		}
 		&:focus {
 			width: 200px;
-			@media only screen and (max-width: $mobile-width) {
+			@media only screen and (max-width: $tablet-landscape-width) {
 				width: 100%;
 			}
 		}
@@ -138,7 +138,7 @@ span {
 		top: 10px;
 		right: 3px;
 		color: $grey !important;
-		@media only screen and (max-width: $mobile-width) {
+		@media only screen and (max-width: $tablet-landscape-width) {
 			right: 20px;
 		}
 	}
@@ -203,7 +203,7 @@ span {
 	float: left;
 	//height: inherit;
 	font-weight: $font-weight-regular;
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		margin-bottom: 0;
 		padding: 4px;
 		float: none;
@@ -236,8 +236,8 @@ span {
 /* ----------- Mobile Header ---------- */
 .mobile-header {
 	display: none;
-	@media only screen and (max-width: $mobile-width) {
-		position: fixed;
+	@media only screen and (max-width: $tablet-landscape-width) {
+		position: fixed !important;
 		top: 0;
 		right: 0;
 		left: 0;
@@ -273,7 +273,7 @@ span {
 .main-body {
 	margin-top: 20px !important;
 	float: left;
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		float: none;
 		margin-bottom: 60px;
 	}
@@ -401,7 +401,6 @@ span {
 	width: 100%;
 	overflow: hidden;
 	margin-top: $gutter-in-px;
-	padding-bottom: 24px;
 	border-bottom: 5px solid $gen-div-border;
 	background-color: $tru-white;
 	img { width: 100%; }
@@ -412,9 +411,10 @@ span {
 
 .gen-div-header {
 	overflow: auto;
-	padding: 6px $gutter-in-px;
-	h2 {
+	padding: 0 $gutter-in-px;
+	h2,h3,h4 {
 		float: left;
+		padding-bottom: 0;
 	}
 	a {
 		color: $primary-color;
@@ -452,6 +452,54 @@ span {
 	@include font-size($med);
 }
 
+/* ----------- Slide Notification ----------- */
+.slide-notify {
+    position: fixed;
+    z-index: 900;
+    bottom: 20px;
+    right: 0;
+    overflow: hidden;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    @media only screen and (max-width: $tablet-device-width) {
+    	display: none;
+    }
+}
+
+#slide {
+    position: absolute;
+    right: -200px;
+    width: 100%;
+    height: 100%;
+    background: $primary-color;
+    padding: $gutter-in-px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 4s;
+    animation: slide 0.5s forwards;
+    animation-delay: 4s;
+    text-shadow: 0 0 10px $primary-hover-color; 
+    a {
+    	text-transform: uppercase;
+    	font-weight: $font-weight-regular;
+    	@include font-size($large);
+    	color: $white;
+    }
+    &:hover {
+    	background: $secondary-color;
+    	text-shadow: 0 0 10px $secondary-hover-color; 
+    }
+}
+
+@-webkit-keyframes slide {
+    100% { right: 0; }
+}
+
+@keyframes slide {
+    100% { right: 0; }
+}
+
+
 /* ----------- Market Data ----------- */
 
 .mrkt-data {
@@ -474,7 +522,7 @@ span {
 		border-bottom: none;
 		h1 { margin-left: $gutter-in-px; }
 	}
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		margin-top: 80px;
 	}
 	.ttip:before {
@@ -512,9 +560,7 @@ span {
 			margin-bottom: 0;
 			height: 60px;
 			padding: 3% 5% !important;
-			.infosparks-icon { float: right; }
-			.faststats-icon { float: right; }
-			.skinny-icon { float: right; }
+			.market-icon { float:right; }
 			&:hover { padding: 2% 5% !important; }
 			p { float: left; color: $white; }
 		}
@@ -530,6 +576,19 @@ span {
 		}
 	}
 }
+
+.mrkt-data .four {
+	margin: ($gutter-in-px*2) 0;
+	&.ttip:after {
+		top: 130%;
+	}
+	p {
+		text-transform: uppercase;
+		color: $white;
+		text-align: center;
+	}
+}
+
 .market-icon {
 	position: absolute;
 	left: 0;
@@ -539,25 +598,35 @@ span {
 	background-size: 32px 32px;
 	width: 32px;
 	height: 32px;
+	&.large {
+		position: relative;
+		background-size: 80px 80px;
+		width: 80px;
+		height: 80px;
+		bottom: 0;
+	}
 	@media only screen and (max-width: $tablet-device-width) {
 		position: relative;
 		bottom: 0;
 	}
 }
 
-.infosparks-icon {
-	@include mrkt-data-img('img/assets/icons/infosparks-white.png');
-}
 
-.faststats-icon {
-	@include mrkt-data-img('img/assets/icons/faststats-white.png');
+.infosparks-icon { @include mrkt-data-img('infosparks'); }
 
-}
+.lmu-icon { @include mrkt-data-img('lmu'); }
 
-.skinny-icon {
-	@include mrkt-data-img('img/assets/icons/skinny-white.png');
+.mmi-icon { @include mrkt-data-img('mmi'); }
 
-}
+.hso-icon { @include mrkt-data-img('hso'); }
+
+.fss-icon { @include mrkt-data-img('fss'); }
+
+.skinny-icon { @include mrkt-data-img('skinny'); }
+
+.ann-icon { @include mrkt-data-img('ann'); }
+
+.wma-icon { @include mrkt-data-img('wma'); }
 
 /* ----------- Notification Alert ----------- */
 .notify {
@@ -631,8 +700,30 @@ span {
 
 .blog #modal-gallery .flex-control-nav { display: inline-block; }
 
+/* ----------- Newsroom Styles ------------ */
+@media only screen and (min-width: $tablet-device-width) {
+	.newsroom.row {
+		height: 450px;
+		overflow: hidden;
+		section.four.columns { height: 97%; }
+	}
+}
+
+.flexslider.newsroom {
+	height: 200px;
+	.slides {
+		img {
+			height: 200px;
+			width: auto;
+			max-width: 1000px !important;
+		}
+		li { max-width: 100%; }
+	}
+}
+
 /* ----------- Team Page Styles ------------ */
 .team {
+	padding-bottom: ($gutter-in-px*2);
 	img { @include grayscale; }
 	&:after {
 		content: "";
@@ -653,7 +744,7 @@ span {
 			text-transform: uppercase;
 			font-size: 11px;
 			line-height: 1.5em;
-			@media only screen and (max-width: $mobile-width) {
+			@media only screen and (max-width: $tablet-landscape-width) {
 				bottom: -10px;
 				margin: -36px 0 0 $gutter-in-px;
 				padding: $gutter-in-px;
@@ -773,7 +864,7 @@ span {
 			padding-top: 3px;
 		}
 	}
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		display: none;
 	}
 }
@@ -784,7 +875,7 @@ span {
 	margin: 0 auto;
 	width: 100%;
 	border: 1px solid $footer-color;
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		padding: 6px;
 		float: left;
 		width: 25%;

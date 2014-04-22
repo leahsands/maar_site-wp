@@ -13,7 +13,7 @@ $sidebar-width: 240px;
 // Responsiveness Settings
 $min-device-width: 320px; 						// iPhone Portrait
 $tablet-device-width: 768px;					// iPad Portrait
-$mobile-width: 55em;							// Screen changes to mobile width
+$tablet-landscape-width: 55em;							// Screen changes to mobile width
 $document-width: $row-max-width;				// Default Document
 $desktop-width: 1232px;							// Screen starts responding
 $max-device-width: 2880px;						// Max Document Size
@@ -266,12 +266,12 @@ $box-shadow-color: rgba(0, 0, 0, 0.2);
 
 //Icon image scaling
 @mixin mrkt-data-img($img-location){
-	background-image: url('../#{$img-location}');
+	background-image: url('../img/assets/icons/#{$img-location}-white.png');
 	background-image: none\9;
 	-webkit-background-size: 32px 32px;
   	   -moz-background-size: 32px 32px;
   		 -o-background-size: 32px 32px;
   			background-size: 32px 32px;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img-location}', sizingMethod='scale');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/assets/icons/#{$img-location}-white.png', sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img-location}', sizingMethod='scale')";
 }

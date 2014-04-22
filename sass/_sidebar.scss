@@ -26,7 +26,7 @@
 		overflow-y: auto;
 
 	}
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		top: 10px;
 	}
 }
@@ -74,7 +74,7 @@
 		padding-bottom: 0;
 		&:first-child {
 			margin-top: 20px;
-			@media only screen and (max-width: $mobile-width) {
+			@media only screen and (max-width: $tablet-landscape-width) {
 				margin-top: 0px;
 			}
 		}
@@ -97,7 +97,7 @@
 } //side-menu ul
 
 .side-main-nav-mobile {
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		position: absolute;
 		top: 260px;
 		left: 0;
@@ -130,7 +130,7 @@
 		height: 95px;
 		padding: ($gutter-in-px/2) 30px 0;
 	}
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		display: none;
 	}
 }
@@ -158,7 +158,7 @@
 	padding-top: $gutter-in-px;
 	background: $poplinks-color;
 	@include div-shadow(inset);
-	@media only screen and (max-width: $mobile-width) {
+	@media only screen and (max-width: $tablet-landscape-width) {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -208,7 +208,7 @@
 }
 
 /* ---- Mobile Sidebar Drawer ---- */
-@media only screen and (max-width: $mobile-width) {
+@media only screen and (max-width: $tablet-landscape-width) {
 
 .side-menu {
 	visibility: hidden;
