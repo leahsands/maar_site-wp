@@ -1,0 +1,316 @@
+/* --------------- Navigation Code --------------- */
+.side-scroll {
+	display:block;
+	position: absolute;
+	top: 100px;
+	bottom: 0;
+	margin-top: 3px;
+	width: $sidebar-width;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	&::-webkit-scrollbar {
+		width: $gutter-in-px;
+		height: $gutter-in-px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 255, 255, 0.3);
+		background-clip: content-box;
+		border-radius: 10px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		@include div-shadow(false, 5px, 5px, 5px);
+	}
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
+	&:hover {
+		overflow-y: auto;
+
+	}
+	@media only screen and (max-width: $tablet-landscape-width) {
+		top: 10px;
+	}
+}
+
+.side-menu {
+	width: $sidebar-width; 
+	position: absolute;
+	float: left;
+	top: 0;
+	bottom: 0;
+	z-index: 9999;
+	color: $white;
+	background: $navbar-color;
+	@include div-shadow(inset);
+}
+
+.side-left {
+	left: 0;
+}
+
+.side-right {
+	display: none;
+	right: 0;
+	@include div-shadow(inset, 10px);
+}
+
+.side-menu .row {
+	min-width: $sidebar-width;
+}
+
+.side-menu h2 {
+	margin: 0;
+	padding: 1em;
+	color: $grey-drk;
+	text-shadow: 0 0 1px rgba (black, 0.3);
+	font-weight: $font-weight-light;
+	font-size: $large;
+}
+
+.side-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		padding-bottom: 0;
+		&:first-child {
+			margin-top: 20px;
+			@media only screen and (max-width: $tablet-landscape-width) {
+				margin-top: 0px;
+			}
+		}
+		&:hover {
+			background: $navbar-hover-color;
+			color: $white;
+		} 
+		a {
+			display: block;
+			padding: 4px 10px;
+			outline: none;
+			color: $white;
+			text-transform: uppercase;
+			text-shadow: 0 0 1px $navbar-hover-color;
+			letter-spacing: 1px;
+			font-weight: 700;
+			@include maar-transition(0.3s);
+		} //side-menu a
+	} //side-menu li
+} //side-menu ul
+
+.side-main-nav-mobile {
+	@media only screen and (max-width: $tablet-landscape-width) {
+		position: absolute;
+		top: 260px;
+		left: 0;
+		right: 0;
+	}
+}
+
+// Area for MAAR Logo
+.logo-area {
+	background: $white;
+	z-index:100;
+	margin-bottom: 40px;
+	width: $sidebar-width;
+	&:after {
+		position: absolute;
+		left:0;
+		top: 103px;
+		z-index: 100;
+		//width: $sidebar-width;
+		height: 0;
+		content: " ";
+		border-top: 20px solid $white;
+		border-left: 120px solid transparent;
+		border-right: 120px solid transparent;
+		@include div-shadow(inset, 0, 30px, 10px);
+	}
+	img {
+		max-width: 100%;
+		width: $sidebar-width;
+		height: 95px;
+		padding: ($gutter-in-px/2) 30px 0;
+	}
+	@media only screen and (max-width: $tablet-landscape-width) {
+		display: none;
+	}
+}
+
+/* ---- Drawer Styles --- */
+.side-menu .drawer {
+	background: $nav-drawer-color;
+	@include div-shadow(inset);
+}
+
+.side-menu .drawer li {
+	margin-top: 0px !important;
+	a {
+		text-transform: none;
+		font-weight: 400;
+		&:hover {
+			background: $nav-drawer-hover-color;
+		}
+	}
+}
+
+/* ---- Popular Links ---- */
+.pop-links {
+	margin-top: 20px;
+	padding-top: $gutter-in-px;
+	background: $poplinks-color;
+	@include div-shadow(inset);
+	@media only screen and (max-width: $tablet-landscape-width) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: inline;
+	}
+	h1 {
+		font-size: $med;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $white;
+		padding-left: $gutter-in-px;
+	}
+	ul li {
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			a { padding-bottom: $gutter-in-px; }
+		}
+		a {
+			text-transform: none;
+			padding: 4px 1em;
+			color: $white;
+			font-weight: 400;
+			&:hover {
+				background: $poplinks-hover-color;
+			}
+		}
+	}
+}
+
+/* --- Contact Information --- */
+.side-contact {
+	p {
+		font-size: $norm;
+	}
+	i {
+		padding: 42px 0;
+		font-size: $xlarge !important;
+	}
+	a {
+		padding-bottom: 2px;
+		color: $white;
+		text-decoration: underline;
+	}
+}
+
+/* ---- Mobile Sidebar Drawer ---- */
+@media only screen and (max-width: $tablet-landscape-width) {
+
+.side-menu {
+	visibility: hidden;
+	&::after {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.3);
+		content: '';
+		opacity: 1;
+		@include maar-transition(0.5s, opacity);
+	}
+}
+
+.side-left::after {
+	right: 0;
+}
+
+/* Right Sidebar styles */
+.side-right {
+	display: block;
+	&::after {
+		left: 0;
+	}
+	.search-field {
+		width: 80%;
+	}
+} // end right sidebar styles
+
+.side-pusher {
+	position: relative;
+	left: 0;
+	height: 100%;
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 0;
+		height: 0;
+		background: rgba(0,0,0,0.2);
+		content: '';
+		opacity: 0;
+	}
+}
+
+.side-menu-open {
+	.side-pusher::after {
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		z-index: 9999;
+	}
+	.side-menu::after {
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+} 
+
+/* Effect: Push*/
+.side-effect.side-menu-open .side-pusher {
+	-webkit-transform: translate3d($sidebar-width, 0, 0);
+	transform: translate3d($sidebar-width, 0, 0);
+}
+
+.side-effect.side-menu {
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.side-effect.side-menu-open .side-effect.side-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.side-effect.side-menu::after { display: none; }
+
+/* Effect: Push Right*/
+.side-effect-right.side-menu-open .side-pusher {
+	-webkit-transform: translate3d(-$sidebar-width, 0, 0);
+	transform: translate3d(-$sidebar-width, 0, 0);
+}
+
+.side-effect-right.side-menu {
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+}
+
+.side-effect-right.side-menu-open .side-effect-right.side-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.side-effect-right.side-menu::after { display: none; }
+
+/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+.no-csstransforms3d .side-pusher,
+.no-js .side-pusher { padding-left: $sidebar-width; }
+
+
+}//sidebar mobile
