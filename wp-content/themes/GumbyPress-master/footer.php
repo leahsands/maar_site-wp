@@ -26,12 +26,6 @@
 			</div><!-- /maar-content -->
 		</div><!-- /side-pusher -->
 	</div><!-- /side-container -->
-
-	<script src="<?php bloginfo('template_url'); ?>/js/custom.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/classie.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/sidebar-effects.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/social_feeds.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider.js"></script>
 	
 	<!-- Slider javascript files -->
 	<script>
