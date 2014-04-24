@@ -263,6 +263,21 @@ html[xmlns] .slides {display: block;}
 	text-align: center;
 	text-shadow: 0 0 5px rgba(0,0,0,0.6);
 	* {color: $tru-white !important;}
+	h1 { @include font-size($reallybig); }
+	h2 { @include font-size($xxlarge); }
+
+	@media only screen and (max-width: $tablet-device-width) {
+		h1 { @include font-size($xlarge); }
+		h2 { @include font-size($med); }
+	}
+
+	@media only screen and (max-width: $min-device-width) {
+		margin-top: 2%;
+		h1 { @include font-size($med); }
+		h2 { @include font-size($small); }
+		p { display: none; }
+	}
+
 	.btn {
 		background: rgba(0,0,0,0.5) !important;
 		border: none !important;
@@ -270,6 +285,9 @@ html[xmlns] .slides {display: block;}
 		a {
 			font-weight: $font-weight-regular;
 			text-shadow: none !important;
+			@media only screen and (max-width: $tablet-device-width) {
+				@include font-size($small);
+			}
 		}
 	}
 }

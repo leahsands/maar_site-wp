@@ -7,7 +7,6 @@
 			"bower_components/gumby-fittext/gumby.fittext.js"
 		],
 		"files": [
-			"js/_custom/jquery.flexslider.js",
 			"js/_custom/classie.js",
 			"js/_custom/custom.js",
 			"js/_custom/flexslider.js",

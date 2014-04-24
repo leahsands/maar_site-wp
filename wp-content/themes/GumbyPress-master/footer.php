@@ -28,6 +28,8 @@
 	</div><!-- /side-container -->
 	
 	<!-- Slider javascript files -->
+	<script src="<?php bloginfo('template_directory');?>/js/_custom/jquery.flexslider.js"></script>
+
 	<script>
     $(window).load(function() {
 	  $('.flexslider').flexslider({

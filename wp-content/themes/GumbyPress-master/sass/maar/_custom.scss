@@ -1,7 +1,5 @@
 // Your custom SCSS should be written here...
-* {
-	@include maar-transition;
-}
+div * { @include maar-transition; }
 
 *,
 *:after,

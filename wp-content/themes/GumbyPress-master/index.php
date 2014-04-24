@@ -55,8 +55,8 @@
 					    <li>
 					      <img src="<?php bloginfo('template_url'); ?>/img/featureslider/tuesday.png" />
 					      <div class="flex-caption">
-					      			<h1 class="fittext" gumby-rate="0.5" gumby-sizes="14|40">Tuesday Mornings at MAAR</h1>
-					      			<h2 class="fittext" gumby-rate="0.5" gumby-sizes="10|30">April 15 at 10am</h2>
+					      			<h1>Tuesday Mornings at MAAR</h1>
+					      			<h2>April 15 at 10am</h2>
 					      			<p class="large btn">
 					      				<a href="#">Find out more<i class="icon-right-open-big"></i></a>
 					      			</p>

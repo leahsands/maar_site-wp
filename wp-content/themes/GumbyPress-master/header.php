@@ -47,6 +47,9 @@
 	}
 	</script>
 
+	<script src="<?php bloginfo('template_directory');?>/js/modernizr-2.6.2.min.js"></script>
+	<script src="<?php bloginfo('template_directory');?>/js/gumby.min.js"></script>
+
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 	</head>
