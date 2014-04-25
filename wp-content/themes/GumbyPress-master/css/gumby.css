@@ -1966,23 +1966,23 @@ span { font-size: 13px; font-size: 1rem; }
 .team:hover:after { position: relative; bottom: -20px; left: -12px; margin: -36px 6px 0 12px; padding: 0 12px; float: left; color: #e82e0a; text-transform: uppercase; font-size: 11px; line-height: 1.5em; }
 @media only screen and (max-width: 55em) { .team:hover:after { bottom: -10px; margin: -36px 0 0 12px; padding: 12px; } }
 
-.team-executive:hover:after { content: "Executive"; }
+.executive:hover:after { content: "Executive"; }
 
-.team-pubaffairs:hover:after { content: "Public Affairs"; }
+.public-affairs:hover:after { content: "Public Affairs"; }
 
-.team-account:hover:after { content: "Accounting & Operations"; }
+.accounting:hover:after { content: "Accounting & Operations"; }
 
-.team-broker:hover:after { content: "Broker Services"; }
+.broker-services:hover:after { content: "Broker Services"; }
 
-.team-edu:hover:after { content: "Education and Professional Development"; }
+.education:hover:after { content: "Education and Professional Development"; }
 
-.team-marketing:hover:after { content: "Marketing & Communications"; }
+.marketing:hover:after { content: "Marketing & Communications"; }
 
-.team-memberserv:hover:after { content: "Member Services"; }
+.member-services:hover:after { content: "Member Services"; }
 
-.team-membership:hover:after { content: "Membership"; }
+.membership:hover:after { content: "Membership"; }
 
-.team-research:hover:after { content: "Research"; }
+.research:hover:after { content: "Research"; }
 
 /* ----------- Video Page Styles ------------ */
 .video-overlay { position: absolute; z-index: 500; top: 0; bottom: 0; left: 0; background: rgba(231, 231, 231, 0.8); width: 100%; text-align: center; }

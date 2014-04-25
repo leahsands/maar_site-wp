@@ -40,6 +40,63 @@
 	add_action( 'widgets_init', 'gp_widgets_init' );
 
 
+	//Register Custom Posts
+	add_action( 'admin_init', 'my_admin' );
+
+	function my_admin() {
+	    add_meta_box( 'feature_image_meta_box',
+	        'Feature Image Details',
+	        'display_feature_image_meta_box',
+	        'feat_img', 'normal', 'high'
+	    );
+	    add_meta_box( 'team_member_meta_box',
+	        'Team Member Details',
+	        'display_team_member_meta_box',
+	        'team_post', 'normal', 'high'
+	    );
+	    add_meta_box( 'Leadership_member_meta_box',
+	        'Leadership Member Details',
+	        'display_leadership_member_meta_box',
+	        'leadership_post', 'normal', 'high'
+	    );
+	}
+
+	add_filter( 'template_include', 'include_template_function', 1 );
+
+	function include_template_function( $template_path ) {
+	    if ( get_post_type() == 'feat_img' ) {
+	        if ( is_single() ) {
+	            // checks if the file exists in the theme first,
+	            // otherwise serve the file from the plugin
+	            if ( $theme_file = locate_template( array ( 'front-page.php' ) ) ) {
+	                $template_path = $theme_file;
+	            } 
+	        }
+	    }
+	    if ( get_post_type() == 'team_post' ) {
+	        if ( is_single() ) {
+	            // checks if the file exists in the theme first,
+	            // otherwise serve the file from the plugin
+	            if ( $theme_file = locate_template( array ( 'single-team_post.php' ) ) ) {
+	                $template_path = $theme_file;
+	            } else {
+	                $template_path = plugin_dir_path( __FILE__ ) . '/single-team_post.php';
+	            }
+	        }
+	    }
+	    if ( get_post_type() == 'leadership_post' ) {
+	        if ( is_single() ) {
+	            // checks if the file exists in the theme first,
+	            // otherwise serve the file from the plugin
+	            if ( $theme_file = locate_template( array ( 'single-leadership_post.php' ) ) ) {
+	                $template_path = $theme_file;
+	            } else {
+	                $template_path = plugin_dir_path( __FILE__ ) . '/single-leadership_post.php';
+	            }
+	        }
+	    }
+	    return $template_path;
+	}
 
 	//Enqueue all the required stylesheet and javascript files
 	function gp_load_style_scripts() {

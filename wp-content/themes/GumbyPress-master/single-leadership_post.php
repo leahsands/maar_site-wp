@@ -1,5 +1,5 @@
 <?php
- /*Template Name: Team
+ /*Template Name: Leadership
  */
  
 get_header(); ?>
@@ -15,23 +15,23 @@ get_header(); ?>
 
     <?php
 
-    $team_members = array( 'post_type' => 'team_post' );
-    $loop = new WP_Query( $team_members );
+    $leadership_members = array( 'post_type' => 'leadership_post' );
+    $loop = new WP_Query( $leadership_members );
     $x = 0;
     
     while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-            <section class="three columns gen-div <?php echo esc_html( get_post_meta( get_the_ID(), 'team_category', true ) ); ?> team"> 
+            <section class="three columns gen-div team" style="padding-bottom: 0;"> 
                 <h3 class="gen-div-header"><?php the_title(); ?></h3>
                 <article class="gen-div-inner">
                     <article class="twelve columns">
                         <?php the_post_thumbnail(); ?>
                     </article>
-                    <p><?php echo esc_html( get_post_meta( get_the_ID(), 'team_position', true ) ); ?> <br />
-                        <?php echo esc_html( get_post_meta( get_the_ID(), 'team_phone', true ) ); ?> <br />
-                        <a href="mailto:<?php echo esc_html( get_post_meta( get_the_ID(), 'team_email', true ) ); ?>">
-                            <?php echo esc_html( get_post_meta( get_the_ID(), 'team_email', true ) ); ?>
-                        </a>
+                    <p><?php echo esc_html( get_post_meta( get_the_ID(), 'leadership_position', true ) ); ?> <br />
+                        <a href="mailto:<?php echo esc_html( get_post_meta( get_the_ID(), 'leadership_email', true ) ); ?>">
+                            <?php echo esc_html( get_post_meta( get_the_ID(), 'leadership_email', true ) ); ?>
+                        </a> <br />
+                        <span><?php echo date('Y'); ?> <?php echo esc_html( get_post_meta( get_the_ID(), 'leadership_category', true ) ); ?> </span>
                     </p>
                 </article>
             </section>

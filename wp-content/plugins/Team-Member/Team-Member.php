@@ -39,47 +39,38 @@ function create_team_member() {
     );
 }
 
-add_action( 'admin_init', 'my_admin' );
-
-function my_admin() {
-    add_meta_box( 'team_member_meta_box',
-        'Team Member Details',
-        'display_team_member_meta_box',
-        'team_post', 'normal', 'high'
-    );
-}
-
 function display_team_member_meta_box( $team_member ) {
     // Retrieve current name of the position and Team Member email based on review ID
     $team_position = esc_html( get_post_meta( $team_member->ID, 'team_position', true ) );
     $team_phone =  esc_html( get_post_meta( $team_member->ID, 'team_phone', true ) );
     $team_email =  esc_html( get_post_meta( $team_member->ID, 'team_email', true ) );
-    $team_category = esc_html( get_post_meta( $team_member->ID, 'team_category', true ) );
+    $team_category = get_post_meta( $team_member->ID, 'team_category', true );
     ?>
     <table>
-        <tr style="width: 50%;">
+        <tr>
             <td style="width: 50%">Team Member Position - <small>(Capitalize all nouns in Position Title)</small></td>
             <td style="width: 50%"><input type="text" size="80" name="team_member_position_name" value="<?php echo $team_position; ?>" /></td>
         </tr>
-        <tr style="width: 50%;">
+        <tr>
             <td style="width: 50%">Team Member Phone - <small>(Make sure the phone number is xxx.xxx.xxxx format)</small></td>
             <td style="width: 50%"><input type="tel" size="80" name="team_member_phone_name" value="<?php echo $team_phone; ?>" /></td>
         </tr>
-        <tr style="width: 50%;">
+        <tr>
             <td style="width: 50%">Team Member Email</td>
             <td style="width: 50%"><input type="email" size="80" name="team_member_email_name" value="<?php echo $team_email; ?>" /></td>
         </tr>
         <tr>
             <td style="width: 50%">Category</td>
-            <td>
-                <select style="width: 100px" name="team_member_category">
+            <td style="width: 25%">
+                <select name="team_member_category" id="team_member_category">
                 <?php
 
-                $array = array( "x", "y", "z" );
+                $array = array( "executive", "public-affairs", "accounting", "broker-services", "education", "marketing", "member-services", "membership", "research" );
                 foreach( $array as $category ) {
                 ?>
-                    <option value="<?php echo $category; ?>" <?php echo selected( $category, $team_category ); ?>>
-                    <?php echo $category; } ?>
+                    <option value="<?php echo $category; ?>" <?php echo selected( $team_category, $category ); ?>>
+                        <?php echo $category; } ?>
+                    </option>
                 </select>
             </td>
         </tr>
@@ -104,25 +95,9 @@ function add_team_member_fields( $team_member_id, $team_member ) {
             update_post_meta( $team_member_id, 'team_email', $_POST['team_member_email_name'] );
         }
         if ( isset( $_POST['team_member_category'] ) && $_POST['team_member_category'] != '' ) {
-            update_post_meta( $team_member_id, 'team_category', $_POST['team_member_catetory'] );
+            update_post_meta( $team_member_id, 'team_category' , $_POST['team_member_category'] );
         }
     }
 }
 
-add_filter( 'template_include', 'include_template_function', 1 );
-
-function include_template_function( $template_path ) {
-    if ( get_post_type() == 'team_post' ) {
-        if ( is_single() ) {
-            // checks if the file exists in the theme first,
-            // otherwise serve the file from the plugin
-            if ( $theme_file = locate_template( array ( 'single-team_post.php' ) ) ) {
-                $template_path = $theme_file;
-            } else {
-                $template_path = plugin_dir_path( __FILE__ ) . '/single-team_post.php';
-            }
-        }
-    }
-    return $template_path;
-}
 ?>
