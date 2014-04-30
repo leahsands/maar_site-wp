@@ -31,7 +31,7 @@ function create_feature_image() {
  
             'public' => true,
             'menu_position' => 15,
-            'supports' => array( 'title', 'thumbnail' ),
+            'supports' => array( 'title'),
             'taxonomies' => array( '' ),
             'menu_icon' => plugins_url( 'img/feature-image.png', __FILE__ ),
             'has_archive' => true
@@ -46,11 +46,6 @@ function display_feature_image_meta_box( $feature_image ) {
     $button_link =  esc_html( get_post_meta( $feature_image->ID, 'button_link', true ) );
     $button_caption = get_post_meta( $feature_image->ID, 'button_caption', true );
     ?>
-    <table>
-        <tr>
-            <td><h2><strong>IMPORTANT</strong> Images MUST be uploaded on this page at a 980x320 ratio</h2></td>
-        </tr>
-    </table>
     <table>
         <tr>
             <td colspan="2"><p>**Remember to keep text in the feature slider short and to the point. There should be only one line of text in each filed**</p></td>

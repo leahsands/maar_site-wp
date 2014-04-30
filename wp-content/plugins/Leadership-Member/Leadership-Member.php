@@ -15,7 +15,7 @@ function create_leadership_member() {
         array(
             'labels' => array(
                 'name' => 'Leadership Members',
-                'singular_name' => 'leadership Member',
+                'singular_name' => 'Leadership Member',
                 'add_new' => 'Add New',
                 'add_new_item' => 'Add New Leadership Member',
                 'edit' => 'Edit',
