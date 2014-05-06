@@ -36,9 +36,9 @@ Template Name: Newsroom
 
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-					<section class="twelve columns gen-div blog">
+					<section class="twelve columns blog">
 						<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
-						<p><?php my_excerpt('long'); ?></p>
+						<?php my_excerpt('long'); ?>
 					</section>
 					<?php endwhile; ?>
 				</div>
@@ -74,7 +74,7 @@ Template Name: Newsroom
 					    
 					    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					            <li>
-					              <a href="<?php the_field('newsletter'); ?>" alt="" />
+					              <a href="<?php the_field('newsletter'); ?>" alt="" target="_blank" />
 					              	<?php the_title(); ?>
 					              </a>
 					            </li>

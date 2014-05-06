@@ -1,5 +1,5 @@
 <?php
- /*Template Name: Community Landing
+ /*Template Name: Community 
  */
  
 get_header(); ?>
@@ -12,31 +12,38 @@ get_header(); ?>
         </section>
     </div>
     <div class="row">
-
-    <?php
-
-    $team_members = array( 'post_type' => 'team_post' );
-    $loop = new WP_Query( $team_members );
-    $x = 0;
-    
-    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-            <section class="three columns gen-div <?php echo esc_html( get_post_meta( get_the_ID(), 'team_category', true ) ); ?> team"> 
-                <h3 class="gen-div-header"><?php the_title(); ?></h3>
-                <article class="gen-div-inner">
-                    <article class="twelve columns">
-                        <?php the_post_thumbnail(); ?>
-                    </article>
-                    <p><?php echo esc_html( get_post_meta( get_the_ID(), 'team_position', true ) ); ?> <br />
-                        <?php echo esc_html( get_post_meta( get_the_ID(), 'team_phone', true ) ); ?> <br />
-                        <a href="mailto:<?php echo esc_html( get_post_meta( get_the_ID(), 'team_email', true ) ); ?>">
-                            <?php echo esc_html( get_post_meta( get_the_ID(), 'team_email', true ) ); ?>
-                        </a>
-                    </p>
-                </article>
+        <div class="eight columns">
+            <section class="row gen-div">
+                <div class="gen-div-inner">
+                    <?php the_field('community_description'); ?>
+                </div>
             </section>
-            <?php if($x == 3) { $x = -1; echo '</div><div class="row">'; } ?>
-    <?php $x++; ?>
+            <section class="row gen-div">
+                <div class="four columns community">
+                    <img src="<?php the_field('community_image'); ?>">
+                </div>
+                <div class="eight columns">
+                    <div class="gen-div-header">
+                        <h4>Community Members</h4>
+                    </div>
+                    <div class="gen-div-inner">
+                        <?php the_field('community_members'); ?>
+                    </div>
+                </div>
+            </section>
+            <section class="row gen-div">
+                <?php the_field('community_more_info'); ?>
+            </section>
+        </div>
+        <div class="four columns">
+            <section class="row gen-div">
+                <div class="gen-div-inner">
+                    <?php the_field('community_social'); ?>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
     
 <?php wp_reset_query(); ?>
 <?php get_footer(); ?>

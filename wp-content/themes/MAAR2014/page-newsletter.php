@@ -12,28 +12,7 @@ get_header(); ?>
         </section>
     </div>
     <div class="row">
-    	<div class="eight columns">
-		<ul>
-			<?php
-
-		    $feature_images = array(
-		    	'post_type' => 'newsletter_pdf',
-		    	'posts_per_page' => 15  );
-		    $loop = new WP_Query( $feature_images );
-		    
-		    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-		            <li>
-		              <a href="<?php the_field('newsletter'); ?>" alt="" />
-		              	<?php the_title(); ?>
-		              </a>
-		            </li>
-
-		    <?php endwhile; ?>
-
-		<?php wp_reset_query(); ?>
-		</ul>
-		</div>
-		<div class="four columns">
+    	<div class="four columns push_eight">
 			<h4>Subscribe</h4>
 			<form>
 				<ul>
@@ -46,6 +25,27 @@ get_header(); ?>
 					</li>
 				</ul>
 			</form>
+		</div>
+    	<div class="eight columns pull_four">
+		<ul>
+			<?php
+
+		    $feature_images = array(
+		    	'post_type' => 'newsletter_pdf',
+		    	'posts_per_page' => 15  );
+		    $loop = new WP_Query( $feature_images );
+		    
+		    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+		            <li>
+		              <a href="<?php the_field('newsletter'); ?>" alt="" target="_blank" />
+		              	<?php the_title(); ?>
+		              </a>
+		            </li>
+
+		    <?php endwhile; ?>
+
+		<?php wp_reset_query(); ?>
+		</ul>
 		</div>
 	</div>
 </div>

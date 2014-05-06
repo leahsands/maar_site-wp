@@ -29,7 +29,7 @@
 				<p>Housing Supply</p>
 				<div class="market-icon hso-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="..." alt="">
+			<li class="ttip two columns" data-tooltip="An important segment spelled out" alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon fss-icon"></div>
 			</li>
@@ -108,7 +108,7 @@
 			    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			    	<?php if( get_post_type() == 'newsletter_pdf') { ?>
 			            <li>
-			              <a href="<?php echo the_field('newsletter'); ?>" alt="" />
+			              <a href="<?php echo the_field('newsletter'); ?>" alt="" target="_blank" />
 			              	<?php the_title(); ?>
 			              	<i class="icon-newspaper"></i>
 			              </a>
@@ -137,7 +137,7 @@
 		</section>
 		<section class="four columns gen-div">
 			<div class="gen-div-header">
-				<h2><?php the_time('M Y') ?></h2><a class="archive" href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">| View Calendar</a>
+				<h2><?php echo date('M Y') ?></h2><a class="archive" href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">| View Calendar</a>
 			</div>
 				<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">
 				<?php get_sidebar( 'calendar' ); ?>

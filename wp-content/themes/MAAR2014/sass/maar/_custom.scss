@@ -55,7 +55,7 @@ body,
 }
 
 /* ---- Font Styles ---- */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
 	text-transform: uppercase;
   color: $primary-color;
   @media only screen and (max-width: $tablet-device-width) {
@@ -86,6 +86,11 @@ i { font-weight: $font-weight-regular !important; }
 
 span {
 	@include font-size($norm);
+}
+
+.wp-caption-text {
+	@include font-size($small);
+	color: $grey-lgtr;
 }
 
 /* ---- Top Member Navigation ---- */
@@ -323,6 +328,7 @@ span {
 }
 
 /* ----- Button Styles ----- */
+.btn,
 .btn > a,
 .btn input,
 .btn button,
@@ -330,12 +336,28 @@ span {
 .skiplink input, 
 .skiplink button { color: $white !important; }
 
+.btn.default,
 .btn.default > a,
 .btn.default input,
-.btn button,
+.btn.default button,
 .skiplink.default > a,
 .skiplink.default input,
 .skiplink.default button { color: $grey-lgt !important; }
+
+/* ----- Form Buttons and Form Styles ----- */
+.submit-wrap .btn.primary {
+	overflow: visible;
+	color: $white;
+	padding: 5px 10px !important;
+}
+
+.submit-wrap .btn.large {
+	height: auto;
+}
+
+.label-inside input {
+	color: $grey-lgtr;
+}
 
 /* ----- Pill Tab Styles ----- */
 .tab-nav > li {
@@ -432,9 +454,12 @@ span {
 	}
 }
 
+.gen-div > p:first-child { padding-top: 12px; }
+.gen-div > p { padding: 0 12px; }
+
 .gen-div-header {
 	overflow: auto;
-	padding: 0 $gutter-in-px;
+	padding: $gutter-in-px $gutter-in-px 0 $gutter-in-px;
 	h2,h3,h4 {
 		float: left;
 		padding-bottom: 0;
@@ -723,6 +748,35 @@ span {
 
 .blog #modal-gallery .flex-control-nav { display: inline-block; }
 
+/* ----------- Lightbox Styles ------------ */
+.nivo-lightbox-theme-default .nivo-lightbox-nav:hover {
+	background-color: rgba(0,0,0,0);
+}
+
+@media only screen and (max-width: $tablet-device-width) {
+	.nivo-lightbox-theme-default .nivo-lightbox-next {
+		background-image: none\9;
+		-webkit-background-size: 24px;
+	  	   -moz-background-size: 24px;
+	  		 -o-background-size: 24px;
+	  			background-size: 24px;
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='next.png', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='next.png', sizingMethod='scale')";
+	}
+}
+@media only screen and (max-width: $tablet-device-width) {
+	.nivo-lightbox-theme-default .nivo-lightbox-prev {
+		background-image: none\9;
+		-webkit-background-size: 24px;
+	  	   -moz-background-size: 24px;
+	  		 -o-background-size: 24px;
+	  			background-size: 24px;
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='prev.png', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='prev.png', sizingMethod='scale')";
+	}
+}
+
+
 /* ----------- Newsroom Styles ------------ */
 @media only screen and (min-width: $tablet-device-width) {
 	.newsroom.row {
@@ -730,6 +784,11 @@ span {
 		overflow: hidden;
 		section.four.columns { height: 97%; }
 	}
+}
+/* ----------- Community Page Styles ------------ */
+.community img {
+	margin-top: ($gutter-in-px*2);
+	padding-left: $gutter-in-px;
 }
 
 /* ----------- Team Page Styles ------------ */

@@ -22,7 +22,7 @@ get_header(); ?>
     while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
             <section class="three columns gen-div team" style="padding-bottom: 0;"> 
-                <h4 class="gen-div-header"><?php the_title(); ?></h4>
+                <h5 class="gen-div-header"><?php the_title(); ?></h5>
                 <article class="gen-div-inner">
                     <article class="twelve columns">
                         <?php the_post_thumbnail(); ?>

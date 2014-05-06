@@ -12,7 +12,7 @@
 	</div>
 	<div class="row">
 		<div class="ten columns">
-		<?php the_content(); ?>
+			<?php the_content(); ?>
 		</div>
 	</div>
 	<?php endwhile; ?>

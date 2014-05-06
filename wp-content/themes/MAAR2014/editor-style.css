@@ -1,0 +1,157 @@
+/*
+Theme Name: MAAR 2014
+Theme URI: http://github.com/tubiz/GumbyPress
+Author: Your Name
+Author URI: Minneapolis Area Association of REALTORS
+Description: A Gumby Framework WordPress theme created by 10K Research and Marketing for MAAR. Breathe life into data.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+*/
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+body { background: #f7f7f7; font-family: "Open Sans"; font-weight: 400; color: #272728; position: relative; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Grid */
+
+.one.column { width: 7.16312%; }
+.one.columns { width: 7.16312%; }
+.two.columns { width: 15.60284%; }
+.three.columns { width: 24.04255%; }
+.four.columns { width: 32.48227%; }
+.five.columns { width: 40.92199%; }
+.six.columns { width: 49.3617%; }
+.seven.columns { width: 57.80142%; }
+.eight.columns { width: 66.24113%; }
+.nine.columns { width: 74.68085%; }
+.ten.columns { width: 83.12057%; }
+.eleven.columns { width: 91.56028%; }
+.twelve.columns { width: 100%; }
+
+.column, .columns { margin-left: 1.2766%; float: left; min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.column:first-child, .columns:first-child, .alpha { margin-left: 0; }
+
+.column.omega, .columns.omega { float: right; }
+
+
+/* Pretty Grid */
+.gen-div { position: relative; height: 100%; width: 100%; overflow: hidden; margin-top: 12px; border-bottom: 5px solid #e7e7e7; background-color: white; }
+.gen-div img { width: 100%; }
+.gen-div:hover { border-bottom: 5px solid #334374; }
+
+.gen-div-header { overflow: auto; padding: 0 12px; }
+.gen-div-header h2, .gen-div-header h3, .gen-div-header h4 { float: left; padding-bottom: 0; }
+.gen-div-header a { color: #334374; font-weight: 400; }
+.gen-div-header a:hover { color: #072554; }
+
+.gen-div-inner { float: left; padding: 12px; width: 100%; height: 100%; }
+
+
+/* Fonts */
+h1, h2, h3, h4, h5, h6 { font-family: "Open Sans"; font-weight: 300; color: #334374; text-rendering: optimizeLegibility; padding-top: 0.336em; line-height: 1.422em; padding-bottom: 0.336em; text-transform: uppercase; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #334374; }
+
+h2 { font-size: 23px; font-size: 1.76923rem; }
+
+h3 { font-size: 19px; font-size: 1.46154rem; }
+
+h4 { font-size: 17px; font-size: 1.30769rem; }
+
+h5 { font-size: 14px; font-size: 1.07692rem; }
+
+h6 { font-size: 13px; font-size: 1rem; }
+
+p { font-family: "Open Sans"; font-weight: 400; font-size: 13px; margin-bottom: 13px; line-height: 2em; }
+
+.gen-div > p:first-child { padding-top: 12px; }
+.gen-div > p { padding: 0 12px; }
+
+a { color: #334374; text-decoration: none; outline: 0; line-height: inherit; }
+a:hover { color: #072554; }
+
+ul, ol { margin-bottom: 0.336em; }
+
+ul { list-style: none outside; }
+
+ol { list-style: decimal; margin-left: 30px; }
+
+ul.circle { list-style: circle outside; }
+ul ul { margin: 4px 0 5px 25px; }
+
+ol ol { margin: 4px 0 5px 30px; }
+
+li { padding-bottom: 0.336em; }
+
+dl dt { font-weight: bold; font-size: 13px; font-size: 1rem; }
+
+/*  Blockquotes  */
+blockquote { line-height: 20px; color: #777; margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 5px solid #414042; }
+blockquote p { line-height: 20px; color: #777; }
+blockquote cite { display: block; font-size: 12px; font-size: 1.2rem; color: #272728; }
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a { color: #272728; }
+blockquote cite a:visited { color: #272728; }
+
+hr { border: 1px solid #414042; clear: both; margin: 16px 0 18px; height: 0; }
+
+abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222; border-bottom: 1px solid #414042; cursor: help; }
+
+abbr { text-transform: none; }
+
+.wp-caption-text { font-size: 10px; font-size: 0.76923rem; color: #8d8c8f; }
+
+
+/* Buttons */
+
+.btn, .skiplink { display: inline-block; width: auto; background: #e7e7e7; -webkit-appearance: none; font-family: "Open Sans"; font-weight: 600; padding: 0 !important; text-align: center; }
+.btn > a, .btn input, .btn button, .skiplink > a, .skiplink input, .skiplink button { display: block; padding: 0 14px; color: #f7f7f7; height: 100%; }
+.btn input, .btn button, .skiplink input, .skiplink button { background: none; border: none; width: 100%; font-size: 100%; cursor: pointer; font-weight: 400; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+.btn.primary.small { font-size: 10px; font-size: 0.76923rem; height: 16px; line-height: 14px; background: #334374; border: 1px solid #334374; }
+.btn.primary.medium { font-size: 13px; font-size: 1rem; height: 20px; line-height: 18px; background: #334374; border: 1px solid #334374; }
+.btn.primary.large { font-size: 17px; font-size: 1.30769rem; height: 26px; line-height: 24px; background: #334374; border: 1px solid #334374; }
+.btn.primary.xlarge { font-size: 19px; font-size: 1.46154rem; height: 29px; line-height: 27px; background: #334374; border: 1px solid #334374; }
+
+.btn.secondary.small { font-size: 10px; font-size: 0.76923rem; height: 16px; line-height: 14px; background: #e82e0a; border: 1px solid #e82e0a; }
+.btn.secondary.medium { font-size: 13px; font-size: 1rem; height: 20px; line-height: 18px; background: #e82e0a; border: 1px solid #e82e0a; }
+.btn.secondary.large { font-size: 17px; font-size: 1.30769rem; height: 26px; line-height: 24px; background: #e82e0a; border: 1px solid #e82e0a; }
+.btn.secondary.xlarge { font-size: 19px; font-size: 1.46154rem; height: 29px; line-height: 27px; background: #e82e0a; border: 1px solid #e82e0a; }
+
+.btn.default.small { font-size: 10px; font-size: 0.76923rem; height: 16px; line-height: 14px; background: #e7e7e7; border: 1px solid #e7e7e7; color: #4a4a4a; border: 1px solid #e7e7e7; }
+.btn.default.medium { font-size: 13px; font-size: 1rem; height: 20px; line-height: 18px; background: #e7e7e7; border: 1px solid #e7e7e7; color: #4a4a4a; border: 1px solid #e7e7e7; }
+.btn.default.large { font-size: 17px; font-size: 1.30769rem; height: 26px; line-height: 24px; background: #e7e7e7; border: 1px solid #e7e7e7; color: #4a4a4a; border: 1px solid #e7e7e7; }
+.btn.default.xlarge { font-size: 19px; font-size: 1.46154rem; height: 29px; line-height: 27px; background: #e7e7e7; border: 1px solid #e7e7e7; color: #4a4a4a; border: 1px solid #e7e7e7; }
+
+.btn.info.small { font-size: 10px; font-size: 0.76923rem; height: 16px; line-height: 14px; background: #272728; border: 1px solid #272728; }
+.btn.info.medium { font-size: 13px; font-size: 1rem; height: 20px; line-height: 18px; background: #272728; border: 1px solid #272728; }
+.btn.info.large { font-size: 17px; font-size: 1.30769rem; height: 26px; line-height: 24px; background: #272728; border: 1px solid #272728; }
+.btn.info.xlarge { font-size: 19px; font-size: 1.46154rem; height: 29px; line-height: 27px; background: #272728; border: 1px solid #272728; }
+
+.btn a { color: #f7f7f7 }
+
+
+/* Alerts */
+
+.alert.primary { background: #586fb5; border: 1px solid #334374; color: #141a2d; padding: 0 10px; font-family: "Open Sans"; font-weight: 600; list-style-type: none; word-wrap: break-word; margin-bottom: 6.5px; font-size: 14px; font-size: 1.07692rem; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.alert.secondary { background: #f87960; border: 1px solid #e82e0a; color: #861b06; }
+.alert.default { background: white; border: 1px solid #e7e7e7; color: #b4b4b4; color: #4a4a4a; border: 1px solid #e7e7e7; padding: 0 10px; font-family: "Open Sans"; font-weight: 600; list-style-type: none; word-wrap: break-word; margin-bottom: 6.5px; font-size: 14px; font-size: 1.07692rem; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.alert.info { background: #5a595c; border: 1px solid #272728; color: black; color: #e7e7e7; padding: 0 10px; font-family: "Open Sans"; font-weight: 600; list-style-type: none; word-wrap: break-word; margin-bottom: 6.5px; font-size: 14px; font-size: 1.07692rem; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.alert.danger { background: #df8989; border: 1px solid #ca3838; color: #7b2121; padding: 0 10px; font-family: "Open Sans"; font-weight: 600; list-style-type: none; word-wrap: break-word; margin-bottom: 6.5px; font-size: 14px; font-size: 1.07692rem; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.alert.warning { background: #fbdca0; border: 1px solid #f6b83f; color: #c68609; color: #644405; padding: 0 10px; font-family: "Open Sans"; font-weight: 600; list-style-type: none; word-wrap: break-word; margin-bottom: 6.5px; font-size: 14px; font-size: 1.07692rem; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.alert.success { background: #91e26a; border: 1px solid #58c026; color: #316b15; padding: 0 10px; font-family: "Open Sans"; font-weight: 600; list-style-type: none; word-wrap: break-word; margin-bottom: 6.5px; font-size: 14px; font-size: 1.07692rem; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+
+
+/* Tabs */
+
+.tab-nav > li:hover { background-color: transparent; }
+.tab-nav > li a:hover { background-color: #334374; color: #f7f7f7; text-shadow: 0 1px 1px #072554; }
+
+.tab-nav > li.active > a { background-color: white; }
+.tab-nav > li.active > a:hover { background: #072554; }
+
+.tabs.pill .tab-nav { width: 100%; /* remove if you dont want the tabs to span the full container width */ display: table; overflow: hidden; border: 1px solid #dadada; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.tabs.pill .tab-nav > li { display: table-cell; margin: 0; margin-left: -4px; text-align: center; top: 0; }
+.tabs.pill .tab-nav > li:first-child { margin-left: 0; }
+.tabs.pill .tab-nav > li > a { border: none; border-right: 1px solid #dadada; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; height: 42px; line-height: 40px; }
+.tabs.pill .tab-nav > li:last-child > a { border-right: none; }

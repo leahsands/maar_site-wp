@@ -18,7 +18,7 @@
 	<meta name="author" content="humans.txt">
 
 	<!-- favicon -->
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
 
 	<!-- Facebook Metadata /-->
 	<meta property="fb:page_id" content="">

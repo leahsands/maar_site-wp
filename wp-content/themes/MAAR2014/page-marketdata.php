@@ -34,7 +34,7 @@ Template Name: Market Data
 			</section>
 		</div>
 		<div class="row">
-			<section class="ttip four columns" data-tooltip="..." alt="">
+			<section class="ttip four columns" data-tooltip="An important segment spelled out" alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon large fss-icon"></div>
 			</section>

@@ -34,6 +34,238 @@
 
 
 
+	/* Tiny MCE Advanced Menus */
+	// Add Formats Dropdown Menu To MCE
+	if ( ! function_exists( 'wpex_style_select' ) ) {
+		function wpex_style_select( $buttons ) {
+			array_push( $buttons, 'styleselect' );
+			return $buttons;
+		}
+	}
+	add_filter( 'mce_buttons', 'wpex_style_select' );
+
+	// Hooks your functions into the correct filters
+	function my_add_mce_button() {
+		// check user permissions
+		if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
+			return;
+		}
+		// check if WYSIWYG is enabled
+		if ( 'true' == get_user_option( 'rich_editing' ) ) {
+			add_filter( 'mce_external_plugins', 'my_add_tinymce_plugin' );
+			add_filter( 'mce_buttons', 'my_register_mce_button' );
+		}
+	}
+	add_action('admin_head', 'my_add_mce_button');
+
+	// Declare script for new button
+	function my_add_tinymce_plugin( $plugin_array ) {
+		$plugin_array['item_button'] = get_template_directory_uri() .'/js/tinymce.js';
+		return $plugin_array;
+	}
+
+	// Register new button in the editor
+	function my_register_mce_button( $buttons ) {
+		array_push( $buttons, 'item_button' );
+		return $buttons;
+	}
+
+
+	//Custom colors
+	function my_mce_options( $init ) {
+	$default_colours = '
+	    "000000", "Black",  "1b1a1b", "Darker Grey", "272728", "Dark Grey", "414042", "Grey", "676669", "Light Grey", "8d8c8f", "Lighter Grey", "e7e7e7", "Lightest Grey", "f7f7f7", "Off White",     "FFFFFF", "White"
+	';
+	$custom_colours = '
+	    "072554", "Dark Blue", "334374", "Blue", "697ebd", "Light Blue", "b72408", "Dark Red", "e82e0a", "Red"
+	';
+	$init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']'; // build colour grid default+custom colors
+	$init['textcolor_rows'] = 6; // enable 6th row for custom colours in grid
+	return $init;
+	}
+	add_filter('tiny_mce_before_init', 'my_mce_options');
+
+
+	// Add new styles to the TinyMCE "formats" menu dropdown
+	if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
+		function wpex_styles_dropdown( $settings ) {
+
+			// Create array of new styles
+			$new_styles = array(
+
+				array(
+					'title'	=> __( 'Columns', 'wpex' ),
+					'items'	=> array(
+						array(
+							'title'		=> __('1/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('one', 'columns'),
+						),
+						array(
+							'title'		=> __('1/6 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('two', 'columns'),
+						),
+						array(
+							'title'		=> __('1/4 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('three', 'columns'),
+						),
+						array(
+							'title'		=> __('1/3 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('four', 'columns'),
+						),
+						array(
+							'title'		=> __('5/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('five', 'columns'),
+						),
+						array(
+							'title'		=> __('1/2 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('six', 'columns'),
+						),
+						array(
+							'title'		=> __('7/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('seven', 'columns'),
+						),
+
+						array(
+							'title'		=> __('2/3 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('eight', 'columns'),
+						),
+						array(
+							'title'		=> __('3/4 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('nine', 'columns'),
+						),
+						array(
+							'title'		=> __('5/6 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('ten', 'columns'),
+						),
+						array(
+							'title'		=> __('11/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('eleven', 'columns'),
+						),
+						array(
+							'title'		=> __('Full Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('twelve', 'columns'),
+						),
+					),
+					'title'	=> __( 'Pretty Columns', 'wpex' ),
+					'items'	=> array(
+						array(
+							'title'		=> __('1/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('one', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('1/6 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('two', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('1/4 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('three', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('1/3 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('four', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('5/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('five', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('1/2 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('six', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('7/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('seven', 'columns', 'gen-div'),
+						),
+
+						array(
+							'title'		=> __('2/3 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('eight', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('3/4 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('nine', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('5/6 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('ten', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('11/12 Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('eleven', 'columns', 'gen-div'),
+						),
+						array(
+							'title'		=> __('Full Column','wpex'),
+							'block'	=> 'div',
+							'wrapper' => true,
+							'classes'	=> array('twelve', 'columns', 'gen-div'),
+						),
+					),
+				),
+			);
+
+			// Merge old & new styles
+			$settings['style_formats_merge'] = true;
+
+			// Add new styles
+			$settings['style_formats'] = json_encode( $new_styles );
+
+			// Return New Settings
+			return $settings;
+
+		}
+	}
+	add_filter( 'tiny_mce_before_init', 'wpex_styles_dropdown' );
+
+
+
+
+
 	/**
 	 * Register our sidebars and widgetized areas.
 	 *
