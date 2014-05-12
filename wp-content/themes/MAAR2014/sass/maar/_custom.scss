@@ -118,6 +118,8 @@ span {
 } // mem nav
 
 .search-field {
+	&:hover { background: none !important; }
+	@media only screen and (max-width: $tablet-landscape-width) { margin-left: 20px; }
 	input {
 		padding-right: 30px;
 		float: right;
@@ -141,9 +143,6 @@ span {
 		top: 10px;
 		right: 3px;
 		color: $grey !important;
-		@media only screen and (max-width: $tablet-landscape-width) {
-			right: 20px;
-		}
 	}
 } // search-field
 
@@ -262,8 +261,8 @@ span {
 .open-panel {
 	float: left;
 	i {
-		margin-top: 7px;
-		font-size: $xlarge;
+		margin-top: $gutter-in-px;
+		font-size: $xxlarge;
 		color: $primary-color;
 	}
 }
@@ -273,14 +272,11 @@ span {
 }
 
 /* ----------- Accordion Menu ------------- */
-.side-menu > .side-scroll> ul {
+.side-menu > .side-scroll > ul {
 	li {
 		max-height: 34px;
 		@include maar-transition(height, 0.6s);
 		overflow: hidden;
-		&:target {
-			max-height: 500px;
-		}
 		ul {
 			opacity: 0;
 			border: 0px;
@@ -291,11 +287,30 @@ span {
 			@include maar-transition(all, 0.6s);
 			li:first-child { margin-top: 0; }    
 		}
-		&:target ul {
-			opacity: 1;            
-		}
+	}
+	li.active {
+		max-height: 500px;
+		ul { opacity: 1; }
+		&:hover { background: none; }
+	}
+	i { display: none; }
+}
+
+.side-menu > .side-scroll > ul > li:first-child.active-item {
+	background: none;
+	i { display: none !important; }
+}
+
+.active-item {
+	background: $grey-drkr;
+	i {
+		display: inline-block !important;  
+		float: right;
+		margin-left: $gutter-in-px;
+		margin-right: 0px;
 	}
 }
+
 
 /* ----------- Main Body Styles ----------- */
 .main-body {
@@ -358,6 +373,10 @@ span {
 .label-inside input {
 	color: $grey-lgtr;
 }
+
+.append.field div { float: left; }
+
+.ninja-forms-field.default { padding: 0 10px !important; }
 
 /* ----- Pill Tab Styles ----- */
 .tab-nav > li {

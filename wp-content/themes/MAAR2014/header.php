@@ -100,12 +100,14 @@
 		<!-- MOBILE RIGHT NAV -->
 			<nav class="side-menu side-right side-effect-right" id="menu">
 				<section class="side-scroll">
-  				<form action="http://m.fiftyone.com/s/544/o3wZukbbQCHKSQ5Q6j2t53AJzBGmz6NH" method="get">
-					<div class="field search-field row">
-						<input class="toggle search input icon-right icon-search" type="search" name="q" placeholder="Search" gumby-trigger="#meta-nav .field" gumby-on="focus blur">
-						<i class="icon-search"></i>
-					</div>
-				</form>
+  				<center><form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+				    <ul>
+				    	<li class="field search-field">
+					        <input class="toggle search input icon-right icon-search" type="text" id="s" name="s" value="<?php the_search_query(); ?>" placeholder="Search" gumby-trigger="#meta-nav .field" gumby-on="focus blur" />
+					        <i class="icon-search"></i>
+					    </li>
+					</ul>
+				</form></center>
 					<ul class="row">
 						<li class="twelve columns">
 							<a href="https://maarportal.ramcoams.net" target="_blank"><p class="mem-icon"><i class="icon-login"></i> Login</p></a>
@@ -130,16 +132,16 @@
 					</div>
 					<div class="row side-contact" style="margin-top: 10px;">
 						<div class="four columns">
-							<a href=""><i class="icon-mail social"></i></a>
+							<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>"><i class="icon-mail social"></i></a>
 						</div>
 						<div class="eight columns">
 							<p> 5750 Lincoln Drive, Edina, MN 55436<br />
 							952.933.9020<br />
-							<a href="#">Privacy Statement</a></p>
+							<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'bylaws-rules-policies' ) ) ); ?>">Privacy Statement</a></p>
 						</div>
 					</div>
 					<div class="row side-contact">
-							<p>&copy;2014 Minneapolis Association of REALTORS&reg;. All rights reserved.</p>
+							<p>&copy;<?php echo date( 'Y' ); ?> Minneapolis Association of REALTORS&reg;. All rights reserved.</p>
 					</div>
 	  		</section> <!-- / side-scroll -->
 			</nav>
@@ -155,7 +157,7 @@
 								<a href="#"><i class="icon-users"></i></a>
 							</div>
 							<div class="logo-area-mobile">
-								<a href="index.html"><img src="<?php bloginfo('template_url'); ?>/img/assets/MAARlogo.png" /></a>
+								<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/assets/MAARlogo.png" /></a>
 							</div>
 					</div>
 

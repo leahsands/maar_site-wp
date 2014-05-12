@@ -74,3 +74,12 @@ $(".content").click(function(){
 $("html").removeClass("openNav");
   
 });
+
+
+//adds an "active" to drawer menu items
+$(function() {                       //run when the DOM is ready
+  $(".clickable").click(function() {  //use a class, since your ID gets mangled
+  	$(".clickable.active").removeClass("active");
+    $(this).addClass("active");      //add the class to the clicked element
+  });
+});

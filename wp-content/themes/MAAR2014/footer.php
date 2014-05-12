@@ -27,6 +27,8 @@
 		</div><!-- /side-pusher -->
 	</div><!-- /side-container -->
 	
+	<!-- Sidebar Effects -->
+	<script src="<?php bloginfo('template_directory');?>/js/_custom/sidebar-effects.js"></script>
 	<!-- Slider javascript files -->
 	<script src="<?php bloginfo('template_directory');?>/js/_custom/jquery.flexslider.js"></script>
 

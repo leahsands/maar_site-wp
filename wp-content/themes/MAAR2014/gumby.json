@@ -9,8 +9,7 @@
 		"files": [
 			"js/_custom/custom.js",
 			"js/_custom/flexslider.js",
-			"js/_custom/classie.js",
-			"js/_custom/sidebar-effects.js",			
+			"js/_custom/classie.js",			
 			"js/_custom/jflickrfeed.min.js",
 			"js/_custom/social_feeds.js"
 		]

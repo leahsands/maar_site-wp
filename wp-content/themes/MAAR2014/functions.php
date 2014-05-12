@@ -170,6 +170,8 @@
 							'classes'	=> array('twelve', 'columns'),
 						),
 					),
+				),
+				array(
 					'title'	=> __( 'Pretty Columns', 'wpex' ),
 					'items'	=> array(
 						array(
@@ -571,25 +573,32 @@
 			$class_names = $value = '';
 	 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+			$new_classes = array();
+			if ( preg_grep("/^current/", $classes) ) {
+				$new_classes [] = 'active';
+				if ( preg_grep("/current-menu-item/",$classes) ) {
+					$new_classes [] = 'active-item';
+				}
+			} 
 	 
-			$class_names = ' class="' . esc_attr( $class_names ) . '"';
+			$class_names = ' class="clickable ' . esc_attr( join( ' ',$new_classes ) ) . '"';
 	 
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 			$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
 	 
 	 		$li_attributes = ($args->has_children) 	    ? ' href="#'. $item->attr_title . '"' : '';
-			$output .= $indent . '<li id="'. $item->attr_title . '">';
+
+			$output .= $indent . '<li id="'. $item->attr_title . '" ' . $class_names . '>';
 	 
 			$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 			$link 		.= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 			$link       .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 			$link		.= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-			$attributes .= ($args->has_children) 	    ? ' href="#'. $item->attr_title . '"' : '';
 	 
 			$item_output = $args->before;
 			$item_output .= '<a'. $attributes . $link .'>';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ($depth == 0 && $args->has_children) ? '</a>' : '</a>';
+			$item_output .= ($depth == 0 && $args->has_children) ? '</a>' : '<i class="icon-right-open"></i></a>';
 			$item_output .= $args->after;
 	 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
