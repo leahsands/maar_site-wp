@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Leadership Members
+Plugin Name: Leadership
 Plugin URI: http://wp.tutsplus.com/
 Description: Declares a plugin that will create a custom post type displaying leadership Members.
 Version: 1.0
@@ -14,19 +14,19 @@ function create_leadership_member() {
     register_post_type( 'leadership_post',
         array(
             'labels' => array(
-                'name' => 'Leadership Members',
-                'singular_name' => 'Leadership Member',
+                'name' => 'Leadership',
+                'singular_name' => 'Leadership',
                 'add_new' => 'Add New',
-                'add_new_item' => 'Add New Leadership Member',
+                'add_new_item' => 'Add New Leadership',
                 'edit' => 'Edit',
-                'edit_item' => 'Edit Leadership Member',
-                'new_item' => 'New leadership Member',
+                'edit_item' => 'Edit Leadership',
+                'new_item' => 'New leadership',
                 'view' => 'View',
-                'view_item' => 'View Leadership Member',
-                'search_items' => 'Search Leadership Members',
-                'not_found' => 'No Leadership Members found',
-                'not_found_in_trash' => 'No Leadership Members found in Trash',
-                'parent' => 'Parent Leadership Member'
+                'view_item' => 'View Leadership',
+                'search_items' => 'Search Leadership',
+                'not_found' => 'No Leadership found',
+                'not_found_in_trash' => 'No Leadership found in Trash',
+                'parent' => 'Parent Leadership'
             ),
  
             'public' => true,

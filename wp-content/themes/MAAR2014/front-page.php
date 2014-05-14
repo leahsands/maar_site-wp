@@ -58,21 +58,24 @@
 	    $loop = new WP_Query( $feature_images );
 	    
 	    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-	            <li>
+	            
+		   <li>
 	              <img src="<?php the_field('feat_img_img'); ?>" alt="" />
 	              <div class="flex-caption">
 	                        <h1><?php echo esc_html( get_post_meta( get_the_ID(), 'large_caption', true ) ); ?></h1>
 	                        <h2><?php echo esc_html( get_post_meta( get_the_ID(), 'small_caption', true ) ); ?></h2>
-	                        <?php if ( get_post_meta($post->ID, 'small_caption', true) ) : ?>
+	                        <?php if ( get_post_meta($post->ID, 'button_caption', true) ) : ?>
 	                        <p class="large btn">
-	                            <a href="<?php echo esc_html( get_post_meta( get_the_ID(), 'button_link', true ) ); ?>" target="_blank">
-	                                <?php echo esc_html( get_post_meta( get_the_ID(), 'small_caption', true ) ); ?>
+	                            <a href="http://<?php echo get_post_meta( get_the_ID(), 'button_link', true ); ?>" target="_blank"  style="z-index: 500;">
+	                                <?php echo esc_html( get_post_meta( get_the_ID(), 'button_caption', true ) ); ?>
 	                                <i class="icon-right-open-big"></i>
 	                            </a>
 	                        </p>
 	                        <?php endif; ?>
 	              </div>
-	            </li>
+		    <a href="http://<?php echo get_post_meta( get_the_ID(), 'button_link', true ); ?>" target="_blank" style="width: 100%; height: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0;">
+	            </a>
+		    </li>
 
 	    <?php endwhile; ?>
 
@@ -84,7 +87,7 @@
 <!-- Notification -->
 <div class="row main-body notify">
 	<section class="twelve columns">
-		<p><i class="icon-attention"></i>Due to incliment weather, the MAAR Office is closed today.<i class="icon-attention"></i></p>
+		<p>Welcome to the new and improved MAAR website!</p>
 	</section>
 </div>
 
@@ -101,12 +104,12 @@
 				<?php
 
 			    $news_items = array(
-			    	'post_type' => array('newsletter_pdf', 'post'),
+			    	'post_type' => array('newsletter_html', 'post'),
 			    	'posts_per_page' => 5  );
 			    $loop = new WP_Query( $news_items );
 			    
 			    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			    	<?php if( get_post_type() == 'newsletter_pdf') { ?>
+			    	<?php if( get_post_type() == 'newsletter_html') { ?>
 			            <li>
 			              <a href="<?php echo the_field('newsletter'); ?>" alt="" target="_blank" />
 			              	<?php the_title(); ?>

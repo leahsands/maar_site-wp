@@ -31,7 +31,7 @@ get_header(); ?>
 			<?php
 
 		    $feature_images = array(
-		    	'post_type' => 'newsletter_pdf',
+		    	'post_type' => 'newsletter_html',
 		    	'posts_per_page' => 15  );
 		    $loop = new WP_Query( $feature_images );
 		    

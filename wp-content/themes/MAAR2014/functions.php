@@ -32,6 +32,13 @@
 	add_action('login_head',  'my_custom_login_logo');
 
 
+	// Subscribe2
+	function my_s2_form($form) {
+	    // To remove the 'Your Email:' prompt text from the form
+	    $form = str_replace('Your email:', '', $form);
+	    return $form;
+	}
+	add_filter('s2_form', 'my_s2_form');
 
 
 	/* Tiny MCE Advanced Menus */
@@ -365,7 +372,7 @@
 			//$query->set('post_type', array('post', 'page'));
 
 			// dont search these pages
-			$query->set('post__not_in', array('feat_img', 'newsletter_pdf'));
+			$query->set('post__not_in', array('feat_img', 'newsletter_html'));
 		}
 		return $query;
 	}
@@ -532,7 +539,7 @@
 	        }
 	    }
 
-	    if ( get_post_type() == 'newsletter_pdf' ) {
+	    if ( get_post_type() == 'newsletter_html' ) {
 	        if ( is_single() ) {
 	            // checks if the file exists in the theme first,
 	            // otherwise serve the file from the plugin
@@ -573,10 +580,11 @@
 			$class_names = $value = '';
 	 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-			$new_classes = array();
+
+			$new_classes = $classes;
 			if ( preg_grep("/^current/", $classes) ) {
 				$new_classes [] = 'active';
-				if ( preg_grep("/current-menu-item/",$classes) ) {
+				if ( preg_grep("/current-menu-item|current-page-ancestor/",$classes) ) {
 					$new_classes [] = 'active-item';
 				}
 			} 
@@ -613,13 +621,30 @@
 		
 	 
 		function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+
 			//v($element);
 			if ( !$element )
 				return;
 	 
 			$id_field = $this->db_fields['id'];
+			$id = $element->$id_field;
 	 
 			//display this element
+			$hasActiveChildren = false;
+
+			if (  isset( $children_elements[$id] ) ) {
+				foreach(  $children_elements[$id] as $child ){
+					$classes = empty( $child->classes ) ? array() : (array) $child->classes;
+					if ( preg_grep("/^current-page-ancestor/", $classes) ) {
+						$hasActiveChildren = true;
+					}
+				}
+			}
+
+			if ($hasActiveChildren) {
+				$element->classes[] = 'current-menu-ancestor';
+			}
+
 			if ( is_array( $args[0] ) )
 				$args[0]['has_children'] = ! empty( $children_elements[$element->$id_field] );
 			else if ( is_object( $args[0] ) )
@@ -627,7 +652,7 @@
 			$cb_args = array_merge( array(&$output, $element, $depth), $args);
 			call_user_func_array(array(&$this, 'start_el'), $cb_args);
 	 
-			$id = $element->$id_field;
+			
 	 
 			// descend only when the depth is right and there are childrens for this element
 			if ( ($max_depth == 0 || $max_depth > $depth+1 ) && isset( $children_elements[$id]) ) {

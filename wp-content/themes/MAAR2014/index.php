@@ -11,12 +11,7 @@
 	</div>
 	<div class="row">
 		<section class="six columns">
-			<ul>
-				<li class="append field">
-					<input class="wide email input" type="email" placeholder="Email input" />
-					<div class="medium default btn"><a href="#">Subscribe</a></div>
-				</li>
-			</ul>
+			<?php echo do_shortcode('[subscribe2]'); ?>
 		</section>
 
 		<?php blog_pagination(); ?>
@@ -26,6 +21,7 @@
 		<?php
 		$blog_posts = array(
 			'post_type' => '',
+			'posts_per_page' => 6,
 			'post_status' => 'publish',
 			'post_type' => 'post',
 			'paged' => $paged 
@@ -38,7 +34,7 @@
 		<section class="four columns gen-div blog">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 			<div class="gen-div-header">
-				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
 			</div>
 			<div class="gen-div-inner">
 				<p><?php the_excerpt(); // echo the excerpt ?></p>
@@ -51,12 +47,7 @@
 
 	<div class="row main-body">
 		<section class="six columns">
-			<ul>
-				<li class="append field">
-					<input class="wide email input" type="email" placeholder="Email input" />
-					<div class="medium default btn"><a href="#">Subscribe</a></div>
-				</li>
-			</ul>
+			<?php echo do_shortcode('[subscribe2]'); ?>
 		</section>
 
 		<?php blog_pagination(); ?>

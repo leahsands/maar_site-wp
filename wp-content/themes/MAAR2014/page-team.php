@@ -22,11 +22,11 @@ get_header(); ?>
     while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
             <section class="three columns gen-div <?php echo esc_html( get_post_meta( get_the_ID(), 'team_category', true ) ); ?> team"> 
-                <h5 class="gen-div-header"><?php the_title(); ?></h5>
-                <article class="gen-div-inner">
                     <article class="twelve columns">
-                        <?php the_post_thumbnail(); ?>
+                        <img src="<?php the_field('display_picture'); ?>" alt="" />
                     </article>
+		    <h5 class="gen-div-header"><?php the_title(); ?></h5>
+		    <article class="gen-div-inner">
                     <p><?php echo esc_html( get_post_meta( get_the_ID(), 'team_position', true ) ); ?> <br />
                         <?php echo esc_html( get_post_meta( get_the_ID(), 'team_phone', true ) ); ?> <br />
                         <a href="mailto:<?php echo esc_html( get_post_meta( get_the_ID(), 'team_email', true ) ); ?>">

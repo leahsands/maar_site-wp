@@ -37,7 +37,7 @@ Template Name: Newsroom
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 					<section class="twelve columns blog">
-						<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+						<a href="<?php the_permalink(); ?>"><h5><?php the_title(); ?></h5></a>
 						<?php my_excerpt('long'); ?>
 					</section>
 					<?php endwhile; ?>
@@ -68,7 +68,7 @@ Template Name: Newsroom
 						<?php
 
 					    $feature_images = array(
-					    	'post_type' => 'newsletter_pdf',
+					    	'post_type' => 'newsletter_html',
 					    	'posts_per_page' => 15  );
 					    $loop = new WP_Query( $feature_images );
 					    

@@ -742,7 +742,7 @@ abbr { text-transform: none; }
 /*.container {
 	padding: 0 $gutter-in-px;
 }*/
-.row { width: 100%; max-width: 980px; min-width: 320px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+.row { width: 100%; max-width: 980px; min-width: 360px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
 .row .row { min-width: 0; padding-left: 0; padding-right: 0; }
 
 /* To fix the grid into a different size, set max-width to your desired width */
@@ -1266,7 +1266,7 @@ img { -ms-interpolation-mode: bicubic; }
 .navbar ul li.field { margin-bottom: 0 !important; margin-right: 0; }
 @media only screen and (max-width: 767px) { .navbar ul li.field { padding: 0 12px; } }
 .navbar ul li.field input.search { background: #0e0e0e; border: none; color: #e7e7e7; }
-.navbar ul li .dropdown { width: auto; min-width: 0; max-width: 320px; height: 0; position: absolute; background: #efefef; overflow: hidden; z-index: 999; }
+.navbar ul li .dropdown { width: auto; min-width: 0; max-width: 360px; height: 0; position: absolute; background: #efefef; overflow: hidden; z-index: 999; }
 @media only screen and (max-width: 767px) { .navbar ul li .dropdown { width: 100%; max-width: 100%; position: relative; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
   .navbar ul li.active .dropdown { border-bottom: 1px solid #272728; }
   .navbar ul li.active .dropdown ul { position: relative; top: 0; background: #2d2c2d; min-height: 50px; max-height: 250px; height: auto; overflow: auto; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
@@ -1275,7 +1275,7 @@ img { -ms-interpolation-mode: bicubic; }
   .navbar ul li.active .dropdown ul li a:hover { color: #334374; } }
 
 @media only screen and (min-width: 768px) and (max-width: 939px) { .navbar > ul > li > .btn a { padding: 0 10px 0 10px !important; }
-  .navbar ul > li .dropdown ul li.active .dropdown { left: -320px; } }
+  .navbar ul > li .dropdown ul li.active .dropdown { left: -360px; } }
 
 .navcontain { height: 80px; }
 @media only screen and (max-width: 768px) { .navcontain { height: auto; } }
@@ -1290,7 +1290,7 @@ img { -ms-interpolation-mode: bicubic; }
 .pretty.navbar ul li.field input.search { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0e0e0e), color-stop(100%, #464547)); background-image: -webkit-linear-gradient(#0e0e0e, #464547); background-image: -moz-linear-gradient(#0e0e0e, #464547); background-image: -o-linear-gradient(#0e0e0e, #464547); background-image: linear-gradient(#0e0e0e, #464547); border: none; -webkit-box-shadow: 0 1px 2px #817f83 !important; -moz-box-shadow: 0 1px 2px #817f83 !important; box-shadow: 0 1px 2px #817f83 !important; /* Remove this line if you dont want a dropshadow on your navigation*/ }
 .pretty.navbar > ul > li:first-child, .pretty.navbar .pretty.navbar > ul > li:first-child a:hover { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
-.navbar li .dropdown { width: auto; min-width: 0; max-width: 320px; height: 0; position: absolute; background: #efefef; overflow: hidden; z-index: 999; }
+.navbar li .dropdown { width: auto; min-width: 0; max-width: 360px; height: 0; position: absolute; background: #efefef; overflow: hidden; z-index: 999; }
 @media only screen and (max-width: 767px) { .navbar li .dropdown .dropdown { width: 100%; max-width: 100%; position: relative; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
   .navbar li .dropdown.active .dropdown { border-bottom: 1px solid #272728; }
   .navbar li .dropdown.active .dropdown ul { position: relative; top: 0; background: #2d2c2d; min-height: 50px; max-height: 250px; height: auto; overflow: auto; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
@@ -1300,7 +1300,7 @@ img { -ms-interpolation-mode: bicubic; }
 
 .navbar li .dropdown ul { margin: 0; display: block; }
 .navbar li .dropdown ul > li { position: relative; display: block; width: 100%; float: left; text-align: left; height: auto; -webkit-border-radius: none; -moz-border-radius: none; -ms-border-radius: none; -o-border-radius: none; border-radius: none; }
-@media only screen and (min-width: 768px) and (max-width: 939px) { .navbar li .dropdown ul > li { max-width: 320px; word-wrap: break-word; } }
+@media only screen and (min-width: 768px) and (max-width: 939px) { .navbar li .dropdown ul > li { max-width: 360px; word-wrap: break-word; } }
 .navbar li .dropdown ul > li a { display: block; padding: 0 20px; color: #334374; border-bottom: 1px solid #414042; text-shadow: none; height: 22px; line-height: 20px; }
 @media only screen and (max-width: 767px) { .navbar li .dropdown ul > li a { padding: 0 12px; } }
 .navbar li .dropdown ul > li .dropdown { display: none; background: white; }
@@ -1961,10 +1961,8 @@ span { font-size: 13px; font-size: 1rem; }
 @media only screen and (max-width: 768px) { .archive { padding: 6px; } }
 
 /* ----------- Blog Page Style ------------ */
-.blog img { filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */ filter: gray; /* IE6-9 */ -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */ }
 .blog a { color: #8d8c8f; }
 .blog h1, .blog h2, .blog h3, .blog h4 { color: #8d8c8f; padding-bottom: 0; padding-top: 0; }
-.blog:hover img { filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale"); -webkit-filter: grayscale(0%); }
 .blog:hover a { color: #334374; }
 .blog:hover h1, .blog:hover h2, .blog:hover h3, .blog:hover h4 { color: #334374; }
 
@@ -1979,6 +1977,35 @@ span { font-size: 13px; font-size: 1rem; }
 
 @media only screen and (max-width: 768px) { .nivo-lightbox-theme-default .nivo-lightbox-next { background-image: none\9; -webkit-background-size: 24px; -moz-background-size: 24px; -o-background-size: 24px; background-size: 24px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='next.png', sizingMethod='scale'); -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='next.png', sizingMethod='scale')"; } }
 @media only screen and (max-width: 768px) { .nivo-lightbox-theme-default .nivo-lightbox-prev { background-image: none\9; -webkit-background-size: 24px; -moz-background-size: 24px; -o-background-size: 24px; background-size: 24px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='prev.png', sizingMethod='scale'); -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='prev.png', sizingMethod='scale')"; } }
+/* ----------- Comments Styles ------------ */
+.gen-div:hover .reply { background: #334374; }
+.gen-div:hover .reply a { color: #f7f7f7; }
+
+.commentlist { list-style: none; }
+
+.commentlist .comment-metadata a { font-weight: 400 !important; color: #272728; }
+
+.comment-body { margin-bottom: 12px; }
+
+.avatar { width: 32px !important; }
+
+.comment-author { text-align: middle; }
+
+.reply { padding: 0 14px; background: #676669; width: 66px; }
+.reply a { color: #f7f7f7; }
+.reply:hover { background: #072554; }
+
+ul.children { padding-left: 24px; }
+
+.form-allowed-tags { display: none; }
+
+.comment-form-comment textarea { background: white; border: 1px solid #e7e7e7; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
+
+.form-submit input { padding: 5px; background-color: #334374; color: #f7f7f7; font-family: "Open Sans"; font-size: 14px; border: 1px solid #072554; }
+.form-submit input:hover { background-color: #072554; }
+
+.drawer.active#comments { overflow-y: auto; }
+
 /* ----------- Newsroom Styles ------------ */
 @media only screen and (min-width: 768px) { .newsroom.row { height: 450px; overflow: hidden; }
   .newsroom.row section.four.columns { height: 97%; } }
@@ -2015,28 +2042,6 @@ span { font-size: 13px; font-size: 1rem; }
 .research:hover:after { content: "Research"; }
 
 #past-pres p { font-size: 10px; }
-
-/* ----------- Comments Styles ------------ */
-.gen-div:hover .reply { background: #334374; }
-.gen-div:hover .reply a { color: #f7f7f7; }
-
-.commentlist { list-style: none; }
-
-.commentlist .comment-metadata a { font-weight: 400 !important; color: #272728; }
-
-.comment-body { margin-bottom: 12px; }
-
-.avatar { width: 32px !important; }
-
-.comment-author { text-align: middle; }
-
-.reply { padding: 0 14px; background: #676669; width: 66px; }
-.reply a { color: #f7f7f7; }
-.reply:hover { background: #072554; }
-
-ul.children { padding-left: 24px; }
-
-.form-allowed-tags { display: none; }
 
 /* ----------- Video Page Styles ------------ */
 .video-overlay { position: absolute; z-index: 500; top: 0; bottom: 0; left: 0; background: rgba(231, 231, 231, 0.8); width: 100%; text-align: center; }
@@ -2240,13 +2245,14 @@ html[xmlns] .slides { display: block; }
 @media only screen and (max-width: 55em) { .flex-direction-nav .flex-prev, .flexslider:hover .flex-prev { opacity: 1; left: 10px; }
   .flex-direction-nav .flex-next, .flexslider:hover .flex-next { opacity: 1; right: 10px; } }
 /* ------------ Flexslider Captions ------------- */
-.flex-caption { width: 100%; padding: 2%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin-top: 5%; text-align: center; text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); }
+.flex-caption { width: 100%; padding: 2%; position: absolute; left: 0; right: 0; bottom: 0; margin-bottom: 4%; text-align: center; text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); }
 .flex-caption * { color: white !important; }
 .flex-caption h1 { font-size: 41px; font-size: 3.15385rem; }
 .flex-caption h2 { font-size: 25px; font-size: 1.92308rem; }
-@media only screen and (max-width: 768px) { .flex-caption h1 { font-size: 23px; font-size: 1.76923rem; }
+@media only screen and (max-width: 768px) { .flex-caption { margin-bottom: 3%; }
+  .flex-caption h1 { font-size: 23px; font-size: 1.76923rem; }
   .flex-caption h2 { font-size: 14px; font-size: 1.07692rem; } }
-@media only screen and (max-width: 320px) { .flex-caption { margin-top: 2%; }
+@media only screen and (max-width: 380px) { .flex-caption { margin-bottom: 5%; }
   .flex-caption h1 { font-size: 14px; font-size: 1.07692rem; }
   .flex-caption h2 { font-size: 10px; font-size: 0.76923rem; }
   .flex-caption p { display: none; } }

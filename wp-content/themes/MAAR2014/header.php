@@ -78,7 +78,7 @@
 						'echo'            => true,
 						'fallback_cb'     => 'wp_page_menu',
 						'depth'           => 2,
-						'walker'          => new Walker_Accordion
+						'walker'          => new Walker_Accordion 
 					);
 
 					wp_nav_menu( $defaults );
@@ -89,7 +89,7 @@
 	  				<ul>
 	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'applications-forms' ) ) ); ?>">Forms</a></li>
 	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>">Blog</a></li>
-	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( '' ) ) ); ?>">Find a REALTOR&reg;</a></li>
+	  					<li><a href="https://maarportal.ramcoams.net/Membership/Directory/MemberSearch.aspx?selmenid=men4" target="_blank">Find a REALTOR&reg;</a></li>
 	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'real-estate-service-guide' ) ) ); ?>">Real Estate Service Guide</a></li>
 	  					<li><a href="http://www.northstarmls.com/" target="_blank">NorthstarMLS</a></li>
 	  				</ul>

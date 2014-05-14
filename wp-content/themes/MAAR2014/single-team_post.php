@@ -15,7 +15,7 @@ get_header(); ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
             <section class="three columns">
-                <?php the_post_thumbnail(); ?>
+                <img src="<?php the_field('display_picture'); ?>" alt="" />
             </section>
             <section style="margin-top: 0;" class="five columns gen-div <?php echo esc_html( get_post_meta( get_the_ID(), 'team_category', true ) ); ?> team"> 
                 <article class="gen-div-inner">

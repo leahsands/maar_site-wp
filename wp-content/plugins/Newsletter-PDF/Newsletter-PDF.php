@@ -1,32 +1,32 @@
 <?php
 /*
-Plugin Name: Newsletter PDFs
-Plugin URI: http://wp.tutsplus.com/
-Description: Declares a plugin that will create a custom post type displaying Newsletter PDFs.
+Plugin Name: Newsletters for MAAR
+Plugin URI: 
+Description: Declares a plugin that will create a custom post type displaying Newsletters.
 Version: 1.0
-Author: Soumitra Chakraborty
-Author URI: http://wp.tutsplus.com/
-License: GPLv2
+Author: 
+Author URI:
+License: 
 */
-add_action( 'init', 'create_newsletter_pdf' );
+add_action( 'init', 'create_newsletter_html' );
 
-function create_newsletter_pdf() {
-    register_post_type( 'newsletter_pdf',
+function create_newsletter_html() {
+    register_post_type( 'newsletter_html',
         array(
             'labels' => array(
-                'name' => 'Newsletter PDFs',
-                'singular_name' => 'Newsletter PDF',
+                'name' => 'Newsletter',
+                'singular_name' => 'Newsletter',
                 'add_new' => 'Add New',
-                'add_new_item' => 'Add New Newsletter PDF',
+                'add_new_item' => 'Add New Newsletter',
                 'edit' => 'Edit',
-                'edit_item' => 'Edit Newsletter PDF',
-                'new_item' => 'New Newsletter PDF',
+                'edit_item' => 'Edit Newsletter',
+                'new_item' => 'New Newsletter',
                 'view' => 'View',
-                'view_item' => 'View Newsletter PDF',
-                'search_items' => 'Search Newsletter PDFs',
-                'not_found' => 'No Newsletter PDFs found',
-                'not_found_in_trash' => 'No Newsletter PDFs found in Trash',
-                'parent' => 'Parent Newsletter PDF'
+                'view_item' => 'View Newsletter',
+                'search_items' => 'Search Newsletters',
+                'not_found' => 'No Newsletter found',
+                'not_found_in_trash' => 'No Newsletters found in Trash',
+                'parent' => 'Parent Newsletter'
             ),
  
             'public' => true,

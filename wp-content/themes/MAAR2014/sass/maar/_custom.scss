@@ -740,7 +740,6 @@ span {
 
 /* ----------- Blog Page Style ------------ */
 .blog {
-	img { @include grayscale }
 	a { color: $grey-lgtr; }
 	h1,h2,h3,h4 {
 		color: $grey-lgtr;
@@ -748,7 +747,6 @@ span {
 		padding-top: 0;
 	}
 	&:hover {
-		img { @include grayscale-color }
 		a { color: $primary-color; }
 		h1,h2,h3,h4 { color: $primary-color; }
 	}
@@ -793,6 +791,57 @@ span {
 		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='prev.png', sizingMethod='scale');
 		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='prev.png', sizingMethod='scale')";
 	}
+}
+
+/* ----------- Comments Styles ------------ */
+.gen-div:hover {
+	.reply {
+		background: $primary-color;
+		a { color: $white; }
+	}
+}
+.commentlist { list-style: none; }
+
+.commentlist .comment-metadata a { font-weight: $font-weight-regular !important; color: $grey-drk; }
+
+.comment-body { margin-bottom: $gutter-in-px; }
+
+.avatar { width: 32px !important; }
+
+.comment-author { text-align: middle; }
+
+.reply { 
+	padding: 0 14px;
+	background: $grey-lgt;
+	width: 66px;
+	a { color: $white; }
+	&:hover { background: $primary-hover-color; }
+}
+
+ul.children { padding-left: ($gutter-in-px*2); }
+
+.form-allowed-tags { display: none; }
+
+.comment-form-comment textarea {
+	background: $tru-white;
+	border: 1px solid $grey-lgtst;
+	@include border-radius;
+}
+
+.form-submit input {
+	padding: 5px;
+	background-color: $primary-color;
+	color: $white;
+	font-family: $font-family;
+	font-size: $med;
+	border: 1px solid $primary-hover-color;
+	&:hover {
+		background-color: $primary-hover-color;
+	}
+}
+
+.drawer.active#comments {
+	overflow-y: auto;
 }
 
 
@@ -915,36 +964,6 @@ span {
 }
 
 #past-pres p { font-size: $small; }
-
-/* ----------- Comments Styles ------------ */
-.gen-div:hover {
-	.reply {
-		background: $primary-color;
-		a { color: $white; }
-	}
-}
-.commentlist { list-style: none; }
-
-.commentlist .comment-metadata a { font-weight: $font-weight-regular !important; color: $grey-drk; }
-
-.comment-body { margin-bottom: $gutter-in-px; }
-
-.avatar { width: 32px !important; }
-
-.comment-author { text-align: middle; }
-
-.reply { 
-	padding: 0 14px;
-	background: $grey-lgt;
-	width: 66px;
-	a { color: $white; }
-	&:hover { background: $primary-hover-color; }
-}
-
-ul.children { padding-left: ($gutter-in-px*2); }
-
-.form-allowed-tags { display: none; }
-
 
 /* ----------- Video Page Styles ------------ */
 .video-overlay {

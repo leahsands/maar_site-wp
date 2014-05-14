@@ -48,17 +48,7 @@
 						<h4>Subscribe</h4>
 					</div>
 					<div class="gen-div-inner">
-						<form>
-							<ul>
-								<li class="append field">
-									<input class="wide email input" type="email" placeholder="Your Email">
-									<div class="medium primary btn">
-										<a href="#">Go</a>
-									</div>
-									</input>
-								</li>
-							</ul>
-						</form>
+						<?php echo do_shortcode('[subscribe2]'); ?>
 					</div>
 				</div>
 

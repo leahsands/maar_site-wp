@@ -257,9 +257,8 @@ html[xmlns] .slides {display: block;}
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 0;
 	bottom: 0;
-	margin-top: 5%;
+	margin-bottom: 4%;
 	text-align: center;
 	text-shadow: 0 0 5px rgba(0,0,0,0.6);
 	* {color: $tru-white !important;}
@@ -267,12 +266,13 @@ html[xmlns] .slides {display: block;}
 	h2 { @include font-size($xxlarge); }
 
 	@media only screen and (max-width: $tablet-device-width) {
+		margin-bottom: 3%;
 		h1 { @include font-size($xlarge); }
 		h2 { @include font-size($med); }
 	}
 
-	@media only screen and (max-width: $min-device-width) {
-		margin-top: 2%;
+	@media only screen and (max-width: 380px) {
+		margin-bottom: 5%;
 		h1 { @include font-size($med); }
 		h2 { @include font-size($small); }
 		p { display: none; }

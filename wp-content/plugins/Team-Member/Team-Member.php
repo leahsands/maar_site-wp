@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Team Members
+Plugin Name: Staff
 Plugin URI: http://wp.tutsplus.com/
 Description: Declares a plugin that will create a custom post type displaying Team Members.
 Version: 1.0
@@ -14,19 +14,19 @@ function create_team_member() {
     register_post_type( 'team_post',
         array(
             'labels' => array(
-                'name' => 'Team Members',
-                'singular_name' => 'Team Member',
+                'name' => 'Staff Members',
+                'singular_name' => 'Staff Member',
                 'add_new' => 'Add New',
-                'add_new_item' => 'Add New Team Member',
+                'add_new_item' => 'Add New Staff Member',
                 'edit' => 'Edit',
-                'edit_item' => 'Edit Team Member',
-                'new_item' => 'New Team Member',
+                'edit_item' => 'Edit Staff Member',
+                'new_item' => 'New Staff Member',
                 'view' => 'View',
-                'view_item' => 'View Team Member',
-                'search_items' => 'Search Team Members',
-                'not_found' => 'No Team Members found',
-                'not_found_in_trash' => 'No Team Members found in Trash',
-                'parent' => 'Parent Team Member'
+                'view_item' => 'View Staff Member',
+                'search_items' => 'Search Staff Members',
+                'not_found' => 'No Staff Members found',
+                'not_found_in_trash' => 'No Staff Members found in Trash',
+                'parent' => 'Parent Staff Member'
             ),
  
             'public' => true,
