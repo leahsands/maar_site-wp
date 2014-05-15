@@ -34,10 +34,11 @@
 		<section class="four columns gen-div blog">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 			<div class="gen-div-header">
-				<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+				<a href="<?php the_permalink(); ?>"><h5><?php the_title(); ?></h5>
+				<span><em><?php the_time('F Y'); ?></em></span></a>
 			</div>
 			<div class="gen-div-inner">
-				<p><?php the_excerpt(); // echo the excerpt ?></p>
+				<?php the_excerpt(); // echo the excerpt ?>
 			</div>
 		</section>
 		

@@ -115,6 +115,7 @@
 			              	<?php the_title(); ?>
 			              	<i class="icon-newspaper"></i>
 			              </a>
+			              <span class="small"><em><?php the_time('n/Y'); ?></em></span>
 			            </li>
 			        <?php } else { ?>
 			        	<li>
@@ -122,6 +123,7 @@
 			              	<?php the_title(); ?>
 			              	<i class="icon-chat"></i>
 			              </a>
+			              <span class="small"><em><?php the_time('n/Y'); ?></em></span>
 			            </li>
 			        <?php }; ?>
 

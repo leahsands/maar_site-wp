@@ -16,27 +16,27 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area gen-div-inner">
+<div id="comments">
 
 	<?php if ( have_comments() ) : ?>
 
-	<h4 class="comments-title">
+	<h3 class="comments-title" style="margin-bottom: 12px;">
 		<?php
 			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'MAAR2014' ),
 				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>
-	</h4>
+	</h3>
 
-	<ul class="comment-list">
+	<div class="comment-list">
 		<?php
 			wp_list_comments( array(
-				'style'      => 'ul',
+				'style'      => 'div',
 				'short_ping' => true,
 				'reverse_top_level' => true
 			) );
 			
 		?>
-	</ul><!-- .comment-list -->
+	</div><!-- .comment-list -->
 
 	<?php if ( ! comments_open() ) : ?>
 	<p class="no-comments"><?php _e( 'Comments are closed.', 'MAAR2014' ); ?></p>
@@ -44,6 +44,33 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<ul class="row">
+
+		<?php $comment_args = array( 'title_reply'=>'Add a comment',
+
+			'fields' => apply_filters( 'comment_form_default_fields', array(
+
+			'author' => '<li class="comment-form-author field">' .
+
+		        '<input id="author" class="input text narrow" name="author" placeholder="Your Name *" type="text" value="' . esc_attr( $commenter['comment_author'] ) . $aria_req . '" /></li>',   
+
+		    'email'  => '<li class="comment-form-email field">' .
+
+		                '<input class="input text narrow email" id="email" name="email" type="text" placeholder="Your Email *" value="' . esc_attr(  $commenter['comment_author_email'] ) . $aria_req . '" />'.'</li>',
+
+		    'url'    => '' ) ),
+
+		    'comment_field' => '<li class="field">' .
+
+		                '<textarea id="comment" class="textarea input wide" name="comment" aria-required="true" placeholder="Comment away!"></textarea>' .
+
+		                '</li>',
+
+		    'comment_notes_after' => '',
+
+		);
+
+		comment_form($comment_args); ?>
+	</ul>
 
 </div><!-- #comments -->

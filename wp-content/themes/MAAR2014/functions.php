@@ -347,7 +347,7 @@
 	}
 
 	function new_excerpt_more( $more ) {
-		return ' <a href="'. get_permalink( get_the_ID() ) . '">' . __('[read more]') . '</a>';
+		return ' <a href="'. get_permalink( get_the_ID() ) . '">... <br />' . __('[read more]') . '</a>';
 	}
 	add_filter( 'excerpt_more', 'new_excerpt_more' );
 
@@ -465,7 +465,7 @@
 	        printf( '<div class="medium info btn" %s><a href="%s">%s</a></div>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
 	        if ( ! in_array( 2, $links ) )
-	            echo '<div class="medium info btn">…</div>';
+	            echo '<span class="medium alert">…</span>';
 	    }
 	    /** Link to current page, plus 2 pages in either direction if necessary */
 	    sort( $links );
@@ -476,7 +476,8 @@
 	    /** Link to last page, plus ellipses if necessary */
 	    if ( ! in_array( $max, $links ) ) {
 	        if ( ! in_array( $max - 1, $links ) )
-	            echo '<div class="medium info btn">…</div>' . "\n";
+	            echo '<span class="medium alert">…</span>' . "\n";
+
 	        $class = $paged == $max ? ' class="active"' : '';
 	        printf( '<div class="medium info btn" %s><a href="%s">%s</a></div>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
 	    }
@@ -584,7 +585,7 @@
 			$new_classes = $classes;
 			if ( preg_grep("/^current/", $classes) ) {
 				$new_classes [] = 'active';
-				if ( preg_grep("/current-menu-item|current-page-ancestor/",$classes) ) {
+				if ( preg_grep("/current-menu-item|current-page-ancestor|current_page_parent/",$classes) ) {
 					$new_classes [] = 'active-item';
 				}
 			} 
@@ -635,7 +636,7 @@
 			if (  isset( $children_elements[$id] ) ) {
 				foreach(  $children_elements[$id] as $child ){
 					$classes = empty( $child->classes ) ? array() : (array) $child->classes;
-					if ( preg_grep("/^current-page-ancestor/", $classes) ) {
+					if ( preg_grep("/current-page-ancestor|current_page_parent/", $classes) ) {
 						$hasActiveChildren = true;
 					}
 				}

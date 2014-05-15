@@ -25,7 +25,8 @@
 
 	<div class="row">
 		<?php while ( have_posts() ) : the_post(); ?>
-			<section class="nine columns blog">		
+			<section class="nine columns blog">	
+				<p><em>By <?php the_author(); ?> on <?php the_time('l, F jS, Y'); ?></em></p>	
 				<?php the_content(); ?>
 
 				<section class="row">
@@ -36,7 +37,12 @@
 				<section class="row">
 					<div class="drawer" id="comments" style="height: auto;">
 						<div class="gen-div">
-							<?php comments_template(); ?>
+							<div class="gen-div-inner">
+								<ul class="row">
+									<?php comments_template( ); ?>
+								</ul>
+								
+							</div>
 						</div>
 					</div>
 				</section>
