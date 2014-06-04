@@ -32,14 +32,19 @@
 	<!-- Slider javascript files -->
 	<script src="<?php bloginfo('template_directory');?>/js/_custom/jquery.flexslider.js"></script>
 
-	<script>
+<script>
     $(window).load(function() {
 	  $('.flexslider').flexslider({
 	    animation: "slide"
 	  });
 	});
 
-  </script>
+</script>
+<script>
+	$('.maar-drawer-link').click(function(){
+	    $('.drawer').toggleClass('active');
+	});
+</script>
 
 	<?php wp_footer(); ?>
 </body>

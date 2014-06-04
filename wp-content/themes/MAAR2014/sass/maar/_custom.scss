@@ -22,7 +22,7 @@ html,
 body,
  {
   height: 100%;
-  overflow: hidden;
+  overflow-x:hidden;
 }
 
 /* ---- Containers, Content and Push Divs ---- */
@@ -55,7 +55,7 @@ body,
 }
 
 /* ---- Font Styles ---- */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
   color: $primary-color;
   @media only screen and (max-width: $tablet-device-width) {
@@ -507,6 +507,7 @@ span {
 	height: 180px;
 	overflow: hidden;
 	h2 { float: left; }
+	i { margin: 0; }
 	@media only screen and (max-width: $tablet-device-width) {
 		height: inherit;
 	}

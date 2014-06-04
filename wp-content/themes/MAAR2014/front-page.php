@@ -33,9 +33,9 @@
 				<p>Foreclosure Report</p>
 				<div class="market-icon fss-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="A smart, informative and fast breakdown of your local housing market" alt="">
-				<p>The Skinny</p>
-				<div class="market-icon skinny-icon"></div>
+			<li class="ttip two columns" data-tooltip="The real estate market expert's best friend. Being replaced by Infosparks this summer!" alt="">
+				<p>The Thing</p>
+				<div class="market-icon infosparks-icon"></div>
 			</li>
 			<li class="ttip two columns" data-tooltip="Your full year at a glance" alt="">
 				<p>Annual Reports</p>
@@ -112,18 +112,16 @@
 			    	<?php if( get_post_type() == 'newsletter_html') { ?>
 			            <li>
 			              <a href="<?php echo the_field('newsletter'); ?>" alt="" target="_blank" />
-			              	<?php the_title(); ?>
+			              	<span><?php the_time('n-d'); ?>  <?php the_title(); ?></span>
 			              	<i class="icon-newspaper"></i>
 			              </a>
-			              <span class="small"><em><?php the_time('n/Y'); ?></em></span>
 			            </li>
 			        <?php } else { ?>
 			        	<li>
 			              <a href="<?php echo get_permalink(); ?>" alt="" />
-			              	<?php the_title(); ?>
+			              	<span><?php the_time('n-d'); ?>  <?php the_title(); ?></span>
 			              	<i class="icon-chat"></i>
 			              </a>
-			              <span class="small"><em><?php the_time('n/Y'); ?></em></span>
 			            </li>
 			        <?php }; ?>
 
@@ -142,7 +140,7 @@
 		</section>
 		<section class="four columns gen-div">
 			<div class="gen-div-header">
-				<h2><?php echo date('M Y') ?></h2><a class="archive" href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">| View Calendar</a>
+				<h2><?php echo date('M Y') ?></h2><a class="archive" href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">| View Full</a>
 			</div>
 				<a href="https://maarportal.ramcoams.net/EventCalendar.aspx" target="_blank">
 				<?php get_sidebar( 'calendar' ); ?>

@@ -38,6 +38,7 @@
 
 	<!-- Grab Google CDN's jQuery, fall back to local if offline -->
 	<!-- 2.0 for modern browsers, 1.10 for .oldie -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 	var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
 	if(!oldieCheck) {
@@ -49,6 +50,25 @@
 
 	<script src="<?php bloginfo('template_directory');?>/js/modernizr-2.6.2.min.js"></script>
 	<script src="<?php bloginfo('template_directory');?>/js/gumby.min.js"></script>
+
+	<!-- SMOOTH SCROLL -->
+	<script>
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	</script>
+	<!-- End of SMOOTH SCROLL -->
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -90,7 +110,7 @@
 	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'applications-forms' ) ) ); ?>">Forms</a></li>
 	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>">Blog</a></li>
 	  					<li><a href="https://maarportal.ramcoams.net/Membership/Directory/MemberSearch.aspx?selmenid=men4" target="_blank">Find a REALTOR&reg;</a></li>
-	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'real-estate-service-guide' ) ) ); ?>">Real Estate Service Guide</a></li>
+	  					<li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'affiliate-partner-directory' ) ) ); ?>">Affiliate Partner Directory</a></li>
 	  					<li><a href="http://www.northstarmls.com/" target="_blank">NorthstarMLS</a></li>
 	  				</ul>
 	  			</section>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Page Content -->
-<div class="maar-content-inner">
+<div class="maar-content-inner" id="top-page">
 
 <div class="main-body row">
 	<?php while ( have_posts() ) : the_post(); ?>

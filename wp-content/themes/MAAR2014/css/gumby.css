@@ -1690,7 +1690,7 @@ div * { -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-ou
 
 ::-moz-selection { color: #f7f7f7; background: #8d8c8f; }
 
-html, body { height: 100%; overflow: hidden; }
+html, body { height: 100%; overflow-x: hidden; }
 
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container, .side-pusher, .maar-content { height: 100%; }
@@ -1707,8 +1707,8 @@ html, body { height: 100%; overflow: hidden; }
 .maar-content-inner { position: relative; overflow: visible; margin-top: 73px; }
 
 /* ---- Font Styles ---- */
-h1, h2, h3, h4, h5 { text-transform: uppercase; color: #334374; }
-@media only screen and (max-width: 768px) { h1, h2, h3, h4, h5 { font-size: 17px; } }
+h1, h2, h3, h4, h5, h6 { text-transform: uppercase; color: #334374; }
+@media only screen and (max-width: 768px) { h1, h2, h3, h4, h5, h6 { font-size: 17px; } }
 
 h1 { font-size: 31px; font-size: 2.38462rem; }
 @media only screen and (max-width: 768px) { h1 { font-size: 23px; font-size: 1.76923rem; } }
@@ -1876,6 +1876,7 @@ span { font-size: 13px; font-size: 1rem; }
 
 .gen-home-div-inner { float: left; padding: 12px; width: 100%; height: 180px; overflow: hidden; }
 .gen-home-div-inner h2 { float: left; }
+.gen-home-div-inner i { margin: 0; }
 @media only screen and (max-width: 768px) { .gen-home-div-inner { height: inherit; } }
 
 .news-headline { padding-right: 12px; font-weight: 400; text-transform: uppercase; font-size: 14px; font-size: 1.07692rem; }
