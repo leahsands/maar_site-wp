@@ -53,19 +53,22 @@
 
 	<!-- SMOOTH SCROLL -->
 	<script>
-	$(function() {
+	jQuery(function($) {
 	  $('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 	      var target = $(this.hash);
 	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	      if (target.length) {
-	        $('html,body').animate({
-	          scrollTop: target.offset().top
-	        }, 1000);
+	        $('.maar-content').animate({
+	          scrollTop: Math.floor(target.offset().top) - $('.maar-container').offset().top - 60
+	        }, 500);
 	        return false;
 	      }
 	    }
+		
+	   
 	  });
+
 	});
 	</script>
 	<!-- End of SMOOTH SCROLL -->

@@ -83,7 +83,9 @@ ol ol { margin: 4px 0 5px 30px; }
 
 li { padding-bottom: 0.336em; }
 
-dl dt { font-weight: bold; font-size: 13px; font-size: 1rem; }
+dt, .dt { font-weight: 600; color: #072554; margin-top: 24px; margin-bottom: 12px; }
+
+dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334374; }
 
 /*  Blockquotes  */
 blockquote { line-height: 20px; color: #777; margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 5px solid #414042; }

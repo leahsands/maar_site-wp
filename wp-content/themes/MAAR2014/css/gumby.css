@@ -1690,7 +1690,7 @@ div * { -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-ou
 
 ::-moz-selection { color: #f7f7f7; background: #8d8c8f; }
 
-html, body { height: 100%; overflow-x: hidden; }
+html, body { height: 100%; overflow: hidden; }
 
 /* ---- Containers, Content and Push Divs ---- */
 .maar-container, .side-pusher, .maar-content { height: 100%; }
@@ -1817,6 +1817,10 @@ span { font-size: 13px; font-size: 1rem; }
 .alignright { float: right; overflow: auto; }
 
 .lead { border-bottom: 1px solid #e7e7e7; margin-bottom: 24px; }
+
+dt, .dt { font-weight: 600; color: #072554; margin-top: 24px; margin-bottom: 12px; }
+
+dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334374; }
 
 /* ----- Button Styles ----- */
 .btn, .btn > a, .btn input, .btn button, .skiplink > a, .skiplink input, .skiplink button { color: #f7f7f7 !important; }

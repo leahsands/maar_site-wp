@@ -93,14 +93,29 @@
 	}
 	add_filter('tiny_mce_before_init', 'my_mce_options');
 
-
 	// Add new styles to the TinyMCE "formats" menu dropdown
 	if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
 		function wpex_styles_dropdown( $settings ) {
 
 			// Create array of new styles
 			$new_styles = array(
-
+				array(
+					'title'	=> __( 'Definition List', 'wpex'),
+					'items'	=> array(
+						array(
+							'title'		=> __('Definition Term','wpex'),
+							'selector' => 'p',
+							'wrapper' => true,
+							'classes' => 'dt',
+						),
+						array(
+							'title'		=> __('Definition Description','wpex'),
+							'selector' => 'p',
+							'wrapper' => true,
+							'classes' => 'dd',
+						),
+					),
+				),
 				array(
 					'title'	=> __( 'Columns', 'wpex' ),
 					'items'	=> array(

@@ -22,7 +22,7 @@ html,
 body,
  {
   height: 100%;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 
 /* ---- Containers, Content and Push Divs ---- */
@@ -340,6 +340,20 @@ span {
 .lead {
 	border-bottom: 1px solid $grey-lgtst;
 	margin-bottom: ($gutter-in-px*2);
+}
+
+dt, .dt {
+	font-weight: $font-weight-semibold;
+	color: $primary-hover-color;
+	margin-top: ($gutter-in-px*2);
+	margin-bottom: $gutter-in-px;
+}
+
+dd, .dd {
+	margin-left: ($gutter-in-px*2);
+	padding: $gutter-in-px;
+	background-color: $tru-white;
+	color: $primary-color;
 }
 
 /* ----- Button Styles ----- */
