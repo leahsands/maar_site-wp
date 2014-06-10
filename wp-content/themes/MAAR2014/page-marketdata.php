@@ -16,37 +16,37 @@ Template Name: Market Data
 	</section>
 	<section class="sixteen colgrid">
 		<div class="row">
-			<section class="ttip four columns" data-tooltip="The real estate market expert's best friend. Interactive, mobile friendly, widget ready and fresh daily" alt="">
+			<section class="ttip four columns" data-tooltip="Interactive analytics for local housing." alt="">
 				<p>Infosparks</p>
 				<div class="market-icon large infosparks-icon"></div>
 			</section>
-			<section class="ttip four columns" data-tooltip="Get local" alt="">
+			<section class="ttip four columns" data-tooltip="Deep dive into cities and neighborhoods." alt="">
 				<p>Local Market Updates</p>
 				<div class="market-icon large lmu-icon"></div>
 			</section>
-			<section class="ttip four columns" data-tooltip="See the big picture" alt="">
+			<section class="ttip four columns" data-tooltip="An overview of key trends for the region." alt="">
 				<p>Monthly Indicators</p>
 				<div class="market-icon large mmi-icon"></div>
 			</section>
-			<section class="ttip four columns" data-tooltip="Trends behind trends" alt="">
+			<section class="ttip four columns" data-tooltip="Segmentation by price, property type." alt="">
 				<p>Housing Supply</p>
 				<div class="market-icon large hso-icon"></div>
 			</section>
 		</div>
 		<div class="row">
-			<section class="ttip four columns" data-tooltip="An important segment spelled out" alt="">
+			<section class="ttip four columns" data-tooltip="An important segment spelled out." alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon large fss-icon"></div>
 			</section>
-			<section class="ttip four columns" data-tooltip="A smart, informative and fast breakdown of your local housing market" alt="">
-				<p>The Skinny</p>
-				<div class="market-icon large skinny-icon"></div>
+			<section class="ttip four columns" data-tooltip="Replaced by Infosparks soon!" alt="">
+				<p>The Thing</p>
+				<div class="market-icon large infosparks-icon"></div>
 			</section>
-			<section class="ttip four columns" data-tooltip="Your full year at a glance" alt="">
+			<section class="ttip four columns" data-tooltip="Full year of activity at a glance." alt="">
 				<p>Annual Reports</p>
 				<div class="market-icon large ann-icon"></div>
 			</section>
-			<section class="ttip four columns" data-tooltip="Trend-spotting faster" alt="">
+			<section class="ttip four columns" data-tooltip="Stay on top of trends every week." alt="">
 				<p>Weekly Activity</p>
 				<div class="market-icon large wma-icon"></div>
 			</section>

@@ -588,6 +588,7 @@ dd, .dd {
 	margin-top: 30px !important;
 	margin-bottom: $gutter-in-px;
 	@include maar-gradient($blu, 30%, $blu-lgt, 100%);
+	background-color: $blu;
 	//border-bottom: 5px solid $gen-div-border;
 	h1 {
 		margin-bottom: 0;

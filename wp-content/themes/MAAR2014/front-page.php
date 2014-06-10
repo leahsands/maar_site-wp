@@ -13,35 +13,35 @@
 	<h1>Today in the Market</h1>
 	<section class="sixteen colgrid">
 		<ul class="row">
-			<li class="ttip two columns" data-tooltip="The real estate market expert's best friend. Interactive, mobile friendly, widget ready and fresh daily" alt="">
+			<li class="ttip two columns" data-tooltip="Interactive analytics for local housing." alt="">
 				<p>Infosparks</p>
 				<div class="market-icon infosparks-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="Get local" alt="">
+			<li class="ttip two columns" data-tooltip="Deep dive into cities and neighborhoods." alt="">
 				<p>Local Market Updates</p>
 				<div class="market-icon lmu-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="See the big picture" alt="">
+			<li class="ttip two columns" data-tooltip="An overview of key trends for the region." alt="">
 				<p>Monthly Indicators</p>
 				<div class="market-icon mmi-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="Trends behind trends" alt="">
+			<li class="ttip two columns" data-tooltip="Segmentation by price, property type." alt="">
 				<p>Housing Supply</p>
 				<div class="market-icon hso-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="An important segment spelled out" alt="">
+			<li class="ttip two columns" data-tooltip="An important segment spelled out." alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon fss-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="The real estate market expert's best friend. Being replaced by Infosparks this summer!" alt="">
+			<li class="ttip two columns" data-tooltip="Replaced by Infosparks soon!" alt="">
 				<p>The Thing</p>
 				<div class="market-icon infosparks-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="Your full year at a glance" alt="">
+			<li class="ttip two columns" data-tooltip="Full year of activity at a glance." alt="">
 				<p>Annual Reports</p>
 				<div class="market-icon ann-icon"></div>
 			</li>
-			<li class="ttip two columns" data-tooltip="Trend-spotting faster" alt="">
+			<li class="ttip two columns" data-tooltip="Stay on top of trends every week." alt="">
 				<p>Weekly Activity</p>
 				<div class="market-icon wma-icon"></div>
 			</li>
@@ -87,7 +87,7 @@
 <!-- Notification -->
 <div class="row main-body notify">
 	<section class="twelve columns">
-		<p>Welcome to the new and improved MAAR website!</p>
+		<?php get_sidebar( 'home-notify' ); ?>
 	</section>
 </div>
 

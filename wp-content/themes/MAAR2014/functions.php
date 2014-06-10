@@ -33,6 +33,53 @@
 	add_action('login_head',  'my_custom_login_logo');
 
 
+
+	// Dashboard Widget for Notifications
+
+	class custom_dashboard_notify extends WP_Widget
+	{
+	  function custom_dashboard_notify()
+	  {
+	    $widget_ops = array('classname' => 'custom_dashboard_notify', 'description' => 'Displays the homepage notification' );
+	    $this->WP_Widget('custom_dashboard_notify', 'Notification for Homepage', $widget_ops);
+
+	  }
+	 
+	  function form($instance)
+	  {
+	    $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+	    $title = $instance['title'];
+	?>
+	  <p><label for="<?php echo $this->get_field_id('title'); ?>"><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+	<?php
+	  }
+	 
+	  function update($new_instance, $old_instance)
+	  {
+	    $instance = $old_instance;
+	    $instance['title'] = $new_instance['title'];
+	    return $instance;
+	  }
+	 
+	  function widget($args, $instance)
+	  {
+	    extract($args, EXTR_SKIP);
+	 
+	    echo $before_widget;
+	    $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
+	 
+	    if (!empty($title))
+	      echo $before_title . $title . $after_title;;
+	 
+	    // WIDGET CODE GOES HERE
+	    echo "";
+	 
+	    echo $after_widget;
+ 	 }
+ 
+	}
+	add_action( 'widgets_init', create_function('', 'return register_widget("custom_dashboard_notify");') );
+
 	// Subscribe2
 	function my_s2_form($form) {
 	    // To remove the 'Your Email:' prompt text from the form
@@ -292,9 +339,25 @@
 
 
 	/**
-	 * Register our sidebars and widgetized areas.
+	 * Register sidebars and widgetized areas.
 	 *
 	 */
+
+	//Register A Sidebar Widget
+	function gp_widgets_init() {
+	    register_sidebar( array(
+	        'name' => ( 'Right Sidebar' ),
+	        'description'   => 'The Right sidebar',
+	        'class'         => '',
+	        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	        'after_widget' => '</div>',
+	        'before_title' => '<h6 class="widget-title"> ',
+	        'after_title' => ' </h6>',
+	    ) );
+	}
+	add_action( 'widgets_init', 'gp_widgets_init' );
+
+
 	function calendar_widgets_init() {
 
 		register_sidebar( array(
@@ -309,7 +372,18 @@
 	add_action( 'widgets_init', 'calendar_widgets_init' );
 
 
+	function notify_widgets_init() {
 
+		register_sidebar( array(
+			'name' => 'Home Notification',
+			'id' => 'home-notify',
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '<p>',
+			'after_title' => '</p>'
+		) );
+	}
+	add_action( 'widgets_init', 'notify_widgets_init' );
 
 
 	//Register Excerpt for Blog Posts
@@ -428,20 +502,6 @@
         $content = str_replace('<p></p>', '', $content);
         return $content;
     }
-
-	//Register A Sidebar Widget
-	function gp_widgets_init() {
-	    register_sidebar( array(
-	        'name' => ( 'Right Sidebar' ),
-	        'description'   => 'The Right sidebar',
-	        'class'         => '',
-	        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	        'after_widget' => '</div>',
-	        'before_title' => '<h6 class="widget-title"> ',
-	        'after_title' => ' </h6>',
-	    ) );
-	}
-	add_action( 'widgets_init', 'gp_widgets_init' );
 
 	//Pagination for Blog
 	function blog_pagination() {

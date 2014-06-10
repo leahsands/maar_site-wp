@@ -1898,7 +1898,7 @@ dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334
 @keyframes slide { 100% { right: 0; } }
 
 /* ----------- Market Data ----------- */
-.mrkt-data { margin-top: 30px !important; margin-bottom: 12px; background: -webkit-linear-gradient(top, #334374 30%, #697ebd 100%); /*Safari 5.1-6*/ background: -o-linear-gradient(bottom, #334374 30%, #697ebd 100%); /*Opera 11.1-12*/ background: -moz-linear-gradient(bottom, #334374 30%, #697ebd 100%); /* Firefox */ background: linear-gradient(to bottom, #334374 30%, #697ebd 100%); /*Standard*/ }
+.mrkt-data { margin-top: 30px !important; margin-bottom: 12px; background: -webkit-linear-gradient(top, #334374 30%, #697ebd 100%); /*Safari 5.1-6*/ background: -o-linear-gradient(bottom, #334374 30%, #697ebd 100%); /*Opera 11.1-12*/ background: -moz-linear-gradient(bottom, #334374 30%, #697ebd 100%); /* Firefox */ background: linear-gradient(to bottom, #334374 30%, #697ebd 100%); /*Standard*/ background-color: #334374; }
 .mrkt-data h1 { margin-bottom: 0; padding-bottom: 0; color: white; }
 .mrkt-data p { color: white; line-height: 1.3em; }
 @media only screen and (max-width: 768px) { .mrkt-data { margin-top: 80px; padding: 0; border-bottom: none; }
