@@ -41,10 +41,12 @@
 
 </script>
 <script>
-	$('.maar-drawer-link').click(function(){
-	    $('.drawer').toggleClass('active');
-	});
+        $('.maar-drawer-link').click(function(){
+            var r = $(this).attr('href').substring(1);
+            $('.drawer[id=' + r + ']').toggleClass('active');
+        });
 </script>
+
 
 	<?php wp_footer(); ?>
 </body>

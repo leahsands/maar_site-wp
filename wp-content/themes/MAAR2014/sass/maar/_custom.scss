@@ -608,6 +608,43 @@ dd, .dd {
 	@media only screen and (max-width: $tablet-landscape-width) {
 		margin-top: 80px;
 	}
+	.ttip.infosparks {
+		.infosparks-nonmem,
+		.infosparks-mem {
+			display:  none;
+			.infosparks-icon { display: none; }
+		}
+		&:hover {
+			.infosparks-icon { display: none; }
+			.infosparks-nonmem,
+			.infosparks-mem {
+				display: block;
+				p {
+					@include font-size($small);
+					margin-top: ($gutter-in-px/2);
+				}
+				.infosparks-icon {
+					display: block;
+					margin-top: 40px;
+					position: relative;
+				}
+				&:hover {
+					background-color: darken($primary-hover-color, 5%);
+				}
+				@media only screen and (max-width: $tablet-device-width) {
+					padding: 0;
+					float: right;
+					p {
+						margin: 16px 8px 0 8px;
+					}
+					.infosparks-icon {
+						margin: 4px 8px 8px 0;
+						float: left;
+					}
+				}
+			}
+		}
+	}
 	.ttip:before {
 		min-width: inherit;
 		border-bottom: none;
@@ -742,6 +779,10 @@ dd, .dd {
 } */
 
 /* ----------- News, Videos, Calendar ----------- */
+.news-item span {
+	@include font-size(12px);
+}
+
 .archive {
 	float: left;
 	padding: $gutter-in-px 0 0 $gutter-in-px;

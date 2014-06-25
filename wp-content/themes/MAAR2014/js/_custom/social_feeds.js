@@ -52,6 +52,20 @@ $(document).ready(function(){
 
 });
 
+
+//News Room Flickr Images
+$(document).ready(function(){
+
+    $('#flickr_gallery_yopro').jflickrfeed({
+        limit: 10,
+        qstrings: {
+            id: '124545997@N07'
+        },
+        itemTemplate: '<li><img src="{{image_m}}" alt="{{title}}" /></li>'
+    });
+
+});
+
 //Video Page Main
 {
     var newsroomURL = 'http://gdata.youtube.com/feeds/api/users/MinneapolisREALTORS/uploads?alt=json&max-results=2';

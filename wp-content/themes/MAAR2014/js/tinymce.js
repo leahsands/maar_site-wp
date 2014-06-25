@@ -119,13 +119,20 @@
 									value: 'Enter Name'
 								},
 								{
+									type: 'textbox',
+									name: 'drawerID',
+									label: 'Unique ID',
+									value: 'Enter Unique One-Word ID'
+								},
+								{
 									type: 'listbox',
 									name: 'drawerWidth',
 									label: 'Width of Drawer',
 									values: [
 										{text: '1/4 Width', value: 'three'},
 										{text: '1/2 Width', value: 'six'},
-										{text: '3/4 Width', value: 'nine'}
+										{text: '3/4 Width', value: 'nine'},
+										{text: 'Full Width', value: 'twelve'}
 									]
 								},
 								{
@@ -139,7 +146,7 @@
 								}
 							],
 							onsubmit: function( e ) {
-								editor.insertContent( '<section class="row main-body"><h4 class="btn default"><a href="#" class="maar-drawer-link">' + e.data.drawerTitle +'<i class="icon-down-open-big"></i></a></h4><section class="row"><div class="drawer ' + e.data.drawerWidth + ' columns" style="overflow-y: auto;"><div class="gen-div"><div class="gen-div-inner"><p>' + e.data.drawerContent + '</p></div></div></div></section></section>');
+								editor.insertContent( '<section class="row main-body"><h4 class="btn default"><a href="#' + e.data.drawerID + '" class="maar-drawer-link">' + e.data.drawerTitle +'<i class="icon-down-open-big"></i></a></h4><section class="row"><div class="drawer ' + e.data.drawerWidth + ' columns" id="' + e.data.drawerID + '" style="overflow-y: auto;"><div class="gen-div"><div class="gen-div-inner"><p>' + e.data.drawerContent + '</p></div></div></div></section></section>');
 							}
 						});
 					}

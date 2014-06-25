@@ -627,6 +627,18 @@
 	            }
 	        }
 	    }
+
+	    if ( get_post_type() == 'report_html' ) {
+	        if ( is_single() ) {
+	            // checks if the file exists in the theme first,
+	            // otherwise serve the file from the plugin
+	            if ( $theme_file = locate_template( array ( 'page-marketdata.php' ) ) ) {
+	                $template_path = $theme_file;
+	            } else {
+	                $template_path = plugin_dir_path( __FILE__ ) . '/page-marketdata.php';
+	            }
+	        }
+	    }
 	    return $template_path;
 	}
 

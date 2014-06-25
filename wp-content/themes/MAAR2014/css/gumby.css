@@ -1904,6 +1904,16 @@ dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334
 @media only screen and (max-width: 768px) { .mrkt-data { margin-top: 80px; padding: 0; border-bottom: none; }
   .mrkt-data h1 { margin-left: 12px; } }
 @media only screen and (max-width: 55em) { .mrkt-data { margin-top: 80px; } }
+.mrkt-data .ttip.infosparks .infosparks-nonmem, .mrkt-data .ttip.infosparks .infosparks-mem { display: none; }
+.mrkt-data .ttip.infosparks .infosparks-nonmem .infosparks-icon, .mrkt-data .ttip.infosparks .infosparks-mem .infosparks-icon { display: none; }
+.mrkt-data .ttip.infosparks:hover .infosparks-icon { display: none; }
+.mrkt-data .ttip.infosparks:hover .infosparks-nonmem, .mrkt-data .ttip.infosparks:hover .infosparks-mem { display: block; }
+.mrkt-data .ttip.infosparks:hover .infosparks-nonmem p, .mrkt-data .ttip.infosparks:hover .infosparks-mem p { font-size: 10px; font-size: 0.76923rem; margin-top: 6px; }
+.mrkt-data .ttip.infosparks:hover .infosparks-nonmem .infosparks-icon, .mrkt-data .ttip.infosparks:hover .infosparks-mem .infosparks-icon { display: block; margin-top: 40px; position: relative; }
+.mrkt-data .ttip.infosparks:hover .infosparks-nonmem:hover, .mrkt-data .ttip.infosparks:hover .infosparks-mem:hover { background-color: #051b3c; }
+@media only screen and (max-width: 768px) { .mrkt-data .ttip.infosparks:hover .infosparks-nonmem, .mrkt-data .ttip.infosparks:hover .infosparks-mem { padding: 0; float: right; }
+  .mrkt-data .ttip.infosparks:hover .infosparks-nonmem p, .mrkt-data .ttip.infosparks:hover .infosparks-mem p { margin: 16px 8px 0 8px; }
+  .mrkt-data .ttip.infosparks:hover .infosparks-nonmem .infosparks-icon, .mrkt-data .ttip.infosparks:hover .infosparks-mem .infosparks-icon { margin: 4px 8px 8px 0; float: left; } }
 .mrkt-data .ttip:before { min-width: inherit; border-bottom: none; border-left: none; border-right: none; }
 .mrkt-data .ttip:after { min-width: inherit; top: 100%; margin-top: -10px; left: 0; right: 0; background: #072554; border: none; text-transform: none; font-size: 10px; }
 .mrkt-data li { margin: 0; padding: 2% 1%; height: 120px; text-transform: uppercase; text-align: center; }
@@ -1961,6 +1971,8 @@ dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334
 	}
 } */
 /* ----------- News, Videos, Calendar ----------- */
+.news-item span { font-size: 12px; font-size: 0.92308rem; }
+
 .archive { float: left; padding: 12px 0 0 12px; color: #8d8c8f; }
 .archive:hover { color: #676669; }
 @media only screen and (max-width: 768px) { .archive { padding: 6px; } }
@@ -2252,8 +2264,8 @@ html[xmlns] .slides { display: block; }
 /* ------------ Flexslider Captions ------------- */
 .flex-caption { width: 100%; padding: 2%; position: absolute; left: 0; right: 0; bottom: 0; margin-bottom: 4%; text-align: center; text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); }
 .flex-caption * { color: white !important; }
-.flex-caption h1 { font-size: 41px; font-size: 3.15385rem; }
-.flex-caption h2 { font-size: 25px; font-size: 1.92308rem; }
+.flex-caption h1 { font-size: 41px; font-size: 3.15385rem; font-weight: 700; }
+.flex-caption h2 { font-size: 25px; font-size: 1.92308rem; font-weight: 700; }
 @media only screen and (max-width: 768px) { .flex-caption { margin-bottom: 3%; }
   .flex-caption h1 { font-size: 23px; font-size: 1.76923rem; }
   .flex-caption h2 { font-size: 14px; font-size: 1.07692rem; } }

@@ -13,38 +13,68 @@
 	<h1>Today in the Market</h1>
 	<section class="sixteen colgrid">
 		<ul class="row">
-			<li class="ttip two columns" data-tooltip="Interactive analytics for local housing." alt="">
+			<li class="ttip two columns infosparks" data-tooltip="Interactive analytics for local housing." alt="">
 				<p>Infosparks</p>
 				<div class="market-icon infosparks-icon"></div>
+				<div class="row">
+					<a href="http://maar-infosparks.stats.10kresearch.com/" target="_blank">
+					<div class="infosparks-nonmem eight columns">
+						<p>Public</p>
+						<div class="market-icon infosparks-icon">
+						</div>
+					</div>
+					</a>
+					<a href="http://northstarmls.stats.10kresearch.com/" target="_blank">
+					<div class="infosparks-mem eight columns">
+						<p>Member</p>
+						<div class="market-icon infosparks-icon">
+						</div>
+					</div>
+					</a>
+				</div>
 			</li>
+			<a href="http://maar.stats.10kresearch.com/reports/lmu" target="_blank">
 			<li class="ttip two columns" data-tooltip="Deep dive into cities and neighborhoods." alt="">
 				<p>Local Market Updates</p>
 				<div class="market-icon lmu-icon"></div>
 			</li>
+			</a>
+			<a href="http://maar.stats.10kresearch.com/reports/mmi" target="_blank">
 			<li class="ttip two columns" data-tooltip="An overview of key trends for the region." alt="">
 				<p>Monthly Indicators</p>
 				<div class="market-icon mmi-icon"></div>
 			</li>
+			</a>
+			<a href="http://maar.stats.10kresearch.com/reports/hso" target="_blank">
 			<li class="ttip two columns" data-tooltip="Segmentation by price, property type." alt="">
 				<p>Housing Supply</p>
 				<div class="market-icon hso-icon"></div>
 			</li>
+			</a>
+			<a href="http://maar.stats.10kresearch.com/reports/fss" target="_blank">
 			<li class="ttip two columns" data-tooltip="An important segment spelled out." alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon fss-icon"></div>
 			</li>
+			</a>
+			<a href="http://thething.mplsrealtor.com/" target="_blank">
 			<li class="ttip two columns" data-tooltip="Replaced by Infosparks soon!" alt="">
 				<p>The Thing</p>
 				<div class="market-icon infosparks-icon"></div>
 			</li>
+			</a>
+			<a href="http://maar.stgstats.10kresearch.com/docs/ann/list" target="_blank">
 			<li class="ttip two columns" data-tooltip="Full year of activity at a glance." alt="">
 				<p>Annual Reports</p>
 				<div class="market-icon ann-icon"></div>
 			</li>
+			</a>
+			<a href="http://maar.stgstats.10kresearch.com/docs/wma/list" target="_blank">
 			<li class="ttip two columns" data-tooltip="Stay on top of trends every week." alt="">
 				<p>Weekly Activity</p>
 				<div class="market-icon wma-icon"></div>
 			</li>
+			</a>
 		</ul>
 	</section>
 </div>
@@ -99,7 +129,7 @@
 			<div class="gen-div-header">
 				<h2>News</h2><a class="archive" href="<?php echo esc_url( get_permalink( get_page_by_path( 'newsroom' ) ) ); ?>">| More News</a>
 			</div>
-			<span class="gen-home-div-inner">
+			<span class="gen-home-div-inner news-item">
 			<ul>
 				<?php
 

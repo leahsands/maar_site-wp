@@ -49,7 +49,7 @@ body { background: #f7f7f7; font-family: "Open Sans"; font-weight: 400; color: #
 
 
 /* Fonts */
-h1, h2, h3, h4, h5, h6 { font-family: "Open Sans"; font-weight: 300; color: #334374; text-rendering: optimizeLegibility; padding-top: 0.336em; line-height: 1.422em; padding-bottom: 0.336em; text-transform: uppercase; }
+h1, h2, h3, h4, h5, h6 { font-family: "Open Sans"; font-weight: 300; clear:both; color: #334374; text-rendering: optimizeLegibility; padding-top: 0.336em; line-height: 1.422em; padding-bottom: 0.336em; text-transform: uppercase; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #334374; }
 
 h2 { font-size: 23px; font-size: 1.76923rem; }

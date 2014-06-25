@@ -262,8 +262,14 @@ html[xmlns] .slides {display: block;}
 	text-align: center;
 	text-shadow: 0 0 5px rgba(0,0,0,0.6);
 	* {color: $tru-white !important;}
-	h1 { @include font-size($reallybig); }
-	h2 { @include font-size($xxlarge); }
+	h1 {
+		@include font-size($reallybig);
+		font-weight: $font-weight-bold;
+	}
+	h2 {
+		@include font-size($xxlarge);
+		font-weight: $font-weight-bold;
+	}
 
 	@media only screen and (max-width: $tablet-device-width) {
 		margin-bottom: 3%;

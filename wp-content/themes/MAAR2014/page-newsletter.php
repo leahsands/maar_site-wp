@@ -13,7 +13,7 @@ get_header(); ?>
     </div>
     <div class="row">
     	<div class="four columns push_eight">
-			<h4>Subscribe</h4>
+			<!-- <h4>Subscribe</h4>
 			<form>
 				<ul>
 					<li class="append field">
@@ -24,7 +24,7 @@ get_header(); ?>
 						</input>
 					</li>
 				</ul>
-			</form>
+			</form> -->
 		</div>
     	<div class="eight columns pull_four">
 		<ul>

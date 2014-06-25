@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Newsroom
+Template Name: Communications
 */
 ?>
 <?php get_header(); ?>
@@ -83,7 +83,7 @@ Template Name: Newsroom
 
 					<?php wp_reset_query(); ?>
 					</ul>
-					<h4>Subscribe</h4>
+					<!-- <h4>Subscribe</h4>
 					<form>
 						<ul>
 							<li class="append field">
@@ -94,7 +94,7 @@ Template Name: Newsroom
 								</input>
 							</li>
 						</ul>
-					</form>
+					</form> -->
 				</div>
 			</div>
 		</section>

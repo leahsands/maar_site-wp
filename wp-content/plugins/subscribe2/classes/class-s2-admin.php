@@ -12,6 +12,9 @@ class s2_admin extends s2class {
 		add_action("admin_print_styles-$s2user", array(&$this, 'user_admin_css'));
 		add_action('load-' . $s2user, array(&$this, 'user_help'));
 
+//		$s2readygraph = add_submenu_page('s2', __('Readygraph App', 'subscribe2'), __('Readygraph App', 'subscribe2'), apply_filters('s2_capability', "manage_options", 'readygraph'), 's2_readygraph', array(&$this, 'readygraph_menu'));
+		add_action("admin_print_scripts-$s2readygraph", array(&$this, 'readygraph_js'));
+
 		$s2subscribers = add_submenu_page('s2', __('Subscribers', 'subscribe2'), __('Subscribers', 'subscribe2'), apply_filters('s2_capability', "manage_options", 'manage'), 's2_tools', array(&$this, 'subscribers_menu'));
 		add_action("admin_print_scripts-$s2subscribers", array(&$this, 'checkbox_form_js'));
 		add_action('load-' . $s2subscribers, array(&$this, 'subscribers_help'));
@@ -154,6 +157,21 @@ class s2_admin extends s2class {
 	} // end option_form_js()
 
 	/**
+	Enqueue jQuery for ReadyGraph
+	*/
+	function readygraph_js() {
+		wp_enqueue_script('jquery');
+		wp_register_script('s2_readygraph', S2URL . 'include/s2_readygraph' . $this->script_debug . '.js', array('jquery'), '1.0');
+		wp_enqueue_script('s2_readygraph');
+		wp_localize_script('s2_readygraph', 'objectL10n', array(
+			'emailempty'  => __('Email is empty!', 'subscribe2'),
+			'passwordempty' => __('Password is empty!', 'subscribe2'),
+			'urlempty' => __('Site URL is empty!', 'subscribe2'),
+			'passwordmatch' => __('Password is not matching!', 'subscribe2')
+		) );
+	} // end readygraph_js()
+
+	/**
 	Adds a links directly to the settings page from the plugin page
 	*/
 	function plugin_links($links, $file) {
@@ -173,6 +191,14 @@ class s2_admin extends s2class {
 		require_once(S2PATH . 'admin/subscribers.php');
 	} // end subscribers_menu()
 
+	/**
+	Our ReadyGraph API page
+	*/
+/*	function readygraph_menu() {
+		global $wpdb;
+		require_once(S2PATH . 'admin/app_page.php');
+	} // end readygraph_menu()
+*/
 	/**
 	Our settings page
 	*/
@@ -242,6 +268,18 @@ class s2_admin extends s2class {
 			wp_enqueue_script('s2_colorpicker');
 		}
 	} // end widget_s2_counter_css_and_js()
+
+	/**
+	Function to to handle activate redirect
+	*/
+	function on_plugin_activated_redirect(){
+		$setting_url="options-general.php?page=readygraph&plugin_redirect=subscribe2";
+
+		if ( get_option('s2_do_activation_redirect', false) ) {
+			delete_option('s2_do_activation_redirect');
+			wp_redirect($setting_url);
+		}
+	} // end on_plugin_activated_redirect()
 
 /* ===== meta box functions to allow per-post override ===== */
 	/**
@@ -563,7 +601,7 @@ class s2_admin extends s2class {
 			$count['all_users'] = $wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users");
 		}
 		if ( $this->s2_mu ) {
-			$count['registered'] = $wpdb->get_var($wpdb->prepare("SELECT COUNT(b.meta_key) FROM $wpdb->usermeta AS a INNER JOIN $wpdb->usermeta AS b ON a.user_id = b.user_id WHERE a.meta_key='" . $wpdb->prefix . "capabilities' AND b.meta_key=%s AND b.meta_value  <> ''", $this->get_usermeta_keyname('s2_subscribed')));
+			$count['registered'] = $wpdb->get_var($wpdb->prepare("SELECT COUNT(b.meta_key) FROM $wpdb->usermeta AS a INNER JOIN $wpdb->usermeta AS b ON a.user_id = b.user_id WHERE a.meta_key='" . $wpdb->prefix . "capabilities' AND b.meta_key=%s AND b.meta_value <> ''", $this->get_usermeta_keyname('s2_subscribed')));
 		} else {
 			$count['registered'] = $wpdb->get_var($wpdb->prepare("SELECT COUNT(meta_key) FROM $wpdb->usermeta WHERE meta_key=%s AND meta_value <> ''", $this->get_usermeta_keyname('s2_subscribed')));
 		}
@@ -725,6 +763,7 @@ class s2_admin extends s2class {
 		$pages = get_pages();
 		if ( empty($pages) ) { return; }
 
+		$option = '';
 		foreach ( $pages as $page ) {
 			$option .= "<option value=\"" . $page->ID . "\"";
 			if ( $page->ID == $s2page ) {
