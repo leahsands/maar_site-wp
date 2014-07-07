@@ -462,7 +462,7 @@
 			//$query->set('post_type', array('post', 'page'));
 
 			// dont search these pages
-			$query->set('post__not_in', array('feat_img', 'newsletter_html'));
+			$query->set('post__not_in', array('feat_img', 'newsletter_html', 'report_html'));
 		}
 		return $query;
 	}
@@ -632,10 +632,22 @@
 	        if ( is_single() ) {
 	            // checks if the file exists in the theme first,
 	            // otherwise serve the file from the plugin
-	            if ( $theme_file = locate_template( array ( 'page-marketdata.php' ) ) ) {
+	            if ( $theme_file = locate_template( array ( 'single-report_html.php' ) ) ) {
 	                $template_path = $theme_file;
 	            } else {
-	                $template_path = plugin_dir_path( __FILE__ ) . '/page-marketdata.php';
+	                $template_path = plugin_dir_path( __FILE__ ) . '/single-report_html.php';
+	            }
+	        }
+	    }
+
+	    if ( get_post_type() == 'ordinances' ) {
+	        if ( is_single() ) {
+	            // checks if the file exists in the theme first,
+	            // otherwise serve the file from the plugin
+	            if ( $theme_file = locate_template( array ( 'single-ordinance_post.php' ) ) ) {
+	                $template_path = $theme_file;
+	            } else {
+	                $template_path = plugin_dir_path( __FILE__ ) . '/single-ordinance_post.php';
 	            }
 	        }
 	    }

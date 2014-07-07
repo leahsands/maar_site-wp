@@ -1796,7 +1796,7 @@ span { font-size: 13px; font-size: 1rem; }
 .side-menu > .side-scroll > ul > li:first-child.active-item i { display: none !important; }
 
 .active-item { background: #1b1a1b; }
-.active-item i { display: inline-block !important; float: right; margin-left: 12px; margin-right: 0px; }
+.active-item i { display: inline-block !important; float: right; margin-left: 6px; margin-right: 0px; }
 
 /* ----------- Main Body Styles ----------- */
 .main-body { margin-top: 20px !important; float: left; }
@@ -1889,13 +1889,15 @@ dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334
 .slide-notify { position: fixed; z-index: 900; bottom: 20px; right: 0; overflow: hidden; width: 200px; height: 50px; text-align: center; }
 @media only screen and (max-width: 768px) { .slide-notify { display: none; } }
 
-#slide { position: absolute; right: -200px; width: 100%; height: 100%; background: #334374; padding: 12px; -webkit-animation: slide 0.5s forwards; -webkit-animation-delay: 4s; animation: slide 0.5s forwards; animation-delay: 4s; text-shadow: 0 0 10px #072554; }
+#slide { position: absolute; right: -200px; width: 100%; height: 100%; background: #334374; padding: 12px; -webkit-animation: slide 0.5s forwards; -webkit-animation-delay: 4s; animation: slide 0.5s forwards; animation-delay: 4s; text-shadow: 0 0 10px #072554; -moz-transition: none !important; -webkit-transition: none !important; }
 #slide a { text-transform: uppercase; font-weight: 400; font-size: 17px; font-size: 1.30769rem; color: #f7f7f7; }
 #slide:hover { background: #e82e0a; text-shadow: 0 0 10px #b72408; }
 
 @-webkit-keyframes slide { 100% { right: 0; } }
 
 @keyframes slide { 100% { right: 0; } }
+
+@-moz-keyframes slide { 100% { right: 0; } }
 
 /* ----------- Market Data ----------- */
 .mrkt-data { margin-top: 30px !important; margin-bottom: 12px; background: -webkit-linear-gradient(top, #334374 30%, #697ebd 100%); /*Safari 5.1-6*/ background: -o-linear-gradient(bottom, #334374 30%, #697ebd 100%); /*Opera 11.1-12*/ background: -moz-linear-gradient(bottom, #334374 30%, #697ebd 100%); /* Firefox */ background: linear-gradient(to bottom, #334374 30%, #697ebd 100%); /*Standard*/ background-color: #334374; }
@@ -1910,7 +1912,7 @@ dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334
 .mrkt-data .ttip.infosparks:hover .infosparks-nonmem, .mrkt-data .ttip.infosparks:hover .infosparks-mem { display: block; }
 .mrkt-data .ttip.infosparks:hover .infosparks-nonmem p, .mrkt-data .ttip.infosparks:hover .infosparks-mem p { font-size: 10px; font-size: 0.76923rem; margin-top: 6px; }
 .mrkt-data .ttip.infosparks:hover .infosparks-nonmem .infosparks-icon, .mrkt-data .ttip.infosparks:hover .infosparks-mem .infosparks-icon { display: block; margin-top: 40px; position: relative; }
-.mrkt-data .ttip.infosparks:hover .infosparks-nonmem:hover, .mrkt-data .ttip.infosparks:hover .infosparks-mem:hover { background-color: #051b3c; }
+.mrkt-data .ttip.infosparks:hover .infosparks-nonmem:hover, .mrkt-data .ttip.infosparks:hover .infosparks-mem:hover { background-color: #334374; }
 @media only screen and (max-width: 768px) { .mrkt-data .ttip.infosparks:hover .infosparks-nonmem, .mrkt-data .ttip.infosparks:hover .infosparks-mem { padding: 0; float: right; }
   .mrkt-data .ttip.infosparks:hover .infosparks-nonmem p, .mrkt-data .ttip.infosparks:hover .infosparks-mem p { margin: 16px 8px 0 8px; }
   .mrkt-data .ttip.infosparks:hover .infosparks-nonmem .infosparks-icon, .mrkt-data .ttip.infosparks:hover .infosparks-mem .infosparks-icon { margin: 4px 8px 8px 0; float: left; } }
@@ -1927,9 +1929,12 @@ dd, .dd { margin-left: 24px; padding: 12px; background-color: white; color: #334
 .mrkt-data li:hover p { color: #f7f7f7; }
 @media only screen and (min-width: 768px) { .mrkt-data li:hover .market-icon { bottom: 30px; } }
 
-.mrkt-data .four { margin: 24px 0; }
-.mrkt-data .four.ttip:after { top: 130%; }
-.mrkt-data .four p { text-transform: uppercase; color: #f7f7f7; text-align: center; }
+.mrkt-data.inner-mrkt .two { padding: 24px 6px !important; }
+.mrkt-data.inner-mrkt .two:hover { background-color: #072554; }
+.mrkt-data.inner-mrkt .two p { text-transform: uppercase; color: #f7f7f7; text-align: center; }
+.mrkt-data.inner-mrkt .two .infosparks-mem, .mrkt-data.inner-mrkt .two .infosparks-nonmem { padding: 10px 0 0 0 !important; }
+.mrkt-data.inner-mrkt .two .infosparks-mem p, .mrkt-data.inner-mrkt .two .infosparks-nonmem p { padding: 10px !important; margin-bottom: 0; }
+.mrkt-data.inner-mrkt .two .infosparks-mem p:hover, .mrkt-data.inner-mrkt .two .infosparks-nonmem p:hover { background-color: #334374; }
 
 .market-icon { position: absolute; left: 0; right: 0; bottom: 20px; margin: 0 auto; background-size: 32px 32px; width: 32px; height: 32px; }
 .market-icon.large { position: relative; background-size: 80px 80px; width: 80px; height: 80px; bottom: 0; }

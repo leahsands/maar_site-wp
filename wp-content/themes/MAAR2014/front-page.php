@@ -17,41 +17,41 @@
 				<p>Infosparks</p>
 				<div class="market-icon infosparks-icon"></div>
 				<div class="row">
-					<a href="http://maar-infosparks.stats.10kresearch.com/" target="_blank">
-					<div class="infosparks-nonmem eight columns">
-						<p>Public</p>
-						<div class="market-icon infosparks-icon">
-						</div>
-					</div>
-					</a>
 					<a href="http://northstarmls.stats.10kresearch.com/" target="_blank">
-					<div class="infosparks-mem eight columns">
+					<div class="infosparks-mem sixteen columns">
 						<p>Member</p>
 						<div class="market-icon infosparks-icon">
 						</div>
 					</div>
 					</a>
+					<!-- <a href="http://maar-infosparks.stgstats.10kresearch.com/" target="_blank">
+					<div class="infosparks-nonmem eight columns">
+						<p>Public</p>
+						<div class="market-icon infosparks-icon">
+						</div>
+					</div>
+					</a> -->
 				</div>
 			</li>
-			<a href="http://maar.stats.10kresearch.com/reports/lmu" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
 			<li class="ttip two columns" data-tooltip="Deep dive into cities and neighborhoods." alt="">
 				<p>Local Market Updates</p>
 				<div class="market-icon lmu-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports/mmi" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
 			<li class="ttip two columns" data-tooltip="An overview of key trends for the region." alt="">
 				<p>Monthly Indicators</p>
 				<div class="market-icon mmi-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports/hso" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
 			<li class="ttip two columns" data-tooltip="Segmentation by price, property type." alt="">
 				<p>Housing Supply</p>
 				<div class="market-icon hso-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports/fss" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
 			<li class="ttip two columns" data-tooltip="An important segment spelled out." alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon fss-icon"></div>
@@ -63,13 +63,13 @@
 				<div class="market-icon infosparks-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stgstats.10kresearch.com/docs/ann/list" target="_blank">
+			<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'market-data' ) ) ); ?>/#ann-archive">
 			<li class="ttip two columns" data-tooltip="Full year of activity at a glance." alt="">
 				<p>Annual Reports</p>
 				<div class="market-icon ann-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stgstats.10kresearch.com/docs/wma/list" target="_blank">
+			<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'market-data' ) ) ); ?>/#wma-archive">
 			<li class="ttip two columns" data-tooltip="Stay on top of trends every week." alt="">
 				<p>Weekly Activity</p>
 				<div class="market-icon wma-icon"></div>
@@ -103,8 +103,10 @@
 	                        </p>
 	                        <?php endif; ?>
 	              </div>
-		    <a href="http://<?php echo get_post_meta( get_the_ID(), 'button_link', true ); ?>" target="_blank" style="width: 100%; height: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0;">
+	            <?php if ( get_post_meta($post->ID, 'button_link', true) ) : ?> 
+		    	<a href="http://<?php echo get_post_meta( get_the_ID(), 'button_link', true ); ?>" target="_blank" style="width: 100%; height: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0;">
 	            </a>
+	        <?php endif; ?>
 		    </li>
 
 	    <?php endwhile; ?>
@@ -127,7 +129,7 @@
 	<div class="row">
 		<section class="four columns gen-div">
 			<div class="gen-div-header">
-				<h2>News</h2><a class="archive" href="<?php echo esc_url( get_permalink( get_page_by_path( 'newsroom' ) ) ); ?>">| More News</a>
+				<h2>News</h2><a class="archive" href="<?php echo esc_url( get_permalink( get_page_by_path( 'communications' ) ) ); ?>">| More News</a>
 			</div>
 			<span class="gen-home-div-inner news-item">
 			<ul>

@@ -35,7 +35,7 @@
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 			<div class="gen-div-header">
 				<a href="<?php the_permalink(); ?>"><h5><?php the_title(); ?></h5>
-				<span><em><?php the_time('F Y'); ?></em></span></a>
+				<span><em><?php the_time('F j, Y'); ?></em></span></a>
 			</div>
 			<div class="gen-div-inner">
 				<?php the_excerpt(); // echo the excerpt ?>

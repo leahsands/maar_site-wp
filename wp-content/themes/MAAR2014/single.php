@@ -25,7 +25,7 @@
 
 	<div class="row">
 		<?php while ( have_posts() ) : the_post(); ?>
-			<section class="nine columns blog">	
+			<section class="eight columns blog">	
 				<p><em>By <?php the_author(); ?> on <?php the_time('l, F jS, Y'); ?></em></p>	
 				<?php the_content(); ?>
 
@@ -48,7 +48,7 @@
 				</section>
 			</section>
 
-			<section class="three columns">
+			<section class="four columns">
 				<div class="gen-div">
 					<div class="gen-div-header">
 						<h4>Subscribe</h4>

@@ -160,7 +160,7 @@
 						<div class="eight columns">
 							<p> 5750 Lincoln Drive, Edina, MN 55436<br />
 							952.933.9020<br />
-							<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'bylaws-rules-policies' ) ) ); ?>">Privacy Statement</a></p>
+							<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'privacy-statement' ) ) ); ?>">Privacy Statement</a></p>
 						</div>
 					</div>
 					<div class="row side-contact">

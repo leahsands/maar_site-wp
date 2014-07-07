@@ -7,8 +7,8 @@
 								<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>"><i class="icon-mail"></i></a>
 							</div>
 							<div class="eleven columns">
-								<p>5750 Lincoln Drive, Edina, MN 55436 • 952.933.9020 • <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'bylaws-rules-policies' ) ) ); ?>">Privacy Statement</a><br />
-								&copy;<?php echo date( 'Y' ); ?> Minneapolis Association of REALTORS&reg;. All rights reserved.</p>
+								<p>5750 Lincoln Drive, Edina, MN 55436 • 952.933.9020 • <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'privacy-statement' ) ) ); ?>">Privacy Statement</a><br />
+								&copy;<?php echo date( 'Y' ); ?> Minneapolis Area Association of REALTORS&reg;. All rights reserved.</p>
 							</div>
 						</div>
 						<div class="three columns">

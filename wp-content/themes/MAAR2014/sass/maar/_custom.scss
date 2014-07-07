@@ -306,7 +306,7 @@ span {
 	i {
 		display: inline-block !important;  
 		float: right;
-		margin-left: $gutter-in-px;
+		margin-left: ($gutter-in-px/2);
 		margin-right: 0px;
 	}
 }
@@ -561,6 +561,9 @@ dd, .dd {
     animation: slide 0.5s forwards;
     animation-delay: 4s;
     text-shadow: 0 0 10px $primary-hover-color; 
+
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
     a {
     	text-transform: uppercase;
     	font-weight: $font-weight-regular;
@@ -579,6 +582,10 @@ dd, .dd {
 
 @keyframes slide {
     100% { right: 0; }
+}
+
+@-moz-keyframes slide {
+	100% { right: 0; }
 }
 
 
@@ -629,7 +636,7 @@ dd, .dd {
 					position: relative;
 				}
 				&:hover {
-					background-color: darken($primary-hover-color, 5%);
+					background-color: $blu;
 				}
 				@media only screen and (max-width: $tablet-device-width) {
 					padding: 0;
@@ -697,15 +704,26 @@ dd, .dd {
 	}
 }
 
-.mrkt-data .four {
-	margin: ($gutter-in-px*2) 0;
-	&.ttip:after {
-		top: 130%;
+.mrkt-data.inner-mrkt .two {
+	padding: ($gutter-in-px*2) ($gutter-in-px/2) !important;
+	&:hover {
+		background-color: $primary-hover-color;
 	}
 	p {
 		text-transform: uppercase;
 		color: $white;
 		text-align: center;
+	}
+	.infosparks-mem,
+	.infosparks-nonmem {
+		padding: 10px 0 0 0 !important;
+		p {
+			padding: 10px !important;
+			margin-bottom: 0;
+			&:hover {
+				background-color: $blu;
+			}
+		}
 	}
 }
 
