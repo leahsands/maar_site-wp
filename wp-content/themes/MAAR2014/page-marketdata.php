@@ -32,25 +32,25 @@ Template Name: Market Data
 					</a> -->
 				</div>
 			</section>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/lmu" target="_blank">
 			<section class="ttip two columns" data-tooltip="Deep dive into cities and neighborhoods." alt="">
 				<p>Local Market Updates</p>
 				<div class="market-icon large lmu-icon"></div>
 			</section>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/mmi" target="_blank">
 			<section class="ttip two columns" data-tooltip="An overview of key trends for the region." alt="">
 				<p>Monthly Indicators</p>
 				<div class="market-icon large mmi-icon"></div>
 			</section>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/hso" target="_blank">
 			<section class="ttip two columns" data-tooltip="Segmentation by price, property type." alt="">
 				<p>Housing Supply</p>
 				<div class="market-icon large hso-icon"></div>
 			</section>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/fss" target="_blank">
 			<section class="ttip two columns" data-tooltip="An important segment spelled out." alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon large fss-icon"></div>
@@ -95,12 +95,11 @@ Template Name: Market Data
 					<h6>2013 Reports</h6>
 
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-						<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+						<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 					<?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile; ?>
-				    <?php wp_reset_query(); ?>
 
 				    </p>
 				    <p>
@@ -126,12 +125,11 @@ Template Name: Market Data
 				    <h6>2012 Reports</h6>
 
 				    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				    	<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+				    	<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile;  ?>
-					<?php wp_reset_query(); ?>
 
 					</p>
 					<p>
@@ -157,13 +155,11 @@ Template Name: Market Data
 				    <h6>2011 Reports</h6>
 
 				    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				    	<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+				    	<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile;  ?>
-					<?php wp_reset_query(); ?>
-
 					</p>
 					<p>
 
@@ -188,13 +184,11 @@ Template Name: Market Data
 				    <h6>2010 Reports</h6>
 
 				    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				    	<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+				    	<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile;  ?>
-					<?php wp_reset_query(); ?>
-
 					</p>
 					<p>
 
@@ -219,12 +213,11 @@ Template Name: Market Data
 				    <h6>2009 Reports</h6>
 
 				    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				    	<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+				    	<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile;  ?>
-					<?php wp_reset_query(); ?>
 
 					</p>
 					<p>
@@ -250,17 +243,15 @@ Template Name: Market Data
 				    <h6>2008 Reports</h6>
 
 				    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				    	<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+				    	<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile;  ?>
-					<?php wp_reset_query(); ?>
-
 					</p>
 					<p>
 
-					 <?php
+					<?php
 					$reports = array(
 						'post_type' => 'report_html',
 						'meta_query' => array(
@@ -281,13 +272,11 @@ Template Name: Market Data
 				    <h6>2007 Reports</h6>
 
 				    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				    	<a href="<?php bloginfo('template_url'); ?>/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
+				    	<a href="../wp-content/files/lmu/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>.html"><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 4) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
 				    <?php endwhile;  ?>
-					<?php wp_reset_query(); ?>
-
 
 					</p>
 				</div>
@@ -303,7 +292,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a><br />
+				        <a href="http://maar.stats.10kresearch.com/docs/ann/<?php the_field('year_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a><br />
 
 				    <?php endwhile; ?>
 				</p>
@@ -332,7 +321,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -360,7 +349,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -388,7 +377,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -416,7 +405,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -444,7 +433,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -472,7 +461,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -500,7 +489,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -528,7 +517,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -555,7 +544,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -581,7 +570,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -607,7 +596,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -633,7 +622,7 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>
@@ -659,7 +648,33 @@ Template Name: Market Data
 				    $x = 0;
 				    
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				        <a href="<?php the_field('report_upload'); ?>" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
+
+				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
+				    <?php $x++; ?>
+					<?php endwhile; ?>
+				</p>
+
+				<h6>2009, Week of:</h6>
+				<p>
+					<?php
+
+				    $reports = array( 'post_type' => 'report_html',
+				    	'meta_query' => array(
+				    		'relation' => 'AND',
+				    		array ( 'key' => 'report_type',
+				    				'value' => 'wma'
+				    		),
+				    		array ( 'key' => 'year_of_report',
+				    				'value' => '2009'
+				    		)
+				    	)
+				    );
+				    $loop = new WP_Query( $reports );
+				    $x = 0;
+				    
+				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
 				    <?php if($x == 3) { $x = -1; echo '<br />'; } ?>
 				    <?php $x++; ?>

@@ -33,25 +33,25 @@
 					</a> -->
 				</div>
 			</li>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/lmu" target="_blank">
 			<li class="ttip two columns" data-tooltip="Deep dive into cities and neighborhoods." alt="">
 				<p>Local Market Updates</p>
 				<div class="market-icon lmu-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/mmi" target="_blank">
 			<li class="ttip two columns" data-tooltip="An overview of key trends for the region." alt="">
 				<p>Monthly Indicators</p>
 				<div class="market-icon mmi-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/hso" target="_blank">
 			<li class="ttip two columns" data-tooltip="Segmentation by price, property type." alt="">
 				<p>Housing Supply</p>
 				<div class="market-icon hso-icon"></div>
 			</li>
 			</a>
-			<a href="http://maar.stats.10kresearch.com/reports" target="_blank">
+			<a href="http://maar.stats.10kresearch.com/reports/fss" target="_blank">
 			<li class="ttip two columns" data-tooltip="An important segment spelled out." alt="">
 				<p>Foreclosure Report</p>
 				<div class="market-icon fss-icon"></div>

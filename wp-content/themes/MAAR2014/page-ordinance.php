@@ -122,7 +122,7 @@ get_header(); ?>
             canvas: "map",
             zoom: 1,
             onClickCallBack: function(areaId) {
-				location.href = "<?php echo home_url(); ?>/blog/ordinances/" + areaId.toLowerCase();
+				location.href = "<?php echo home_url(); ?>/ordinances/" + areaId.toLowerCase();
               },
             onChangeCallBack: function(areaName) {
               areaNameEl.text(areaName);

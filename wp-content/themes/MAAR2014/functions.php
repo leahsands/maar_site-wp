@@ -683,7 +683,7 @@
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
 			$new_classes = $classes;
-			if ( preg_grep("/^current/", $classes) ) {
+			if ( preg_grep("/^current/", $classes) && !is_404() && !is_search() ) {
 				$new_classes [] = 'active';
 				if ( preg_grep("/current-menu-item|current-page-ancestor|current_page_parent/",$classes) ) {
 					$new_classes [] = 'active-item';

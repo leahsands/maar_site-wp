@@ -24,7 +24,8 @@
 			'posts_per_page' => 6,
 			'post_status' => 'publish',
 			'post_type' => 'post',
-			'paged' => $paged 
+			'paged' => $paged,
+			'pagename' => 'blog'
 		);
     	$loop = new WP_Query( $blog_posts );
 		$x = 0;
