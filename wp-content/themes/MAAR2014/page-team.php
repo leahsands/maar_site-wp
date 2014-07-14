@@ -15,7 +15,7 @@ get_header(); ?>
 
     <?php
 
-    $team_members = array( 'post_type' => 'team_post' );
+    $team_members = array( 'post_type' => 'team_post', 'posts_per_page' => -1 );
     $loop = new WP_Query( $team_members );
     $x = 0;
     

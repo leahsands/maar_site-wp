@@ -287,10 +287,14 @@ Template Name: Market Data
 				<p>
 					<?php
 
-				    $reports = array( 'post_type' => 'report_html', 'meta_value' => 'ann' );
+				    $reports = array(
+				    	'post_type' => 'report_html',
+				    	'meta_value' => 'ann',
+				    	'posts_per_page' => -1
+				    	);
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/ann/<?php the_field('year_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a><br />
 
@@ -315,11 +319,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2022'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -343,11 +348,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2021'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -371,11 +377,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2020'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -399,11 +406,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2019'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -427,11 +435,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2018'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -455,11 +464,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2017'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -483,11 +493,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2016'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -511,11 +522,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2015'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -538,11 +550,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2014'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -564,11 +577,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2013'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -590,11 +604,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2012'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -616,11 +631,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2011'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -642,11 +658,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2010'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 
@@ -668,11 +685,12 @@ Template Name: Market Data
 				    		array ( 'key' => 'year_of_report',
 				    				'value' => '2009'
 				    		)
-				    	)
+				    	),
+				    	'posts_per_page' => -1
 				    );
 				    $loop = new WP_Query( $reports );
 				    $x = 0;
-				    
+
 				    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				        <a href="http://maar.stats.10kresearch.com/docs/wma/<?php the_field('year_of_report'); ?>-<?php the_field('month_of_report'); ?>-<?php the_field('day_of_report'); ?>/report/" alt="" target="_blank" /><?php the_title(); ?></a>&nbsp;|&nbsp;
 

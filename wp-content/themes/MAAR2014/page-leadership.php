@@ -15,7 +15,7 @@ get_header(); ?>
 
     <?php
 
-    $leadership_members = array( 'post_type' => 'leadership_post' );
+    $leadership_members = array( 'post_type' => 'leadership_post', 'posts_per_page' => -1 );
     $loop = new WP_Query( $leadership_members );
     $x = 0;
     
