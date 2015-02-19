@@ -1,0 +1,17 @@
+{
+	"build": {
+		"gumbyPath": "bower_components/gumby",
+		"outPath": "js",
+		"addons": [
+			"bower_components/gumby-images/gumby.images.js",
+			"bower_components/gumby-fittext/gumby.fittext.js"
+		],
+		"files": [
+			"js/_custom/custom.js",
+			"js/_custom/flexslider.js",
+			"js/_custom/classie.js",			
+			"js/_custom/jflickrfeed.min.js",
+			"js/_custom/social_feeds.js"
+		]
+	}
+}
